@@ -1,0 +1,65 @@
+
+
+/* *********************************************************************************************  */
+
+/* começo do header */
+
+/* DIV PARA O HEADER */
+.header{
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    border: 2px solid firebrick;
+    display: flex;
+    flex-direction: row;
+}
+/* DIV PARA O LOGO */
+.logo{
+    height: 100%;
+    width: 30%;
+    border: 2px solid violet;
+}
+/* PARA AJUSTAR OS ICONES DO MENU */
+.menu{
+    display: flex;
+    height: 100%;
+    width: 70%;
+    border: 2px solid violet;
+    justify-content:space-evenly ;
+}
+/* DIV PARA TIRAR A DECORAÇAÕ DO A */
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+/* ********************************************************************************************* */
+
+/* Rodape */
+.footer{
+    border: 2px solid rgb(63, 180, 165);
+    height: 20%;
+    width: 100%;
+}
+
+/* ********************************************************************************************* */
+
+/* Comeco do meio da pagina Index */
+
+/* DIV PARA O BANNER */
+.banner{
+    border: 2px solid gold;
+    height: 80%;
+    width: 100%;
+}
+
+/* DIV PARA O CONTAINER */
+
+.container{
+    border: 2px solid rgb(69, 59, 163);
+    height: 90%;
+    width: 80%;
+}
+
+/* ********************************************************************************************* */
