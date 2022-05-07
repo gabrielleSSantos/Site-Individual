@@ -108,52 +108,57 @@ body {
 
 
 
-/* DIV DO PAINEL */
-/* 
-.painel{
-    font-size: 25px;
-    border:2px solid black;
-    font-family:cursive;
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    justify-content:center;
-    align-items: center;
+/* DIV Da GALERIA */
+
+.galeria{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(207, 6, 207), rgb(100, 210, 238),rgb(223, 21, 115))
+
 }
+/* AQUI MUDA O TAMANHO DO SLIDES TODOS */
 .slider{
     margin: 0 auto;
-    width: 400px;
-    height: 400px;
+    width: 1000px;
+    height: 500px;
     overflow: hidden;
-    border: 2px solid gold;
+    border: 2px solid black;
+    border-radius: 10px;
+    position:absolute;
 }
 .slides{
-    width: 100%;
-    height: 100%;
+    width: 1000px;
+    height: 500px;
     display: flex;
-    border: 2px solid rgb(17, 0, 255); 
+    /* border: 2px solid rgb(17, 0, 255);  */
 }
+
 .slides input{
     display: none;
 }
 
 .slide{
-    width: 25%;
+    width: 100%;
     position: relative;
    
 }
 
 .slide img{
-    width: 400px;
-    height: 400px;
+    width: 1000px;
 }
 
 .manual-navigation{
     position: absolute;
-    width: 400px;
+    width: 1000px;
+    margin-top: -17px;
     display: flex;
     justify-content: center;
-    border: 2px solid black; 
+    /* border: 2px solid black;  */
 }
 
 .manual-btn{
@@ -163,29 +168,64 @@ body {
     cursor: pointer;
     transition: 1s;
 }
+/* serve para especar as bolinhas */
 .manual-btn:not(:last-child){
     margin-right: 40px;
 }
-
+/* passar o mouse em cima ficar preto */
 .manual-btn:hover{
     background-color: black;
 }
-
+/* serve para as transiçoes das fotos */
 #radio1:checked ~ .first{
     margin-left:0;
 }
 
 #radio2:checked ~ .first{
-    margin-right: 0;
+    margin-left: -100%;
 }
 
 #radio3:checked ~ .first{
-    margin-left: 0;
+    margin-left: -200%;
 } 
 
 #radio4:checked ~ .first{
-    margin-left: 0;
+    margin-left: -300%;
 }
-  */
 
+.navigation-auto div{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position:absolute;
+    width: 1000px;
+    margin-top: 483px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+/* QUANDO A BOLINHA FOR CLICADA DEIXA EM BRANCO */
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: black;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: black;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: black;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: black;
+}
 /* ********************************************************************************************* */
