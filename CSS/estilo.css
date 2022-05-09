@@ -1,10 +1,24 @@
 body {
   margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.banner {
+  /* border: 2px solid gold; */
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  /* border: 2px solid rgb(69, 59, 163); */
+  height: 100%;
+  width: 100%;
 }
 /* *********************************************************************************************  */
 
-/* começo do header */
-/* DIV PARA O HEADER */
+/* PAGINA INDEX */
+
+/* codigo relacionado ao header */
 .header {
   height: 20%;
   width: 99.7%;
@@ -14,7 +28,6 @@ body {
   align-items: center;
 }
 
-/* DIV PARA O LOGO */
 .logo {
   display: flex;
   height: 100%;
@@ -29,7 +42,6 @@ body {
   padding: 5px;
 }
 
-/* PARA AJUSTAR OS ICONES DO MENU */
 .menu {
   display: flex;
   height: 100%;
@@ -39,69 +51,81 @@ body {
   cursor: pointer;
 }
 
-/* DIV PARA TIRAR A DECORAÇAÕ DO A */
 .menu a {
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
 
-/* ********************************************************************************************* */
-
-/* Rodape */
-.footer {
-  /* border: 2px solid rgb(63, 180, 165); */
-  height: 20%;
-  width: 100%;
-}
-
-/* ********************************************************************************************* */
-
-/* Comeco do meio da pagina Index */
-
-/* DIV PARA O BANNER */
-.banner {
-  /* border: 2px solid gold; */
-  height: 100%;
-  width: 100%;
-}
-
-/* DIV PARA O CONTAINER */
-
-.container {
-  /* border: 2px solid rgb(69, 59, 163); */
-  height: 100%;
-  width: 100%;
-}
-
-.bg_video {
-  border: 2px solid black;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.painel h1 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 80px;
-  color: white;
-}
-.painel h1:hover {
-  text-shadow: 12px 8px 8px rgb(240, 136, 184);
-}
 .painel {
   display: flex;
   border: 2px solid saddlebrown;
-  width: 100%;
-  justify-content: center;
-  background-color: black;
+  align-items: center;
+  width: 99.7%;
+  justify-content: space-around;
+  background-color: rgb(241, 166, 201);
 }
 
 .video {
   display: flex;
-  border: 2px solid white;
-  width: 50%;
+  /* border: 2px solid white; */
+  width: 30%;
   height: 400px;
+}
+
+.bg_video {
+  display: flex;
+  border-radius: 10px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color: black; */
+}
+
+/* CODIGO RELACIONADO A ANIMAÇÃO TEXTO INICIAÇÃO */
+.typewriter {
+  font-size: 50px;
+  width: 70%;
+}
+.typewriter h1 {
+  overflow: hidden;
+  margin: 0 auto;
+  display: inline-block;
+  font-weight: normal;
+}
+.typewriter h1:after {
+  content: "";
+  display: inline-block;
+  background-color: white;
+  margin-left: 2px;
+  height: 25px;
+  width: 4px;
+  animation: cursor 0.4s infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* DIV dps do painel */
+
+.missao {
+  display: flex;
+  border: 2px solid black;
+  height: 400px;
+  width: 99.7%;
 }
 
 /* COMECANDO A PARTE DE FOTOS */
@@ -224,3 +248,11 @@ body {
   background-color: black;
 }
 /* ********************************************************************************************* */
+
+/* ********************************************************************************************* */
+/* Rodape */
+.footer {
+  /* border: 2px solid rgb(63, 180, 165); */
+  height: 20%;
+  width: 100%;
+}
