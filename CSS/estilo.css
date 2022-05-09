@@ -1,58 +1,58 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 /* *********************************************************************************************  */
 
 /* começo do header */
 /* DIV PARA O HEADER */
 .header {
-    height: 20%;
-    width: 99.7%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  height: 20%;
+  width: 99.7%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* DIV PARA O LOGO */
 .logo {
-    display: flex;
-    height: 100%;
-    width: 30%;
-    justify-content: center;
+  display: flex;
+  height: 100%;
+  width: 30%;
+  justify-content: center;
 }
 
 .logo img {
-    height: 10vh;
-    width: 20vw;
-    border-radius: 30px;
-    padding: 5px;
+  height: 10vh;
+  width: 20vw;
+  border-radius: 30px;
+  padding: 5px;
 }
 
 /* PARA AJUSTAR OS ICONES DO MENU */
 .menu {
-    display: flex;
-    height: 100%;
-    width: 70%;
-    justify-content: space-around;
-    font-family: 'Signika Negative', sans-serif;
-    cursor: pointer;
+  display: flex;
+  height: 100%;
+  width: 70%;
+  justify-content: space-around;
+  font-family: "Signika Negative", sans-serif;
+  cursor: pointer;
 }
 
 /* DIV PARA TIRAR A DECORAÇAÕ DO A */
 .menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
 }
 
 /* ********************************************************************************************* */
 
 /* Rodape */
 .footer {
-    /* border: 2px solid rgb(63, 180, 165); */
-    height: 20%;
-    width: 100%;
+  /* border: 2px solid rgb(63, 180, 165); */
+  height: 20%;
+  width: 100%;
 }
 
 /* ********************************************************************************************* */
@@ -61,56 +61,54 @@ body {
 
 /* DIV PARA O BANNER */
 .banner {
-    /* border: 2px solid gold; */
-    height: 100%;
-    width: 100%;
+  /* border: 2px solid gold; */
+  height: 100%;
+  width: 100%;
 }
 
 /* DIV PARA O CONTAINER */
 
 .container {
-    /* border: 2px solid rgb(69, 59, 163); */
-    height: 100%;
-    width: 100%;
+  /* border: 2px solid rgb(69, 59, 163); */
+  height: 100%;
+  width: 100%;
 }
 
 .bg_video {
-    position: relative;
-    bottom: 0px;
-    right: 0;
-    min-width: 100%;
-    width: 100%;
-    height: 100%;
-    z-index: -1000;
-    background-size: cover;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    /* border: 2px solid black; */
-    margin: 0;
+  border: 2px solid black;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .painel h1 {
-    position: absolute;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 80px;
-    color: black;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 80px;
+  color: white;
 }
-.painel h1:hover{
-    text-shadow: 12px 8px 8px #fff;
+.painel h1:hover {
+  text-shadow: 12px 8px 8px rgb(240, 136, 184);
 }
 .painel {
-    display: flex;
-    justify-content:center;
-    align-items:center;
+  display: flex;
+  border: 2px solid saddlebrown;
+  width: 100%;
+  justify-content: center;
+  background-color: black;
+}
+
+.video {
+  display: flex;
+  border: 2px solid white;
+  width: 50%;
+  height: 400px;
 }
 
 /* COMECANDO A PARTE DE FOTOS */
 
-
-
 /* DIV Da GALERIA */
 
-.galeria{
+.galeria {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -118,114 +116,111 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgb(207, 6, 207), rgb(100, 210, 238),rgb(223, 21, 115))
-
+  background: linear-gradient(rgb(223, 21, 115), rgb(100, 210, 238));
 }
 /* AQUI MUDA O TAMANHO DO SLIDES TODOS */
-.slider{
-    margin: 0 auto;
-    width: 1000px;
-    height: 500px;
-    overflow: hidden;
-    border: 2px solid black;
-    border-radius: 10px;
-    position:absolute;
+.slider {
+  margin: 0 auto;
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: absolute;
 }
-.slides{
-    width: 1000px;
-    height: 500px;
-    display: flex;
-    /* border: 2px solid rgb(17, 0, 255);  */
-}
-
-.slides input{
-    display: none;
+.slides {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  /* border: 2px solid rgb(17, 0, 255);  */
 }
 
-.slide{
-    width: 100%;
-    position: relative;
-   
+.slides input {
+  display: none;
 }
 
-.slide img{
-    width: 1000px;
+.slide {
+  width: 100%;
+  position: relative;
 }
 
-.manual-navigation{
-    position: absolute;
-    width: 1000px;
-    margin-top: -17px;
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid black;  */
+.slide img {
+  width: 1000px;
 }
 
-.manual-btn{
-    border: 2px solid black;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
+.manual-navigation {
+  position: absolute;
+  width: 1000px;
+  margin-top: -17px;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid black;  */
+}
+
+.manual-btn {
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
 }
 /* serve para especar as bolinhas */
-.manual-btn:not(:last-child){
-    margin-right: 40px;
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
 }
 /* passar o mouse em cima ficar preto */
-.manual-btn:hover{
-    background-color: black;
+.manual-btn:hover {
+  background-color: black;
 }
 /* serve para as transiçoes das fotos */
-#radio1:checked ~ .first{
-    margin-left:0;
+#radio1:checked ~ .first {
+  margin-left: 0;
 }
 
-#radio2:checked ~ .first{
-    margin-left: -100%;
+#radio2:checked ~ .first {
+  margin-left: -100%;
 }
 
-#radio3:checked ~ .first{
-    margin-left: -200%;
-} 
-
-#radio4:checked ~ .first{
-    margin-left: -300%;
+#radio3:checked ~ .first {
+  margin-left: -200%;
 }
 
-.navigation-auto div{
-    border: 2px solid black;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
+#radio4:checked ~ .first {
+  margin-left: -300%;
 }
 
-.navigation-auto{
-    position:absolute;
-    width: 1000px;
-    margin-top: 483px;
-    display: flex;
-    justify-content: center;
+.navigation-auto div {
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
 }
 
+.navigation-auto {
+  position: absolute;
+  width: 1000px;
+  margin-top: 483px;
+  display: flex;
+  justify-content: center;
+}
 
-.navigation-auto div:not(:last-child){
-    margin-right: 40px;
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
 }
 
 /* QUANDO A BOLINHA FOR CLICADA DEIXA EM BRANCO */
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background-color: black;
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background-color: black;
 }
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background-color: black;
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background-color: black;
 }
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background-color: black;
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background-color: black;
 }
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background-color: black;
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background-color: black;
 }
 /* ********************************************************************************************* */
