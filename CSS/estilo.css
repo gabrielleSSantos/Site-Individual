@@ -127,8 +127,8 @@ body {
   height: 400px;
   width: 99.7%;
 }
-
-/* COMECANDO A PARTE DE FOTOS */
+/* ********************************************************************************************* */
+/* PAGINA GALERIA */
 
 /* DIV Da GALERIA */
 
@@ -140,7 +140,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgb(223, 21, 115), rgb(100, 210, 238));
+  background-color: rgb(241, 166, 201);
 }
 /* AQUI MUDA O TAMANHO DO SLIDES TODOS */
 .slider {
