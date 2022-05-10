@@ -303,13 +303,13 @@ body {
   height: 20%;
   width: 99.7%;
   background-color: rgb(241, 166, 201);
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .footer .logo img {
   height: 50%;
-  width: 80%;
+  width: 50%;
 }
 
 .icones {
@@ -337,6 +337,10 @@ body {
   color: black;
   font-size: 20px;
 }
+.paginas a:hover,
+.paginas a:active {
+  color: rgb(233, 14, 116);
+}
 /* ********************************************************************************************* */
 /* PAGINA CONTATO */
 
@@ -346,25 +350,25 @@ body {
   width: 99.7%;
   justify-content: space-around;
   align-items: center;
+  /* border: 3px solid black; */
 }
 
 .form {
   display: flex;
-  height: 85%;
+  height: 90%;
   width: 40%;
   border: 3px solid black;
   flex-direction: column;
   border-radius: 20px;
   justify-items: center;
-  /* align-items: center; */
-  /* box-shadow: 15px -10px pink; */
+  margin-left: 50px;
   box-shadow: inset 0 0 1em rgb(233, 14, 116), 0 0 1em rgb(233, 14, 116);
 }
 .form h3 {
   margin-left: 28px;
 }
 
-.form h2 {
+.form h1 {
   margin-left: 40px;
 }
 
@@ -378,26 +382,31 @@ body {
 
 .meios {
   height: 90%;
-  width: 40%;
+  width: 30%;
   border-radius: 10px;
   border: 3px solid black;
   box-shadow: inset 0 0 1em rgb(233, 14, 116), 0 0 1em rgb(233, 14, 116);
 }
 .meios .icones {
   width: 100%;
+  height: 150px;
   display: flex;
   justify-content: space-evenly;
   border-radius: 20px;
+  /* border: 3px solid black; */
 }
-
+.meios .icones a {
+  text-decoration: 0;
+  font-size: 30px;
+  /* border: 2px solid gold; */
+  color: black;
+}
 .meios .icones img {
   height: 60%;
-  width: 20%;
+  width: 90px;
+  /* border: 2px solid aqua; */
 }
 
-.meios .icones h2 {
-  font-size: 30px;
-}
 .meios h1 {
   margin-left: 25px;
 }
@@ -409,15 +418,18 @@ body {
   align-items: center;
   width: 100%;
   height: 200px;
+  /* border: 2px solid black; */
+  box-shadow: 0 0 1em rgb(233, 14, 116);
 }
 
-.contato_comeco .btn {
+.btn {
   height: 70px;
   width: 120px;
   border-radius: 15px;
   background-color: black;
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
 .btn a {
@@ -428,4 +440,10 @@ body {
 .btn:hover,
 .btn:active {
   font-size: 150%;
+}
+
+.form .btn {
+  margin-top: 15px;
+  margin-left: 200px;
+  height: 50px;
 }
