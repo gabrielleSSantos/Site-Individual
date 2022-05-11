@@ -14,6 +14,35 @@ body {
   height: 100%;
   width: 100%;
 }
+/* INPUT PADRÃO */
+input{
+  border: 2px solid rgb(233, 14, 116);
+  width: 100%;
+  border-radius: 10px;
+  height: 15%;
+  
+}
+/* BOTOES PADRAO */
+.btn {
+  height: 70px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: black;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover,
+.btn:active {
+  font-size: 150%;
+}
+
 /* *********************************************************************************************  */
 
 /* PAGINA INDEX */
@@ -67,7 +96,7 @@ body {
   align-items: center;
   width: 99.7%;
   justify-content: center;
-  background-color: rgb(241, 166, 201);
+  background-color: pink;
 }
 
 .video {
@@ -85,7 +114,10 @@ body {
   width: 100%;
   /* background-color: black; */
 }
-
+/* TAG PARA MUDAR A COR DO MENU */
+#agora{
+  color: rgb(233, 14, 116);
+ }
 /* CODIGO RELACIONADO A ANIMAÇÃO TEXTO INICIAÇÃO */
 .typewriter {
   margin-left: 15px;
@@ -167,7 +199,7 @@ body {
   margin-bottom: 10px;
   font-size: 20px;
   border: 2px solid black;
-  box-shadow: 0 0 1em rgb(233, 14, 116);
+  /* box-shadow: 0 0 1em rgb(233, 14, 116); */
 }
 
 .imagens_card {
@@ -438,26 +470,6 @@ body {
   }
 }
 
-.btn {
-  height: 70px;
-  width: 120px;
-  border-radius: 15px;
-  background-color: black;
-  font-size: 20px;
-  cursor: pointer;
-  color: white;
-}
-
-.btn a {
-  text-decoration: none;
-  color: white;
-}
-
-.btn:hover,
-.btn:active {
-  font-size: 150%;
-}
-
 .form .btn {
   margin-top: 15px;
   margin-left: 200px;
@@ -474,8 +486,8 @@ body {
 /* ********************************************************************************************* */
 /* PAGINA LOGIN */
 .container .seta{
-  width: 100px;
-  height: 80px;
+  width: 2hw;
+  height: 10vh;
   position: absolute;
 }
 .login {
@@ -497,7 +509,7 @@ body {
   display: flex;
   height: 75vh;
   border: 2px solid black;
-  width: 35%;
+  width: 33vw;
   box-shadow: 0 0 2em rgb(233, 14, 116);
   justify-content: center;
   flex-direction: column;
@@ -505,21 +517,14 @@ body {
   border-radius: 10px;
 }
 .login .card_login h1{
-  font-size: 45px;
+  font-size: 6vh;
   margin: 0;
 }
 
 .login .card_login h2{
-  font-size: 25px;
+  font-size: 3vh;
 }
 
-.card_login input{
-  border: 2px solid rgb(233, 14, 116);
-  width: 100%;
-  border-radius: 10px;
-  height: 15%;
-  
-}
 .card_login .label{
   width: 80%;
   height: 50%; 
@@ -535,8 +540,39 @@ body {
   text-decoration: none;
   color: black;
 }
+/* ********************************************************************************************* */
+/* PAGINA CADASTRO */
+.login .card_cadastro{
+  display: flex;
+  height: 70vh;
+  border: 2px solid black;
+  width: 60vw;
+  box-shadow: 0 0 2em rgb(233, 14, 116);
+  flex-direction: row;
+  border-radius: 10px;
 
-/* TAG PARA MUDAR A COR DO MENU */
-#agora{
- color: rgb(233, 14, 116);
+}
+
+#login_id {
+  flex-direction: column; /* deixando o titulo no comeco */
+  background-image: none;
+}
+.card_cadastro .label{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  width: 80%;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.card_cadastro .label .input{
+  width: 80%;
+}
+
+.card_cadastro .label .btn{
+  margin-top: 10px;
+  width: 50%;
+  height: 30%;
+
 }
