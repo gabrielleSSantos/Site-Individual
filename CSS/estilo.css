@@ -27,6 +27,7 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
 .logo {
   display: flex;
   height: 100%;
@@ -468,4 +469,69 @@ body {
 .sobre {
   height: 100vh;
   border: 2px solid blue;
+}
+
+/* ********************************************************************************************* */
+/* PAGINA LOGIN */
+.container .seta{
+  width: 100px;
+  height: 80px;
+  position: absolute;
+}
+.login {
+  height: 100vh;
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:url(../IMAGENS/Trabalho.png);
+  background-size:cover;
+  background-position: top center;
+  animation: mymove3 5s infinite;
+}
+ @keyframes mymove3 {
+  100% {background-position: center;}
+
+} 
+.login .card_login {
+  display: flex;
+  height: 75vh;
+  border: 2px solid black;
+  width: 35%;
+  box-shadow: 0 0 2em rgb(233, 14, 116);
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.login .card_login h1{
+  font-size: 45px;
+  margin: 0;
+}
+
+.login .card_login h2{
+  font-size: 25px;
+}
+
+.card_login input{
+  border: 2px solid rgb(233, 14, 116);
+  width: 100%;
+  border-radius: 10px;
+  height: 15%;
+  
+}
+.card_login .label{
+  width: 80%;
+  height: 50%; 
+}
+
+.card_login .btn{
+  width: 30%;
+  height:10%;
+
+}
+
+.card_login a{
+  text-decoration: none;
+  color: black;
 }
