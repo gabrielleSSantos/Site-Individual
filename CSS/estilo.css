@@ -487,7 +487,7 @@ body {
   background-image:url(../IMAGENS/Trabalho.png);
   background-size:cover;
   background-position: top center;
-  animation: mymove3 5s infinite;
+  animation: mymove3 5s infinite alternate;
 }
  @keyframes mymove3 {
   100% {background-position: center;}
@@ -534,4 +534,9 @@ body {
 .card_login a{
   text-decoration: none;
   color: black;
+}
+
+/* TAG PARA MUDAR A COR DO MENU */
+#agora{
+ color: rgb(233, 14, 116);
 }
