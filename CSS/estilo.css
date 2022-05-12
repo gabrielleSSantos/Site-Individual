@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Barlow Condensed", sans-serif;
+
 }
 
 .banner {
@@ -38,10 +39,7 @@ input{
   color: white;
 }
 
-.btn:hover,
-.btn:active {
-  font-size: 150%;
-}
+  /* border: 2px solid black; */
 
 /* *********************************************************************************************  */
 
@@ -50,7 +48,7 @@ input{
 /* codigo relacionado ao header */
 .header {
   height: 20%;
-  width: 99.7%;
+  width: 99.8%;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
@@ -92,9 +90,9 @@ input{
 
 .painel {
   display: flex;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   align-items: center;
-  width: 99.7%;
+  width: 100%;
   justify-content: center;
   background-color: pink;
 }
@@ -162,15 +160,16 @@ input{
   display: flex;
   /* border: 2px solid black; */
   height: 600px;
-  width: 99.7%;
+  width: 100%;
   flex-direction: row;
   margin-bottom: 70px;
+  justify-content: center;
 }
 
 .tudo {
   display: flex;
   /* border: 2px solid black; */
-  width: 60%;
+  width: 50%;
   height: 100%;
   flex-direction: column;
   align-items: center;
@@ -191,8 +190,8 @@ input{
 
 .card1 {
   display: flex;
-  width: 85%;
-  height: 90%;
+  width: 75%;
+  height: 60%;
   border-radius: 20px;
   align-items: center;
   /* background-color:rgb(233, 170, 181); */
@@ -206,10 +205,10 @@ input{
   height: 75%;
   width: 30%;
 }
-
-/* ********************************************************************************************* */
-/* PAGINA GALERIA */
-
+.card1:hover,
+.card1:active{
+  font-size: 130%;
+}
 /* DIV Da GALERIA */
 
 .galeria {
@@ -222,6 +221,7 @@ input{
   align-items: center;
   /* background-color: rgb(241, 166, 201); */
 }
+
 /* AQUI MUDA O TAMANHO DO SLIDES TODOS */
 .slider {
   margin: 0 auto;
@@ -389,7 +389,7 @@ input{
 .contato {
   display: flex;
   height: 600px;
-  width: 99.7%;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   /* border: 3px solid black; */
@@ -403,7 +403,6 @@ input{
   flex-direction: column;
   border-radius: 20px;
   justify-items: center;
-  margin-left: 50px;
   box-shadow: inset 0 0 1em rgb(233, 14, 116), 0 0 1em rgb(233, 14, 116);
 }
 .form h3 {
@@ -456,7 +455,7 @@ input{
 .painel .contato_comeco {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 150px;
@@ -546,7 +545,7 @@ input{
   display: flex;
   height: 70vh;
   border: 2px solid black;
-  width: 60vw;
+  width: 65vw;
   box-shadow: 0 0 2em rgb(233, 14, 116);
   flex-direction: row;
   border-radius: 10px;
@@ -555,13 +554,13 @@ input{
 
 #login_id {
   flex-direction: column; /* deixando o titulo no comeco */
-  background-image: none;
+  background-image: url(../IMAGENS/FundoCadastro.png);
 }
 .card_cadastro .label{
   display: flex;
   flex-direction: column;
   /* border: 2px solid black; */
-  width: 80%;
+  width: 60%;
   padding: 10px;
   justify-content: space-evenly;
 }
