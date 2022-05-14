@@ -1,0 +1,170 @@
+<div class="painel">
+              <div class="contato_comeco">
+                <h1>Agendamentos pela Plataforma:</h1>
+             
+                <button class="btn"><a href="login.html">Login </a></button>
+                <h1>OU</h1>
+                <button class="btn"><a href="cadastro.html">Cadastro</a></button>
+              </div>
+            </div>
+            <h1 id="titulo_galeria"> Galeria de Fotos: </h1>
+                <div class="galeria">
+                  <div class="slider">
+            <div class="slides">
+              <!--  AS BOLINHAS DE ESCOLHER AS IMAGENS   -->
+              <input type="radio" name="radio-btn" id="radio1" />
+              <input type="radio" name="radio-btn" id="radio2" />
+              <input type="radio" name="radio-btn" id="radio3" />
+              <input type="radio" name="radio-btn" id="radio4" />
+
+              <!-- SLIDES IMAGENS -->
+              <div class="slide first">
+                <img src="../IMAGENS/Trança4.png" />
+              </div>
+
+              <div class="slide">
+                <img src="../IMAGENS/Trança2.png" />
+              </div>
+
+              <div class="slide">
+                <img src="../IMAGENS/Trança3.png" />
+              </div>
+
+              <div class="slide">
+                <img src="../IMAGENS/Trança1.png" />
+              </div>
+
+              <!-- BOLINHAS DE NAVEGAÇÃO -->
+              
+              <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+              </div>
+            </div>
+
+            <div class="manual-navigation">
+              <label for="radio1" class="manual-btn"></label>
+              <label for="radio2" class="manual-btn"></label>
+              <label for="radio3" class="manual-btn"></label>
+              <label for="radio4" class="manual-btn"></label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        .slider {
+          margin: 0 auto;
+          width: 1000px;
+          height: 500px;
+          overflow: hidden;
+          border-radius: 8px;
+          position: absolute;
+          outline: 15px solid rgb(233, 14, 116);
+          animation: mymove2 5s infinite;
+        }
+        
+        /* KEY FRAMES VC CRIA A ANIMAÇÃO */
+        @keyframes mymove2 {
+          50% {
+            outline-color: pink;
+          }
+        }
+        .slides {
+          width: 1000px;
+          height: 500px;
+          display: flex;
+          /* border: 2px solid rgb(17, 0, 255);  */
+        }
+        
+        .slides input {
+          display: none;
+        }
+        
+        .slide {
+          width: 100%;
+          position: relative;
+        }
+        
+        .slide img {
+          width: 1000px;
+        }
+        
+        .manual-navigation {
+          position: absolute;
+          width: 1000px;
+          margin-top: -17px;
+          display: flex;
+          justify-content: center;
+          /* border: 2px solid black;  */
+        }
+        
+        .manual-btn {
+          border: 2px solid black;
+          padding: 5px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 1s;
+        }
+        /* serve para especar as bolinhas */
+        .manual-btn:not(:last-child) {
+          margin-right: 40px;
+        }
+        /* passar o mouse em cima ficar preto */
+        .manual-btn:hover {
+          background-color: black;
+        }
+        /* serve para as transiçoes das fotos */
+        #radio1:checked ~ .first {
+          margin-left: 0;
+        }
+        
+        #radio2:checked ~ .first {
+          margin-left: -100%;
+        }
+        
+        #radio3:checked ~ .first {
+          margin-left: -200%;
+        }
+        
+        #radio4:checked ~ .first {
+          margin-left: -300%;
+        }
+        
+        .navigation-auto div {
+          border: 2px solid black;
+          padding: 5px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 1s;
+        }
+        
+        .navigation-auto {
+          position: absolute;
+          width: 1000px;
+          margin-top: 483px;
+          display: flex;
+          justify-content: center;
+        }
+        
+        .navigation-auto div:not(:last-child) {
+          margin-right: 40px;
+        }
+        
+        /* QUANDO A BOLINHA FOR CLICADA DEIXA EM BRANCO */
+        
+        #radio1:checked ~ .navigation-auto .auto-btn1 {
+          background-color: black;
+        }
+        #radio2:checked ~ .navigation-auto .auto-btn2 {
+          background-color: black;
+        }
+        #radio3:checked ~ .navigation-auto .auto-btn3 {
+          background-color: black;
+        }
+        #radio4:checked ~ .navigation-auto .auto-btn4 {
+          background-color: black;
+        }

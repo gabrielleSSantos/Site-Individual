@@ -222,119 +222,115 @@ input{
   /* background-color: rgb(241, 166, 201); */
 }
 
-/* AQUI MUDA O TAMANHO DO SLIDES TODOS */
-.slider {
-  margin: 0 auto;
-  width: 1000px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 8px;
-  position: absolute;
-  outline: 15px solid rgb(233, 14, 116);
-  animation: mymove2 5s infinite;
+/* SLIDER NA INDEX */
+
+
+
+.slideshow-container img {
+  vertical-align: middle;
 }
 
-/* KEY FRAMES VC CRIA A ANIMAÇÃO */
-@keyframes mymove2 {
-  50% {
-    outline-color: pink;
-  }
+.slideshow-container {
+width: 400px;
+position: relative;
+margin: auto;
+height: 500px;
+/* border: 2px solid black; */
 }
-.slides {
-  width: 1000px;
-  height: 500px;
+
+.mySlides {
   display: flex;
-  /* border: 2px solid rgb(17, 0, 255);  */
-}
-
-.slides input {
-  display: none;
-}
-
-.slide {
+  height: 100%;
   width: 100%;
-  position: relative;
+
 }
 
-.slide img {
-  width: 1000px;
-}
-
-.manual-navigation {
-  position: absolute;
-  width: 1000px;
-  margin-top: -17px;
+.mySlides2 {
   display: flex;
-  justify-content: center;
-  /* border: 2px solid black;  */
+  height: 100%;
+  width: 100%;
+
 }
 
-.manual-btn {
-  border: 2px solid black;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 1s;
-}
-/* serve para especar as bolinhas */
-.manual-btn:not(:last-child) {
-  margin-right: 40px;
-}
-/* passar o mouse em cima ficar preto */
-.manual-btn:hover {
-  background-color: black;
-}
-/* serve para as transiçoes das fotos */
-#radio1:checked ~ .first {
-  margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-  margin-left: -100%;
-}
-
-#radio3:checked ~ .first {
-  margin-left: -200%;
-}
-
-#radio4:checked ~ .first {
-  margin-left: -300%;
-}
-
-.navigation-auto div {
-  border: 2px solid black;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 1s;
-}
-
-.navigation-auto {
-  position: absolute;
-  width: 1000px;
-  margin-top: 483px;
+.mySlides3 {
   display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+.img_Slider{
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid saddlebrown; */
+  border-radius: 30px;
+  /* box-shadow: inset 0 0 1em rgb(233, 14, 116), 0 0 1em rgb(233, 14, 116); */
+  border: 5px solid rgb(233, 14, 116);
+  animation: mymove4 5s infinite;
+}
+
+@keyframes mymove4 {
+100% {border-color: rgb(108, 110, 245);}
+}
+/* TEXTO QUE APARECE NAS IMAGENS */
+.text {
+color: white;
+font-size: 22px;
+position: absolute;
+/* bottom: 20px; */
+width: 100%;
+text-align: center;
+background-color: black;
+border-radius: 10px;
+width: 60%;
+}
+
+/* border-style:ridge; 
+border-width: 10px; */
+
+/* botoes que troca as imagens */
+.dot {
+height: 15px;
+width: 15px;
+
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+.text {font-size: 11px}
+}
+.todos_slides{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+.slider{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  /* border: 2px solid black; */
+  margin: auto;
+}
+.slider h2{
+  margin: 0;
+  font-size: 5vh;
 }
 
-.navigation-auto div:not(:last-child) {
-  margin-right: 40px;
-}
+/* .slider */
 
-/* QUANDO A BOLINHA FOR CLICADA DEIXA EM BRANCO */
-
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-  background-color: black;
-}
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-  background-color: black;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-  background-color: black;
-}
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-  background-color: black;
-}
 /* ********************************************************************************************* */
 
 /* ********************************************************************************************* */

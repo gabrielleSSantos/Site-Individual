@@ -2,167 +2,292 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/estilo.css">
-    <!-- <link rel="icon" href="../IMAGENS/Logotipo para Tranças.jpg"> -->
-    <title> Gabi Tranças </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/estilo.css">
+  <!-- <link rel="icon" href="../IMAGENS/Logotipo para Tranças.jpg"> -->
+  <title> Gabi Tranças </title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:itawght@1,300&family=Pacifico&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap');
-    </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:itawght@1,300&family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap');
+  </style>
 </head>
 
 <body>
-    <!-- DIV PARA O HEADER -->
-    <div class="header">
-        <!-- DIV PARA O LOGO NA HEADER -->
-        <div class="logo">
-            <img src="../IMAGENS/Logotipo para Tranças.jpg">
+  <!-- DIV PARA O HEADER -->
+  <div class="header">
+    <!-- DIV PARA O LOGO NA HEADER -->
+    <div class="logo">
+      <img src="../IMAGENS/Logotipo para Tranças.jpg">
+    </div>
+
+    <!-- DIV PARA O MENU NA HEADER -->
+    <div class="menu">
+      <a href="index.html" id="agora"> Home </a>
+      <a href="sobremim.html"> Sobre Mim </a>
+      <a href="contato.html"> Contato </a>
+      <a href="login.html"> Login/Cadastro </a>
+    </div>
+
+  </div> <!-- FECHANDO A DIV HEADER  -->
+
+
+
+
+  <!-- DIV PARA O BANNER -->
+  <div class="banner">
+    <!-- DIV PARA CONTAINER -->
+    <div class="container">
+      <!-- NO CONTAINER E BANNER VC NÃO MEXE  -->
+      <!-- DIV PARA A FOTO NO FUNDO -->
+      <div class="painel">
+        <div class="typewriter">
+          <h1 id="text">Seja Bem vindo!! Gabi Tranças</h1>
         </div>
+        <script src="../js/script.js"> </script>
 
-        <!-- DIV PARA O MENU NA HEADER -->
-        <div class="menu">
-        <a href="index.html" id="agora"> Home </a>
-            <a href="sobremim.html"> Sobre Mim </a>
-            <a href="contato.html"> Contato </a>
-            <a href="login.html"> Login/Cadastro </a>
-        </div>
-
-    </div> <!-- FECHANDO A DIV HEADER  -->
-
-
-
-
-    <!-- DIV PARA O BANNER -->
-    <div class="banner">
-        <!-- DIV PARA CONTAINER -->
-        <div class="container">
-            <!-- NO CONTAINER E BANNER VC NÃO MEXE  -->
-            <!-- DIV PARA A FOTO NO FUNDO -->
-            <div class="painel">
-                <div class="typewriter">
-                    <h1 id="text">Seja Bem vindo!! Gabi Tranças</h1>
-                  </div>
-                    <script src="../js/script.js"> </script>
-                
-                <div class="video">
-                    <video autoplay muted loop poster="../IMAGENS/videoFundo.mp4" class="bg_video">
-                        <source src="../IMAGENS/VideoFundo.mp4" type="video/webm">
-                </video>
-                </div>
-            </div>
-            <div class="missao">
-
-                <div class="foto">
-        <video autoplay muted loop poster="../IMAGENS/GifPagina.mp4" class="bg_video">
-        <source src="../IMAGENS/GifPagina.mp4" type="video/webm">
-        </video>
-                </div>
-
-            <div class="tudo"> 
-              <h1> Valores</h1>
-                <div class="card1">
-                    <img src="../IMAGENS/1.png" class="imagens_card">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quo reprehenderit vero sapiente, similique nam laboriosam 
-                    perferendis illo corporis optio cum soluta eligendi numquam suscipit,
-                     rem nostrum libero quod quia voluptatem.
-                </div>
-
-                <div class="card1">
-                    <img src="../IMAGENS/2.png"  class="imagens_card">
-                    
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quo reprehenderit vero sapiente, similique nam laboriosam 
-                    perferendis illo corporis optio cum soluta eligendi numquam suscipit,
-                     rem nostrum libero quod quia voluptatem.
-                </div>
-
-                <div class="card1">
-                    <img src="../IMAGENS/3.png"  class="imagens_card">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quo reprehenderit vero sapiente, similique nam laboriosam 
-                    perferendis illo corporis optio cum soluta eligendi numquam suscipit,
-                     rem nostrum libero quod quia voluptatem.
-                </div>
-            </div>
-            </div>
-
-            <h1 id="titulo_galeria"> Galeria de Fotos: </h1>
-                <div class="galeria">
-                  <div class="slider">
-            <div class="slides">
-              <!--  AS BOLINHAS DE ESCOLHER AS IMAGENS   -->
-              <input type="radio" name="radio-btn" id="radio1" />
-              <input type="radio" name="radio-btn" id="radio2" />
-              <input type="radio" name="radio-btn" id="radio3" />
-              <input type="radio" name="radio-btn" id="radio4" />
-
-              <!-- SLIDES IMAGENS -->
-              <div class="slide first">
-                <img src="../IMAGENS/Trança4.png" />
-              </div>
-
-              <div class="slide">
-                <img src="../IMAGENS/Trança2.png" />
-              </div>
-
-              <div class="slide">
-                <img src="../IMAGENS/Trança3.png" />
-              </div>
-
-              <div class="slide">
-                <img src="../IMAGENS/Trança1.png" />
-              </div>
-
-              <!-- BOLINHAS DE NAVEGAÇÃO -->
-              
-              <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-                <div class="auto-btn4"></div>
-              </div>
-            </div>
-
-            <div class="manual-navigation">
-              <label for="radio1" class="manual-btn"></label>
-              <label for="radio2" class="manual-btn"></label>
-              <label for="radio3" class="manual-btn"></label>
-              <label for="radio4" class="manual-btn"></label>
-            </div>
-          </div>
+        <div class="video">
+          <video autoplay muted loop poster="../IMAGENS/videoFundo.mp4" class="bg_video">
+            <source src="../IMAGENS/VideoFundo.mp4" type="video/webm">
+          </video>
         </div>
       </div>
+      <div class="missao">
+
+        <div class="foto">
+          <video autoplay muted loop poster="../IMAGENS/GifPagina.mp4" class="bg_video">
+            <source src="../IMAGENS/GifPagina.mp4" type="video/webm">
+          </video>
         </div>
-    </div>
-    
+
+        <div class="tudo">
+          <h1> Valores</h1>
+          <div class="card1">
+            <img src="../IMAGENS/1.png" class="imagens_card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Quo reprehenderit vero sapiente, similique nam laboriosam
+            perferendis illo corporis optio cum soluta eligendi numquam suscipit,
+            rem nostrum libero quod quia voluptatem.
+          </div>
+
+          <div class="card1">
+            <img src="../IMAGENS/2.png" class="imagens_card">
+
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Quo reprehenderit vero sapiente, similique nam laboriosam
+            perferendis illo corporis optio cum soluta eligendi numquam suscipit,
+            rem nostrum libero quod quia voluptatem.
+          </div>
+
+          <div class="card1">
+            <img src="../IMAGENS/3.png" class="imagens_card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Quo reprehenderit vero sapiente, similique nam laboriosam
+            perferendis illo corporis optio cum soluta eligendi numquam suscipit,
+            rem nostrum libero quod quia voluptatem.
+          </div>
+        </div> <!-- FECHANDO A DIV TUDO-->
+      </div><!-- FECHANDO A DIV DA MISSÃO-->
+      <div class="painel">
+        <div class="contato_comeco" style="animation: 0;">
+          <h1>Agendamentos pela Plataforma:</h1>
+
+          <button class="btn"><a href="login.html">Login </a></button>
+          <h1>OU</h1>
+          <button class="btn"><a href="cadastro.html">Cadastro</a></button>
+        </div><!-- FECHANDO A DIV CONTATO_COMECO-->
+      </div> <!-- FECHANDO A DIV PAINEL -->
+
+      <!-- slider -->
+
+      <div class="todos_slides"> 
+        <div class="slider"> 
+        <h2>Tranças Femininas </h2>
+        <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+          <img src="../IMAGENS/Trança-slider-3.jpg" class="img_Slider">
+          <div class="text">Trança Lateral</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="../IMAGENS/Trança-slider-7.jpg" class="img_Slider">
+          <div class="text">Trança Lateral</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="../IMAGENS/Trança-slider-12.jpg" class="img_Slider" >
+          <div class="text">Trança Boxeadora</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="../IMAGENS/Trança-slider-2.jpg" class="img_Slider" >
+            <div class="text">Trança Frontal</div>
+          </div>
+        
+        <div class="mySlides fade">
+          <img src="../IMAGENS/Trança-slider-13.jpg" class="img_Slider" >
+          <div class="text">Trança Frontal</div>
+        </div>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        </div>
+        </div>
+        
+        
+        <!-- SEGUNDO CARD DE SLIDES -->
+        <div class="slider"> 
+        <h2>Tranças Masculina </h2>
+        <div class="slideshow-container">
+            <div class="mySlides2 fade">
+              <img src="../IMAGENS/Trança-slider-8.jpg" class="img_Slider">
+              <div class="text">Trança Nago Cabelo todo</div>
             </div>
+            
+            <div class="mySlides2 fade">
+              <img src="../IMAGENS/Trança-slider-5.jpg" class="img_Slider" >
+              <div class="text">Trança Nago Cabelo todo</div>
+            </div>
+            
+            <div class="mySlides2 fade">
+              <img src="../IMAGENS/Trança-slider-9.jpg" class="img_Slider" >
+              <div class="text">Trança Nago com Jumbo</div>
+            </div>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            </div>
+        </div>
+
+            <!-- TERCEIRO CARD DE SLIDES -->
+            <div class="slider"> 
+            <h2>Tranças Infantil </h2>
+            <div class="slideshow-container">
+                <div class="mySlides3 fade">
+                  <img src="../IMAGENS/Trança-slider-1.jpg" class="img_Slider">
+                  <div class="text">Trança Topo</div>
+                </div>
+                
+                <div class="mySlides3 fade">
+                  <img src="../IMAGENS/Trança-slider-10.jpg" class="img_Slider" >
+                  <div class="text">Trança Lateral</div>
+                </div>
+                
+                <div class="mySlides3 fade">
+                  <img src="../IMAGENS/Trança-slider-11.jpg" class="img_Slider" >
+                  <div class="text">Trança Nagô Cabelo todo</div>
+                </div>
+                
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                </div>
+                </div>
+            </div>
+        </div>
+    
+      <!--ACABOU SLIDER -->
 
 
-                    <!-- DIV PARA O RODAPE -->
-                    <div class="footer">
+    </div><!-- FECHANDO A DIV DO CONTAINER-->
+  </div><!-- FECHANDO A DIV BANNER-->
 
-                    <div class="logo"> 
-                        <img src="../IMAGENS/Logotipo para Tranças.jpg">
-                    </div>
 
-                    <div class="paginas">
-                        <a href="suporte.html"> Suporte </a>
-                        <a href="contato.html"> Contato</a>
-                        <a href="login.html"> Agendamentos </a>
-                    </div>
-                    
-                    <div class="icones">
-                        <h4> Redes Sociais:</h4>
-                        <img src="../IMAGENS/iconeFace.png"> 
-                        <img src="../IMAGENS/iconeInsta.png">
-                        <img src="../IMAGENS/iconeWPP.png">
-                    </div>
-                         </div>
+  <!-- DIV PARA O RODAPE -->
+  <div class="footer">
+
+    <div class="logo">
+      <img src="../IMAGENS/Logotipo para Tranças.jpg">
+    </div>
+
+    <div class="paginas">
+      <a href="suporte.html"> Suporte </a>
+      <a href="contato.html"> Contato</a>
+      <a href="login.html"> Agendamentos </a>
+    </div>
+
+    <div class="icones">
+      <h4> Redes Sociais:</h4>
+      <img src="../IMAGENS/iconeFace.png">
+      <img src="../IMAGENS/iconeInsta.png">
+      <img src="../IMAGENS/iconeWPP.png">
+    </div>
+  </div>
 </body>
 
 </html>
+
+<script>
+  //  JAVACRIPT DO PRIMEIRO SLIDE
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3100); // Change image every 2 seconds
+  }
+  
+  // JAVACRIPT DO SEGUNDO SLIDE
+  let slideIndexSegunda = 0;
+  showSlides2();
+  
+  function showSlides2() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides2");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndexSegunda++;
+    if (slideIndexSegunda > slides.length) {slideIndexSegunda = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndexSegunda-1].style.display = "block";  
+    dots[slideIndexSegunda-1].className += " active";
+    setTimeout(showSlides2, 3200); // Change image every 2 seconds
+  }
+  
+  // JAVACRIPT DO TERCEIRO SLIDE
+  let slideIndexTerceiro = 0;
+  showSlides3();
+  
+  function showSlides3() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides3");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndexTerceiro++;
+    if (slideIndexTerceiro > slides.length) {slideIndexTerceiro = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndexTerceiro-1].style.display = "block";  
+    dots[slideIndexTerceiro-1].className += " active";
+    setTimeout(showSlides3, 3200); // Change image every 2 seconds
+  }
+  </script>
