@@ -44,17 +44,20 @@
         <!-- CONTATO ATRAVES DE FORMULARIO E REDES SOCIAIS  -->
         <div class="contato">
           <div class="form">
-            <h1>Formulario para Duvidas</h1>
+            <form action="https://formspree.io/f/xlezaano" method="POST">
+          <h1>Formulario para Duvidas</h1>
             <h3>Nome:</h3>
-            <input id="input_nome_contato" type="text" placeholder="Escreva seu nome"/>
+            <input id="input_nome_contato" type="text" placeholder="Escreva seu nome" />
             <h3>Email:</h3>
-            <input id="input_email_contato" type="text"  placeholder="Escreva seu email"/>
+            <input id="input_email_contato" type="text"  placeholder="Escreva seu email" name="email"/>
             <h3>Telefone:</h3>
-            <input id="input_telefone_contato" type="text"  placeholder="Escreva seu Telefone" />
+            <input id="input_telefone_contato" type="number"  placeholder="Escreva seu Telefone" />
             <h3>Duvida:</h3>
-            <input id="input_duvida_contato" type="text"  placeholder="Escreva sua Duvida"/>
+            <input id="input_duvida_contato" type="text"  placeholder="Escreva sua Duvida"  name="message"/>
      
-            <button class="btn"> Enviar </button>
+            <button class="btn" onclick="duvida()"> Validar </button>
+            <button class="btn" type="submit"> Enviar </button>
+          </form>
           </div>
 
           <div class="meios">
@@ -105,3 +108,21 @@
     </div>
   </body>
 </html>
+
+<!-- <script>
+  function duvida(){
+      if (input_nome_contato.value == "" || input_email_contato.value == "" || 
+      input_telefone_contato.value== "" || input_duvida_contato.value== "" ) {
+       alert("Por favor preencha os campos para Continuar"); 
+      } else if(input_nome_contato.value.lenght < 4 || input_nome_contato.value.startsWith(Number) == true){
+        alert("Nome invalido"); 
+      } else if(input_telefone_contato.value.lenght == 11 ){
+        alert("Numero invalido"); 
+      } else if(input_duvida_contato.value.lenght >10){
+        alert("Explique melhor sua duvida"); 
+      } else{
+        // alert("Entraremos em contato"); 
+      }
+  }
+</script> -->
+
