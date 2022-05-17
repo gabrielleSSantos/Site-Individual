@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../public/CSS/estilo.css">
+        <link rel="stylesheet" href="CSS/estilo.css">
         <title> Gabi Tranças -Login </title>
 
         <style>
@@ -16,8 +16,13 @@
     <body>
     
           <div class="banner"> 
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
             <div class="container">
-              <a href="../public/index.html"><img src="../public/IMAGENS/Seta.png" class="seta" ></a>
+              <a href="index.html"><img src="IMAGENS/Seta.png" class="seta" ></a>
                 <div class="login">
                     <div class="card_login">
                         
@@ -30,11 +35,17 @@
                             <input type="password" id="senha_input" class="input"
                              placeholder="Escreva sua senha:">
                         </div>
-                        <button class="btn" onclick="entrar()"> Entrar </button>
-                        <h2> <a href="../public/cadastro.html"> Clique aqui para realizar Cadastro </a></h2>
+                        <button class="btn"  onclick="entrar()"> Entrar </button>
+                        <h2> <a href="cadastro.html"> Clique aqui para realizar Cadastro </a></h2>
                         
                     </div>
-
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="IMAGENS/circle-loading.gif" id="loading-gif">
+                    </div>
+    
+                    <div id="div_erros_login">
+    
+                    </div>
                 </div>
             </div>
           </div>
@@ -47,15 +58,15 @@
   
 
   function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            mensagem_erro.innerHTML = "(Mensagem de erro todos os campos em branco)";
+            // finalizarAguardar();
             return false;
         }
         else {

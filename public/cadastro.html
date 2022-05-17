@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/CSS/estilo.css" />
+    <link rel="stylesheet" href="CSS/estilo.css">
     <title>Gabi Tranças - Cadastro </title>
 
     <style>
@@ -14,8 +14,13 @@
 
   <body>
     <div class="banner">
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
       <div class="container">
-        <a href="../public/index.html"><img src="../public/IMAGENS/Seta.png" class="seta" /></a>
+        <a href="index.html"><img src="IMAGENS/Seta.png" class="seta" /></a>
         <div class="login" id="login_id" >
             <h1>Cadastro</h1>
             <div class="card_cadastro">
@@ -51,9 +56,15 @@
                 placeholder="Digite o bairro"/>
                 
                 <button class="btn" id="btn_id" onclick="cadastrar()">Cadastrar</button>
-            <h2><a href="../public/login.html" id="frase_id"> Caso ja tenha conta, clique voltar pro Login </a></h2>
+            <h2><a href="login.html" id="frase_id"> Caso ja tenha conta, clique voltar pro Login </a></h2>
            </div><!-- FECHANDO A DIV LABEL -->
+           <div id="div_aguardar" class="loading-div">
+            <img src="IMAGENS/circle-loading.gif" id="loading-gif">
+        </div>
 
+        <div id="div_erros_login">
+
+        </div>
        </div>
 
         </div>
@@ -63,7 +74,7 @@
 </html>
 <script>
   function cadastrar() {
-      aguardar();
+      // aguardar();
 
       //Recupere o valor da nova input pelo nome do id
       // Agora vá para o método fetch logo abaixo
