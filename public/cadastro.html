@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/CSS/estilo.css" />
+    <title>Gabi Tranças - Cadastro </title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div class="banner">
+      <div class="container">
+        <a href="../public/index.html"><img src="../public/IMAGENS/Seta.png" class="seta" /></a>
+        <div class="login" id="login_id" >
+            <h1>Cadastro</h1>
+            <div class="card_cadastro">
+
+        
+               <!-- pRIMEIRO PARTE DO CADASTRO(ENDEREÇO) -->
+               <div class="label">
+              <h2>Nome:</h2>
+              <input type="text" id="nome_input" class="input" 
+              placeholder="Escreva seu nome"/>
+              <h2>Email :</h2>
+              <input type="text" id="email_input" class="input" 
+              placeholder="Escreva seu email"/>
+              <h2>Senha :</h2>
+              <input type="password" id="senha_input" class="input"
+              placeholder="Escreva sua senha" />
+              <h2>Indicação:</h2>
+              <input type="text" id="indicacao_input" class="input" 
+              placeholder="Quem te indicou"/>
+            </div><!-- FECHANDO A DIV LABEL -->
+    
+            <!-- SEGUNDA PARTE DO CADASTRO(ENDEREÇO) -->
+            
+            <div class="label"> 
+                <h2>Rua:</h2>
+                <input type="text" id="rua_input" class="input" 
+                placeholder="Digite o nome da sua rua"/>
+                <h2>Numero:</h2>
+                <input type="number" id="numero_input" class="input"
+                placeholder="Digite o numero da sua casa" />
+                <h2>Bairro:</h2>
+                <input type="text" id="bairro_input" class="input" 
+                placeholder="Digite o bairro"/>
+                
+                <button class="btn" id="btn_id" onclick="cadastrar()">Cadastrar</button>
+            <h2><a href="../public/login.html" id="frase_id"> Caso ja tenha conta, clique voltar pro Login </a></h2>
+           </div><!-- FECHANDO A DIV LABEL -->
+
+       </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function cadastrar() {
+      aguardar();
+
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = nome_input.value;
+      var emailVar = email_input.value;
+      var senhaVar = senha_input.value;
+      var ruaVar = rua_input.value;
+      var numeroVar = numero_input.value;
+      var bairroVar = bairro_input.value;
+      var indicacaoVar = indicacao_input.value;
+
+      if (nomeVar == "" || emailVar == "" || senhaVar == "" ||
+       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  indicacaoVar == "") {
+          cardErro.style.display = "block"
+          mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+          finalizarAguardar();
+          return false;
+      }
+      else {
+          setInterval(sumirMensagem, 5000)
+      }
+
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              nomeServer: nomeVar,
+              emailServer: emailVar,
+              senhaServer: senhaVar,
+              ruaServer: ruaVar,
+              numeroServer: numeroVar,
+              bairroServer: bairroVar,
+              indicacaoServer: indicacaoVar
+          })
+      }).then(function (resposta) {
+
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+              cardErro.style.display = "block";
+
+              mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+              setTimeout(() => {
+                  window.location = "login.html";
+              }, "2000")
+              
+              limparFormulario();
+              finalizarAguardar();
+          } else {
+              throw ("Houve um erro ao tentar realizar o cadastro!");
+          }
+      }).catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          finalizarAguardar();
+      });
+
+      return false;
+  }
+
+  function sumirMensagem() {
+      cardErro.style.display = "none"
+  }
+
+</script>
