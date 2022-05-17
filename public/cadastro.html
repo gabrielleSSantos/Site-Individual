@@ -37,9 +37,9 @@
               <h2>Senha :</h2>
               <input type="password" id="senha_input" class="input"
               placeholder="Escreva sua senha" />
-              <h2>Indicação:</h2>
-              <input type="text" id="indicacao_input" class="input" 
-              placeholder="Quem te indicou"/>
+              <h2>Idade:</h2>
+              <input type="number" id="idade_input" class="input" 
+              placeholder="Digite sua idade"/>
             </div><!-- FECHANDO A DIV LABEL -->
     
             <!-- SEGUNDA PARTE DO CADASTRO(ENDEREÇO) -->
@@ -84,12 +84,12 @@
       var ruaVar = rua_input.value;
       var numeroVar = numero_input.value;
       var bairroVar = bairro_input.value;
-      var indicacaoVar = indicacao_input.value;
+      var idadeVar = idade_input.value;
 
       if (nomeVar == "" || emailVar == "" || senhaVar == "" ||
-       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  indicacaoVar == "") {
+       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  idadeVar == "") {
           cardErro.style.display = "block"
-          mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+          mensagem_erro.innerHTML = "(Preencha todos os campos)";
 
           finalizarAguardar();
           return false;
@@ -113,7 +113,7 @@
               ruaServer: ruaVar,
               numeroServer: numeroVar,
               bairroServer: bairroVar,
-              indicacaoServer: indicacaoVar
+              idadeServer: idadeVar
           })
       }).then(function (resposta) {
 
@@ -122,10 +122,10 @@
           if (resposta.ok) {
               cardErro.style.display = "block";
 
-              mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+              mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Seja Bem vindo!!";
 
               setTimeout(() => {
-                  window.location = "login.html";
+                  window.location = "./central/painel.html";
               }, "2000")
               
               limparFormulario();
@@ -135,7 +135,7 @@
           }
       }).catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
-          finalizarAguardar();
+          // finalizarAguardar();NO
       });
 
       return false;
