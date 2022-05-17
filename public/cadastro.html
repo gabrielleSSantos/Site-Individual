@@ -94,6 +94,17 @@
           finalizarAguardar();
           return false;
       }
+       if(nomeVar.length < 4 || nomeVar.length > 30 ){
+        mensagem_erro.innerHTML = "(Nome invalido)";
+      } else if(emailVar.indexOf('@') <= 0 || emailVar.indexOf('.com') == -1){
+        mensagem_erro.innerHTML = "(Email invalido)";
+      } else if(senhaVar.length > 10 || senhaVar.length <4 ){
+        mensagem_erro.innerHTML = "(Senha invalido)";
+      } else if(ruaVar.indexOf(Number) == true || bairroVar.indexOf(Number)== true){
+        mensagem_erro.innerHTML = "(Rua/bairro não tem contem Numero)";
+      } else if(idadeVar > 80 || idadeVar < 5){
+        mensagem_erro.innerHTML = "(Idade invalida)";
+      }
       else {
           setInterval(sumirMensagem, 5000)
       }
