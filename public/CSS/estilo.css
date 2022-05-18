@@ -232,7 +232,7 @@ input{
 }
 
 .slideshow-container {
-width: 350px;
+width: 340px;
 position: relative;
 margin: auto;
 height: 500px;
@@ -313,7 +313,7 @@ to {opacity: 1}
 .todos_slides{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 100vh;
 }
 .slider{
