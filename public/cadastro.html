@@ -74,7 +74,7 @@
 </html>
 <script>
   function cadastrar() {
-      // aguardar();
+      aguardar();
 
       //Recupere o valor da nova input pelo nome do id
       // Agora vá para o método fetch logo abaixo
@@ -109,12 +109,6 @@
       } else if(senhaVar.length > 10 || senhaVar.length <4 ){
         cardErro.style.display = "block"
         mensagem_erro.innerHTML = "(Senha invalido)";
-        
-        finalizarAguardar();
-          return false;
-      } else if(ruaVar.indexOf(Number) == true || bairroVar.indexOf(Number)== true){
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Rua/bairro não tem contem Numero)";
         
         finalizarAguardar();
           return false;
