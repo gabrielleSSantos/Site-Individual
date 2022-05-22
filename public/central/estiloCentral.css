@@ -15,7 +15,21 @@ body {
 	/* border: 1px solid rgba(0, 6, 12, 0.808); */
 	flex-direction: row;
 }
-
+.btn {
+	height: 10vh;
+	width: 15vw;
+	border-radius: 15px;
+	background-color: black;
+	font-size: 20px;
+	cursor: pointer;
+	color: white;
+  }
+  
+  .btn a {
+	text-decoration: none;
+	color: white;
+  }
+  
 /* HEADER */
 #icone {
 	cursor: pointer;
@@ -105,11 +119,47 @@ nav a {
 }
 
 .card .formulario{
-	width: 70vw;
-	height: 70vh;
+	width: 60vw;
+	height: 90vh;
 	border: 1px solid black;
 	display: flex;
-    box-shadow: 0 0 1em rgb(233, 14, 116);
+	box-shadow: 5px 10px black;
 	margin-right: 20px;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items:center;
+	font-size: 4vh;
+	border-radius: 8vh;
+	background-color: rgb(252, 203, 210);
+}
+.card .formulario input{
+	border: 2px solid rgb(233, 14, 116);
+	width: 20vw;
+	border-radius: 8vh;
+	height: 5vh;
+	/* margin-left: 20px; */
+}
+.card .formulario .label h2{
+	margin: 2vh;
+}
+.card .formulario .form-foto{
+	display: flex;
 	flex-direction: column;
+	/* border: 2px solid gold; */
+	height: 65vh;
+	width: 20vw;
+	align-items: center;
+	justify-content: center;
+}
+.card .formulario select{
+	height: 8vh;
+	border: 2px solid rgb(233, 14, 116);
+	border-radius: 5vw;
+	font-size: 3vh;
+	margin-top: 5vh;
+}
+
+#botao-agendamento{
+	margin-top: 5vh;
+	
 }
