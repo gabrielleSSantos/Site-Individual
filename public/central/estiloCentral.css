@@ -113,7 +113,7 @@ nav a {
 
 .container {
 	width: 100vw;
-	/* border: 2px solid black; */
+	border: 2px solid black;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -162,4 +162,13 @@ nav a {
 #botao-agendamento{
 	margin-top: 5vh;
 	
+}
+
+/* PAGINA PERFIL */
+
+.container .perfil{
+	display: flex;
+	width: 45vw;
+	height: 95vh;
+	border: 2px solid gold;
 }
