@@ -470,7 +470,20 @@ to {opacity: 1}
   margin-left: 200px;
   height: 50px;
 }
+#botao-contato-enviar{
+  display: none;
+}
 
+.aviso {
+  color: rgb(231, 18, 18);
+  font-family: Bahnschrift;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-top: 2vh;
+  display: flex;
+  justify-content:center ;
+
+}
 /* ********************************************************************************************* */
 /* PAGINA LOGIN */
 .container .seta{
@@ -531,8 +544,10 @@ to {opacity: 1}
 
 .loading-div {
   width: 50px;
-  margin: auto;
+  margin-left:80vw;
   display: none;
+  height: 30vh;
+  position: absolute;
 }
 
 .loading-div img {

@@ -3,7 +3,6 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 /* para workbench - local - desenvolvimento */
 CREATE DATABASE GabiTrancas;
-
 USE GabiTrancas;
 
 CREATE TABLE usuario(
@@ -28,15 +27,13 @@ CREATE TABLE usuario(
  ALTER TABLE Agendamentos ADD COLUMN StatusHorario VARCHAR(12) constraint CNK_STATUS 
  CHECK (StatusHorario= 'Disponivel' or StatusHorario = 'Indisponivel');
  
- CREATE TABLE Avaliacoes(
-	idavaliacoes int primary KEY auto_increment,
-    descricao varchar(65),
-    nota int,
-    FKusuario int, foreign key (FKusuario) references usuario(idusuario)
- );
- 
-
  insert into usuario values
  (null, 'Gabrielle', 'gabrielle@gmail.com', 'gabi','rua doida', 20, 'inacio monteiro', 18);
  
  SELECT * FROM USUARIO;
+ 
+ /*
+ CREATE TABLE DadosGraficos(
+ 
+ );
+ */

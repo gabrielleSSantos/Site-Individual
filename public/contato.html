@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/estilo.css">
+    <script src="./js/funcoes.js"></script>
     <title>Gabi Tranças - Contato</title>
 
     <style>
@@ -55,9 +56,15 @@
             <h3>Duvida:</h3>
             <input id="input_duvida_contato" type="text"  placeholder="Escreva sua Duvida"  name="message"/>
      
-            <!-- <button class="btn" onclick="duvida()"> Validar </button> -->
-            <button class="btn" type=" button"> Enviar </button>
+           <div class="aviso" id="div_aviso"></div>
+
+              <div class="botoes" id="botoes"> 
+            <button class="btn" type="button" onclick="verificar()" id="botao-contato"> Verificar </button>
+            <button class="btn" type="submit" id="botao-contato-enviar"> Enviar </button>
+          </div>
+          
           </form>
+
           </div>
 
           <div class="meios">
@@ -109,20 +116,4 @@
   </body>
 </html>
 
-<!-- <script>
-  function duvida(){
-      if (input_nome_contato.value == "" || input_email_contato.value == "" || 
-      input_telefone_contato.value== "" || input_duvida_contato.value== "" ) {
-       alert("Por favor preencha os campos para Continuar"); 
-      } else if(input_nome_contato.value.lenght < 4 || input_nome_contato.value.startsWith(Number) == true){
-        alert("Nome invalido"); 
-      } else if(input_telefone_contato.value.lenght == 11 ){
-        alert("Numero invalido"); 
-      } else if(input_duvida_contato.value.lenght >10){
-        alert("Explique melhor sua duvida"); 
-      } else{
-        // alert("Entraremos em contato"); 
-      }
-  }
-</script> -->
 
