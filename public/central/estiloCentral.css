@@ -29,7 +29,8 @@ body {
 	text-decoration: none;
 	color: white;
   }
-  
+
+
 /* HEADER */
 #icone {
 	cursor: pointer;
@@ -44,7 +45,7 @@ body {
 }
 
 .barra {
-	background-color: pink;
+	background-color: rgb(243, 45, 78);
 	height: 100%;
 	width: 18vw;
 	position: absolute;
@@ -73,7 +74,7 @@ nav a {
 }
 
 .link {
-	color: black;
+	color: white;
 	font-size: 3vh;
 	padding: 18px;
 	border-radius: 3vh;
@@ -83,11 +84,12 @@ nav a {
 }
 
 .link:hover {
-	color: rgb(233, 5, 112);
+	color: black;
 }
 
 #agora {
-	background-color: rgb(233, 5, 112);
+	color: white;
+	background-color: black;
 }
 
 #check:checked~.barra nav a .link {
@@ -103,43 +105,46 @@ nav a {
 
 /* pagina agendamentos */
 .card {
-	width: 80vw;
+	width: 90vw;
 	/* border: 1px solid aqua; */
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 	/* margin-left: 10px; */
 }
 
 .container {
 	width: 100vw;
-	border: 2px solid black;
+	/* border: 2px solid black; */
 	display: flex;
 	justify-content: flex-end;
 }
 
 .card .formulario{
-	width: 60vw;
+	width: 65vw;
 	height: 90vh;
 	border: 1px solid black;
 	display: flex;
-	box-shadow: 5px 10px black;
+	box-shadow: 5px 5px rgb(233, 14, 116);
 	margin-right: 20px;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items:center;
 	font-size: 4vh;
 	border-radius: 8vh;
-	background-color: rgb(252, 203, 210);
+	background-color: pink;
 }
 .card .formulario input{
-	border: 2px solid rgb(233, 14, 116);
-	width: 20vw;
-	border-radius: 8vh;
+	border: 2px solid black;
+	width: 23vw;
+	border-radius: 2vh;
 	height: 5vh;
 	/* margin-left: 20px; */
 }
 .card .formulario .label h2{
+	margin: 4vh;
+}
+.card .formulario .label h3{
 	margin: 2vh;
 }
 .card .formulario .form-foto{
@@ -153,22 +158,43 @@ nav a {
 }
 .card .formulario select{
 	height: 8vh;
-	border: 2px solid rgb(233, 14, 116);
-	border-radius: 5vw;
+	border: 2px solid black;
+	border-radius: 1vw;
 	font-size: 3vh;
 	margin-top: 5vh;
+	margin: 0;
 }
 
 #botao-agendamento{
 	margin-top: 5vh;
 	
 }
+.hello{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
+.frase img{
+	height: 40vh;
+	width: 15vw;
+}
+
+.frase{
+	display: flex;
+	font-size: 4vh;
+	flex-direction: column;
+	align-items: center;
+}
 /* PAGINA PERFIL */
 
 .container .perfil{
 	display: flex;
-	width: 45vw;
-	height: 95vh;
+	width: 50vw;
+	height: 99vh;
 	border: 2px solid gold;
+}
+
+.span_agendamento{
+	color: rgb(233, 14, 116);
 }

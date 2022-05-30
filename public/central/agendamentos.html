@@ -10,69 +10,120 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
     </style>
+    <script src="../js/funcoes.js"></script>
 </head>
 
-<body>
-    <div class="banner">
-        <div class="header">
-            <input type="checkbox" id="check">
-            <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
-            <div class="barra">
-                <nav>
-                    <a href="agendamentos.html" id="agora">
-                        <div class="link">Agendamentos</div>
-                    </a>
-                    <a href="perfil.html">
-                        <div class="link">Perfil</div>
-                    </a>
-                    <a href="painel.html">
-                        <div class="link">Painel De Noticia</div>
-                    </a>
-                    <a href="../index.html">
-                        <div class="link">Sair</div>
-                    </a>
-                </nav>
-            </div>
+<body onload="validarSessao(), atualizarFeed()">
+
+<div class="banner">
+    <div class="header">
+        <input type="checkbox" id="check">
+        <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
+        <div class="barra">
+            <nav>
+                <div class="hello">
+                    <h1>Olá, <span id="b_usuario"> </span>!</h1>
+                </div>
+                <a href="agendamentos.html" id="agora">
+                    <div class="link">Agendamentos</div>
+                </a>
+                <a href="perfil.html">
+                    <div class="link">Perfil</div>
+                </a>
+                <a href="painel.html">
+                    <div class="link"> Dashboards </div>
+                </a>
+                <a href="../index.html">
+                    <div class="link">Sair</div>
+                </a>
+            </nav>
         </div>
-        <!-- ACABOU O HEADER -->
-        <div class="container">
+    </div>
+    <!-- ACABOU O HEADER -->
+    <div class="container">
 
-            <div class="card">
-                <div class="formulario">
+        <div class="card">
+            <div class="formulario">
+                <label class="label">
+                    <h2> Agendamentos </h2>
+                    <h3> Nome : <span id="b_agendamento" class="span_agendamento"> </span></h3>
+                    <h3> Telefone: <span id="b_agendamento_telefone" class="span_agendamento"> </span></h3>
+                    <h3> Data: </h3>
+                    <input type="date" id="dt_agendamento">
+                    <h3> Hora: </h3>
+                    <select id="select_hora">
+                        <option value="1"> 10:00 </option>
+                        <option value="2"> 12:00 </option>
+                        <option value="3"> 14:00 </option>
+                        <option value="4"> 16:00 </option>
+                    </select>
+                    <h3> Observação :</h3>
+                    <input type="text" id="observacao_agendamento">
+
+                </label>
+        
+                <div class="form-foto">
                     <label class="label">
-                        <h2> Agendamentos </h2>
-                        <h3> Nome :</h3>
-                        <input type="text">
-                        <h3> Telefone: </h3>
-                        <input type="text">
-                        <h3> Data: </h3>
-                        <input type="date">
-                        <h3> Hora: </h3>
-                        <select id="select_hora">
-                            <option value="1"> 10:00 </option>
-                            <option value="2"> 12:00 </option>
-                            <option value="3"> 14:00 </option>
-                            <option value="4"> 16:00 </option>
-                        </select>
-                        <h3> Observação :</h3>
-                        <input type="text">
-
-                    </label>
-                <div class="form-foto"> 
                         <h3> Escolha uma Trança: </h3>
                         <select id="select_tranca">
+                            <option value="0"> </option>
                             <option value="1"> Trança Lateral </option>
                             <option value="2"> Trança Frontal </option>
                             <option value="3"> Trança Cabelo Todo </option>
                             <option value="4"> Trança Nagô com jumbo </option>
                             <option value="5"> Trança Boxeadora </option>
                         </select>
-
-                        <button class="btn" id="botao-agendamento"> Confirmar Agendamento </button> 
-                    </div>  
+                       
+                    </label>
+                    <div id="frase" class="frase"> </div>
+                    <button class="btn" id="botao-agendamento" onclick="agendamento()"> Confirmar Agendamento </button>
                 </div>
-            </div>    
-     </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
+
 </html>
+<script>
+    function agendamento(){
+
+        // VALIDAÇOES 
+        var data = dt_agendamento.value
+        var hora = select_hora.value
+        var escolha_tranca = select_tranca.value
+
+        if(data == "" || hora == ""|| escolha_tranca == "" ){
+            frase.innerHTML = `Preencha todos os Campos`
+        } else
+        // ESCOLHA DA TRANÇA
+        if(escolha_tranca == 1){
+            frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
+            <img src="../IMAGENS/Trança-slider-10.jpg">
+            `
+            
+        } else if(escolha_tranca == 2){
+            frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
+            <img src="../IMAGENS/Trança-slider-1.jpg">
+            `
+        }
+        else if(escolha_tranca == 3){
+            frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
+            <img src="../IMAGENS/trança-slider-11.jpg"> 
+            `
+        }
+        else if(escolha_tranca == 4){
+            frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
+            <img src="../IMAGENS/trança-slider-12.jpg">   
+            `
+        }
+        else if(escolha_tranca == 5){
+            frase.innerHTML = `Você escolheu Trança Boxeadora, Pronta pro combate!!  <br>
+            <img src="../IMAGENS/trança-slider-7.jpg">
+            `
+        }
+        else if(escolha_tranca == 0){
+            frase.innerHTML = `Escolha uma opção valida`
+        }
+    }
+</script>

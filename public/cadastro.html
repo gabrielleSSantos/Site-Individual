@@ -42,9 +42,9 @@
               <h2>Senha :</h2>
               <input type="password" id="senha_input" class="input"
               placeholder="Escreva sua senha" />
-              <h2>Idade:</h2>
-              <input type="number" id="idade_input" class="input" 
-              placeholder="Digite sua idade"/>
+              <h2>Telefone: </h2>
+              <input type="number" id="telefone_input" class="input" 
+              placeholder="Digite seu telefone"/>
             </div><!-- FECHANDO A DIV LABEL -->
     
             <!-- SEGUNDA PARTE DO CADASTRO(ENDEREÇO) -->
@@ -58,7 +58,8 @@
                 placeholder="Digite o numero da sua casa" />
                 <h2>Bairro:</h2>
                 <input type="text" id="bairro_input" class="input" 
-                placeholder="Digite o bairro"/>
+                placeholder="Digite o bairro" />
+                
                 
                 <button class="btn" id="btn_id" onclick="cadastrar()">Cadastrar</button>
             <h2><a href="login.html" id="frase_id"> Caso ja tenha conta, clique voltar pro Login </a></h2>
@@ -87,10 +88,10 @@
       var ruaVar = rua_input.value;
       var numeroVar = numero_input.value;
       var bairroVar = bairro_input.value;
-      var idadeVar = idade_input.value;
+      var telefoneVar = telefone_input.value;
 
       if (nomeVar == "" || emailVar == "" || senhaVar == "" ||
-       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  idadeVar == "") {
+       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  telefoneVar == "") {
           cardErro.style.display = "block"
           mensagem_erro.innerHTML = "(Preencha todos os campos)";
 
@@ -103,8 +104,8 @@
         
         finalizarAguardar();
           return false;
-      } else if (email.indexOf('@') <= 0 || email.indexOf('.com') == -1
-        || email.indexOf('.com') < email.indexOf('@')){
+      } else if (emailVar.indexOf('@') <= 0 || emailVar.indexOf('.com') == -1
+        || emailVar.indexOf('.com') < emailVar.indexOf('@')){
         cardErro.style.display = "block"
         mensagem_erro.innerHTML = "(Email invalido)";
         
@@ -116,9 +117,9 @@
         
         finalizarAguardar();
           return false;
-      } else if(idadeVar > 80 || idadeVar < 5){
+      } else if(telefoneVar.length == 10){
         cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Idade invalida)";
+        mensagem_erro.innerHTML = "(O telefone Contém 11 numeros)";
         
         finalizarAguardar();
           return false;
@@ -142,7 +143,7 @@
               ruaServer: ruaVar,
               numeroServer: numeroVar,
               bairroServer: bairroVar,
-              idadeServer: idadeVar
+              telefoneServer: telefoneVar
           })
       }).then(function (resposta) {
 
@@ -154,7 +155,7 @@
               mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Seja Bem vindo!!";
 
               setTimeout(() => {
-                  window.location = "./central/painel.html";
+                  window.location = "./central/agendamento.html";
               }, "2000")
               
               limparFormulario();

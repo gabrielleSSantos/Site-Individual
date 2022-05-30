@@ -9,16 +9,20 @@
     <title> Painel de Noticias </title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
-    </style>
+    </style> 
+    <script src="../js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao(), atualizarFeed()"></body>
     <div class="banner">
         <div class="header">
-        <input type="checkbox" id="check">
-        <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
-        <div class="barra">
-            <nav>
+            <input type="checkbox" id="check">
+            <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
+            <div class="barra">
+                <nav>
+                    <div class="hello">
+                        <h1>Olá, <span id="b_usuario"> </span>!</h1>
+                    </div>
                 <a href="agendamentos.html">
                     <div class="link">Agendamentos</div>
                 </a>
@@ -26,7 +30,7 @@
                     <div class="link">Perfil</div>
                 </a>
                 <a href="painel.html" id="agora">
-                    <div class="link">Painel De Noticia</div>
+                    <div class="link">Dashboards</div>
                 </a>
                 <a href="../index.html">
                     <div class="link">Sair</div>
