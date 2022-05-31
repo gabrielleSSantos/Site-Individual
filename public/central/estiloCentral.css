@@ -115,7 +115,7 @@ nav a {
 
 .container {
 	width: 100vw;
-	/* border: 2px solid black; */
+	border: 2px solid black;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -197,4 +197,43 @@ nav a {
 
 .span_agendamento{
 	color: rgb(233, 14, 116);
+}
+
+
+/* PAGINA PAINEL */
+
+.container .painel{
+	display: flex;
+	border: 2px solid black;
+	width: 80vw;
+	/* background-color: pink; */
+	height: 90vh;
+	border-radius: 5vh;
+	justify-content: center;
+	flex-direction: column;
+	box-shadow: 0 0 2em rgb(233, 14, 116);
+	align-items: center;
+
+}
+
+.sub_grafico {
+	height: 85%;
+	width: 45%;
+	border: 0.5vh solid rgb(233, 14, 116);
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+}
+
+
+.grafico{
+	height: 80%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	/* border: 2px solid blue; */
+	align-items: center;
+	justify-content: space-around;
 }

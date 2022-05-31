@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../central/estiloCentral.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title> Painel de Noticias </title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
@@ -38,9 +40,129 @@
             </nav>
         </div>
     </div>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="painel">
+                <h1> Dashboards</h1>
+             
+                    <div class="grafico"> 
+                    <div class="sub_grafico">
+                        <h2> Quantidade de Tranças por mês de Agendamentos </h2>
+                        <canvas id="myChart"> </canvas>
+                    </div>
+                    
+                    <div class="sub_grafico">
+                        <h2> Tranças Tendencias nesse Mês </h2>
+                        <canvas id="myChart2"> </canvas>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
 </div>
 
     </div>
 </body>
+<script>
 
+    //  Primeiro Grafico
+    const labels = [
+        '0 Litros',
+        '5-10 Litros',
+        '15-20 Litros',
+    ];
+
+
+
+    const data = {
+        labels: labels,
+
+        datasets: [{
+
+            label: 'Quantidade em dias que ocorreram desperdícios',
+            backgroundColor: [
+                '#6c5eff',
+            ],
+            borderColor: '#3a3383 ',
+            borderRadius: 10,
+            hoverBorderColor: 'black',
+            hoverBorderWidth: 3,
+            data: [],
+        }]
+    };
+
+
+    const config = {
+
+
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        offset: true
+                    }
+                }
+            }
+        }
+    };
+
+// SEGUNFO GRAFICO 
+const labels2 = [
+        '0 Litros',
+        '5-10 Litros',
+        '15-20 Litros',
+    ];
+
+
+
+    const data2 = {
+        labels: labels2,
+
+        datasets: [{
+
+            label: 'Quantidade em dias que ocorreram desperdícios',
+            backgroundColor: [
+                '#6c5eff',
+            ],
+            borderColor: '#3a3383 ',
+            borderRadius: 10,
+            hoverBorderColor: 'black',
+            hoverBorderWidth: 3,
+            data: [],
+        }]
+    };
+
+
+    const config2 = {
+
+
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        offset: true
+                    }
+                }
+            }
+        }
+    };
+
+</script>
+
+<script>
+    // GRAFICO 1
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config
+    );
+
+</script>
 </html>
