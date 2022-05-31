@@ -45,7 +45,7 @@ body {
 }
 
 .barra {
-	background-color: rgb(243, 45, 78);
+	background-color: rgb(233, 14, 116);
 	height: 100%;
 	width: 18vw;
 	position: absolute;
@@ -189,15 +189,24 @@ nav a {
 
 .container .perfil{
 	display: flex;
-	width: 50vw;
+	width: 95vw;
 	height: 99vh;
-	border: 2px solid gold;
+	/* border: 2px solid black; */
+	justify-content: center;
+	align-items: center;
 }
 
 .span_agendamento{
 	color: rgb(233, 14, 116);
 }
 
+.card_perfil{
+	width: 65vw;
+	height: 85vh;
+	background-color: white;
+	box-shadow: 0 0 1em black;
+	border-radius: 5vh;
+}
 
 /* PAGINA PAINEL */
 

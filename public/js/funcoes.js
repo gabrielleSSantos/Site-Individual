@@ -6,7 +6,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
     var telefone = sessionStorage.TELEFONE_USUARIO;
     var h1LoginUsuario = document.getElementById("h1_login_usuario");
-
+    
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         if (h1LoginUsuario != undefined) {
@@ -57,7 +57,7 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 
-// VERIFICAR JAVACRIPT 
+// VERIFICAR JAVACRIPT NA PAGINA DE CONTATO
 
 function verificar() {
     var nome = input_nome_contato.value
