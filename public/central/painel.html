@@ -46,18 +46,28 @@
              
                     <div class="grafico"> 
                     <div class="sub_grafico">
-                        <h2> Quantidade de Tranças por mês de Agendamentos </h2>
+                        <h2> Tranças Tendencias no Mês </h2>
                         <canvas id="myChart"> </canvas>
                     </div>
                     
                     <div class="sub_grafico">
-                        <h2> Tranças Tendencias nesse Mês </h2>
-                        <canvas id="myChart2"> </canvas>
+                        
+                        <h2> Quantidade de Tranças por mês de Agendamentos </h2>
+                        <div class="pie"> 
+                            <canvas id="myChart2"> </canvas>
+                        </div>
+                    </div> <!--  FECHOU A sub GRAFICO -->
+                    <div class="metricas">
+                        <div class="card_metricasI"> Grave  </div>
+                        <div class="card_metricasI">  Importante </div>
+                        <div class="card_metricasI">  Ideal </div>
+                        <div class="card_metricasI">  Importante </div>
+                        <div class="card_metricasI">  Grave </div>
                     </div>
-                </div>
-                </div>
-
+                </div><!--  FECHOU A DIV GRAFICO -->
             </div>
+            
+        </div>
         </div>
 </div>
 
@@ -81,15 +91,15 @@
 
         datasets: [{
 
-            label: 'Quantidade em dias que ocorreram desperdícios',
+            label: 'Quantidade dessa Tranças no mês',
             backgroundColor: [
-                '#6c5eff',
+                '#e90e74',
             ],
             borderColor: '#3a3383 ',
             borderRadius: 10,
             hoverBorderColor: 'black',
             hoverBorderWidth: 3,
-            data: [],
+            data: [1,2,3,5,5],
         }]
     };
 
@@ -112,9 +122,10 @@
 
 // SEGUNFO GRAFICO 
 const labels2 = [
-        '0 Litros',
-        '5-10 Litros',
-        '15-20 Litros',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho'
     ];
 
 
@@ -124,15 +135,18 @@ const labels2 = [
 
         datasets: [{
 
-            label: 'Quantidade em dias que ocorreram desperdícios',
+            label: 'Quantidade',
             backgroundColor: [
-                '#6c5eff',
+                '#e57d90',
+                '#f1889b',
+                '#f99aaa',
+                '#fdb4bf',
             ],
-            borderColor: '#3a3383 ',
-            borderRadius: 10,
+            borderColor: 'black ',
+            hoverOffset: 20,
             hoverBorderColor: 'black',
             hoverBorderWidth: 3,
-            data: [],
+            data: [10,17,25 , 8],
         }]
     };
 
@@ -140,7 +154,7 @@ const labels2 = [
     const config2 = {
 
 
-        type: 'bar',
+        type: 'pie',
         data: data2,
         options: {
             scales: {
@@ -163,7 +177,7 @@ const labels2 = [
     );
     const myChart2 = new Chart(
         document.getElementById('myChart2'),
-        config
+        config2
     );
 
 </script>

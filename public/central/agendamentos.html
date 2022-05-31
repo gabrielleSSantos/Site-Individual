@@ -65,7 +65,7 @@
                 <div class="form-foto">
                     <label class="label">
                         <h3> Escolha uma Trança: </h3>
-                        <select id="select_tranca">
+                        <select id="select_tranca" onchange="selecionar()">
                             <option value="0"> </option>
                             <option value="1"> Trança Lateral </option>
                             <option value="2"> Trança Frontal </option>
@@ -76,6 +76,7 @@
                        
                     </label>
                     <div id="frase" class="frase"> </div>
+
                     <button class="btn" id="botao-agendamento" onclick="agendamento()"> Confirmar Agendamento </button>
                 </div>
             </div>
@@ -87,21 +88,24 @@
 </html>
 <script>
     function agendamento(){
-
-        // VALIDAÇOES 
         var data = dt_agendamento.value
         var hora = select_hora.value
         var escolha_tranca = select_tranca.value
 
         if(data == "" || hora == ""|| escolha_tranca == "" ){
             frase.innerHTML = `Preencha todos os Campos`
-        } else
+        } 
+    }
+    function selecionar(){
+
+        // VALIDAÇOES 
+        var escolha_tranca = select_tranca.value
+
         // ESCOLHA DA TRANÇA
         if(escolha_tranca == 1){
             frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
             <img src="../IMAGENS/Trança-slider-10.jpg">
-            `
-            
+            `    
         } else if(escolha_tranca == 2){
             frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
             <img src="../IMAGENS/Trança-slider-1.jpg">

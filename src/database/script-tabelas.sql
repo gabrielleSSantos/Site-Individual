@@ -13,7 +13,7 @@ CREATE TABLE usuario(
     rua VARCHAR(45),
     numero INT,
     bairro VARCHAR(45),
-    idade int
+    telefone CHAR(11)
 );
 
  CREATE TABLE Agendamentos(
@@ -26,9 +26,6 @@ CREATE TABLE usuario(
  );
  ALTER TABLE Agendamentos ADD COLUMN StatusHorario VARCHAR(12) constraint CNK_STATUS 
  CHECK (StatusHorario= 'Disponivel' or StatusHorario = 'Indisponivel');
- 
- insert into usuario values
- (null, 'Gabrielle', 'gabrielle@gmail.com', 'gabi','rua doida', 20, 'inacio monteiro', 18);
  
  SELECT * FROM USUARIO;
  
