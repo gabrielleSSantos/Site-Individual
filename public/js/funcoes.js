@@ -14,6 +14,7 @@ function validarSessao() {
         }
         b_usuario.innerHTML = nome;
         b_agendamento.innerHTML = nome;
+        // b_perfil_email.innerHTML =  email;
         b_agendamento_telefone.innerHTML = telefone;
         // finalizarAguardar();
     } else {

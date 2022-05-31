@@ -206,8 +206,54 @@ nav a {
 	background-color: white;
 	box-shadow: 0 0 1em black;
 	border-radius: 5vh;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	align-items: center;
 }
 
+.card_perfil .card_informacoes{
+	/* border: 2px solid black; */
+	width: 30vw;
+	height: 70vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.card_informacoes h2{
+	margin-top: 2vh;
+}
+
+.card_perfil .foto_perfil{
+	box-shadow: 0 0 1em black;
+	width: 30vw;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card_perfil .foto_perfil .card_perfil_foto{
+	border: 2px solid rgb(233, 14, 116);
+	width: 30vw;
+	height: 30vh;
+	background-color: pink;
+}
+
+.card_perfil .foto_perfil .descricao{
+	/* border: 2px solid blue; */
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+}
+.descricao h2{
+	margin: 1.5vh;
+}
+.descricao h3{
+	margin: 0.5vh;
+}
 /* PAGINA PAINEL */
 
 .container .painel{
