@@ -48,17 +48,17 @@
                     <h2> Agendamentos </h2>
                     <h3> Nome : <span id="b_agendamento" class="span_agendamento"> </span></h3>
                     <h3> Telefone: <span id="b_agendamento_telefone" class="span_agendamento"> </span></h3>
+                    <h3> Observação :</h3>
+                    <input type="text" id="observacao_agendamento">
                     <h3> Data: </h3>
                     <input type="date" id="dt_agendamento">
                     <h3> Hora: </h3>
-                    <select id="select_hora">
+                    <select id="hora_agendamento">
                         <option value="1"> 10:00 </option>
                         <option value="2"> 12:00 </option>
                         <option value="3"> 14:00 </option>
                         <option value="4"> 16:00 </option>
                     </select>
-                    <h3> Observação :</h3>
-                    <input type="text" id="observacao_agendamento">
 
                 </label>
         
@@ -76,7 +76,7 @@
                        
                     </label>
                     <div id="frase" class="frase"> </div>
-
+                    
                     <button class="btn" id="botao-agendamento" onclick="agendamento()"> Confirmar Agendamento </button>
                 </div>
             </div>
@@ -87,15 +87,48 @@
 
 </html>
 <script>
+   var lista_horario = []
     function agendamento(){
         var data = dt_agendamento.value
-        var hora = select_hora.value
+        var hora = hora_agendamento.value
+        var observacao = observacao_agendamento.value
         var escolha_tranca = select_tranca.value
+        var fkusuario = sessionStorage.ID_USUARIO;
+        var fkHorario = sessionStorage.FK_HORARIO;
 
         if(data == "" || hora == ""|| escolha_tranca == "" ){
             frase.innerHTML = `Preencha todos os Campos`
-        } 
-    }
+        } else {
+
+        fetch("/usuarios/cadastrarAgendamento", {
+        method: "POST",
+         headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // data_AgendamentoServer: data,
+        // hora_AgendamentoServer: hora,
+        observaçao_AgendamentoServer: observacao,
+        escolhaTranca_AgendamentoServer: escolha_tranca,
+        fkusario_AgendamentoServer: fkusuario,
+        fkHorario_AgendamentoServer: fkHorario
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+        alert ("Agendamento Marcado com sucesso");
+        } else {
+          throw "Houve um erro ao tentar realizar o agendamento!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+ }
+
     function selecionar(){
 
         // VALIDAÇOES 

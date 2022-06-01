@@ -1,7 +1,43 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-/* para workbench - local - desenvolvimento */
+let horario = [{"id":1,"horario":"08:00","dia":"01/06","status":"disponível"},{"id":2,"horario":"09:00","dia":"01/06","status":"disponível"},{"id":3,"horario":"10:00","dia":"01/06","status":"disponível"},{"id":4,"horario":"11:00","dia":"01/06","status":"disponível"},{"id":5,"horario":"12:00","dia":"01/06","status":"disponível"},{"id":6,"horario":"13:00","dia":"01/06","status":"disponível"}]
+
+horario[0]
+horario[0].id
+1
+
+horario[0].status
+
+horario[0].status = "indisponível"
+'indisponível'
+
+      fetch("/usuarios/cadastrarAgendamento", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         data_AgendamentoServer: data,
+//         hora_AgendamentoServer: hora,
+//         escolhaTrança_AgendamentoServer: escolha_tranca,
+//         observaçao_Agendamento: observacao,
+//         fkusario_Agendamento: usuario
+//       }),
+//     })
+//       .then(function (resposta) {
+//         console.log("resposta: ", resposta);
+
+//         if (resposta.ok) {
+//         alert ("Agendamento Marcado com sucesso");
+//         } else {
+//           throw "Houve um erro ao tentar realizar o agendamento!";
+//         }
+//       })
+//       .catch(function (resposta) {
+//         console.log(`#ERRO: ${resposta}`);
+//       });
+//   }
+
+
+
 
 CREATE DATABASE GabiTrancas;
 USE GabiTrancas;

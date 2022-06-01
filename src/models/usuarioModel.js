@@ -31,6 +31,14 @@ function cadastrar(nome, email, senha, rua , numero, bairro, telefone) {
     return database.executar(instrucao);
 }
 
+function cadastrarAgendamento(observacao, escolhaTranca,fkUsuario , fkHorario){
+        var instrucao = `
+        INSERT INTO Agendamento (observacao, escolhaTranca, fkUsuario, fkHorario) VALUES 
+        (${observacao}, ${escolhaTranca}, ${fkUsuario}, '${fkHorario}');
+        `;
+        console.log("Executando a instrução SQL: \n" + instrucao);
+        return database.executar(instrucao);
+}
 module.exports = {
     entrar,
     cadastrar,
