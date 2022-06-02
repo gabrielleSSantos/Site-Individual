@@ -10,10 +10,11 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
     </style>
+    <!-- ESSE JAVACRIPT SERVE PARA COLOCAR OS NOMES NA TELA DA SESSION STORE -->
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao()">
+<body onload="validarSessao(), carregarHorario()" >
 
 <div class="banner">
     <div class="header">
@@ -51,14 +52,10 @@
                     <h3> Observação :</h3>
                     <input type="text" id="observacao_agendamento">
                     <h3> Dia e Hora: </h3>
-                    <select id="dia_hora_agendamento">
-
-                        <option value="0">  </option>
-                        <option value="1"> </option>
-                        <option value="2"> </option>
-                        <option value="3"> </option>
-                        <option value="4"> </option>
+                    <select id="dia_hora_agendamento"> 
+                        <option value="0">0</option> 
                     </select>
+            
                 </label>
         
                 <div class="form-foto">
@@ -85,85 +82,6 @@
 </body>
 
 </html>
-<script>
-
-  // VALIDAÇOES NO AGENDAMENTOS
-    function cadastrarAgendamento(req, res){
-        var observacaoVar = observacao_agendamento.value
-        var escolha_trancaVar = select_tranca.value
-        var horarioVar = "2022-06-13 10:00:00"
-        var fkusuarioVar = sessionStorage.ID_USUARIO;
-   
-        if (escolha_trancaVar == 0 || horarioVar == 0) {
-            frase.innerHTML = `Preencha todos os Campos`
-        }
-        else {
-            alert("COMEÇANDO A AGENDAR");
-            fetch("/usuarios/cadastrarAgendamento", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              // crie um atributo que recebe o valor recuperado aqui
-              // Agora vá para o arquivo routes/usuario.js
-              observacaoServer: observacaoVar,
-              escolhaTrançaServer: escolha_trancaVar,
-              horarioServer: horarioVar,
-              fkusarioServer: fkusuarioVar
-
-          })
-      }).then(function (resposta) {
-
-          console.log("resposta: ", resposta);
-
-          if (resposta.ok) {
-            alert( "Agendamento realizado!");
-          } else {
-            alert( "Não foi possível realizar o agendamento");
-            throw "Houve um erro ao tentar realizar o cadastro!";
-          }
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
-    }
-  }
-
-
-    // VALIDAÇOES NA FOTO
-    function selecionar(){
-
-        // VALIDAÇOES 
-        var escolha_trancaVar = select_tranca.value
-
-        // ESCOLHA DA TRANÇA
-        if(escolha_trancaVar == 1){
-            frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
-            <img src="../IMAGENS/Trança-slider-10.jpg">
-            `    
-        } else if(escolha_trancaVar == 2){
-            frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
-            <img src="../IMAGENS/Trança-slider-1.jpg">
-            `
-        }
-        else if(escolha_trancaVar == 3){
-            frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
-            <img src="../IMAGENS/trança-slider-11.jpg"> 
-            `
-        }
-        else if(escolha_trancaVar == 4){
-            frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
-            <img src="../IMAGENS/trança-slider-12.jpg">   
-            `
-        }
-        else if(escolha_trancaVar == 5){
-            frase.innerHTML = `Você escolheu Trança Boxeadora, Pronta pro combate!!  <br>
-            <img src="../IMAGENS/trança-slider-7.jpg">
-            `
-        }
-        else if(escolha_trancaVar == 0){
-            frase.innerHTML = `Escolha uma opção valida`
-        }
-    }
-</script>
+<script src="../js/agendamentos.js"> </script>
+<script src="../js/verificacoes.js"></script>
+ 

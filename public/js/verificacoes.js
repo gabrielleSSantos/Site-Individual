@@ -37,6 +37,41 @@ function verificar() {
     }
 
 
-// VERIFICAR JAVACRIPT NA Pagina
+// VERIFICAR JAVACRIPT NA PAGINA AGENDAMENTOS
 
 
+    // VALIDAÇOES NA FOTO
+    function selecionar(){
+
+        // VALIDAÇOES 
+        var escolha_trancaVar = select_tranca.value
+
+        // ESCOLHA DA TRANÇA
+        if(escolha_trancaVar == 1){
+            frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
+            <img src="../IMAGENS/Trança-slider-10.jpg">
+            `    
+        } else if(escolha_trancaVar == 2){
+            frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
+            <img src="../IMAGENS/Trança-slider-1.jpg">
+            `
+        }
+        else if(escolha_trancaVar == 3){
+            frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
+            <img src="../IMAGENS/trança-slider-11.jpg"> 
+            `
+        }
+        else if(escolha_trancaVar == 4){
+            frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
+            <img src="../IMAGENS/trança-slider-12.jpg">   
+            `
+        }
+        else if(escolha_trancaVar == 5){
+            frase.innerHTML = `Você escolheu Trança Boxeadora, Pronta pro combate!!  <br>
+            <img src="../IMAGENS/trança-slider-7.jpg">
+            `
+        }
+        else if(escolha_trancaVar == 0){
+            frase.innerHTML = `Escolha uma opção valida`
+        }
+    }
