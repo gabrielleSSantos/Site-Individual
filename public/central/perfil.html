@@ -48,14 +48,17 @@
                     <h2> Agendamentos </h2>
                 </div>
                 <div class="foto_perfil">
-                    <div class="card_perfil_foto"> 
-                        FOTO AQUI
+                    <div class="card_perfil_foto" id="card_perfil_legenda"> 
+                        <div class="bolinha_Foto" >
+
+                        </div>
                     </div>
                     <div class="descricao"> 
                         <h2> Dados </h2>
                       <h3> Nome : <span id="b_agendamento" class="span_agendamento"> </span> </h3>
                       <h3> Email : <span id="b_perfil_email" class="span_agendamento"></span></h3>
                       <h3> Telefone: <span id="b_agendamento_telefone" class="span_agendamento"></span> </h3>
+                      <h3> Genero : <span id="b_perfil_genero" class="span_agendamento"> </span></h3>
 
                       <h2> Endereço </h2>
                       <h3> Rua: <span id="b_perfil_rua" class="span_agendamento"></span></h3>
@@ -70,3 +73,14 @@
 
     </div>
 </body>
+<script>
+    function avatar(){
+        var genero = sessionStorage.GENERO_USUARIO;
+
+        if(genero == "FEM"){
+            card_perfil_legenda.innerHTML = "Vc é menina"
+        }else{
+            card_perfil_legenda.innerHTML = "Vc é menino"
+        }
+    }
+</script>

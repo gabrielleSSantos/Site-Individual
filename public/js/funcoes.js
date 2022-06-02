@@ -5,6 +5,7 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var telefone = sessionStorage.TELEFONE_USUARIO;
+    var genero = sessionStorage.GENERO_USUARIO;
     var h1LoginUsuario = document.getElementById("h1_login_usuario");
     
     if (email != null && nome != null) {
@@ -14,8 +15,9 @@ function validarSessao() {
         }
         b_usuario.innerHTML = nome;
         b_agendamento.innerHTML = nome;
-        // b_perfil_email.innerHTML =  email;
         b_agendamento_telefone.innerHTML = telefone;
+        b_perfil_genero.innerHTML = genero;
+        // b_perfil_email.innerHTML =  email;
         // finalizarAguardar();
     } else {
         window.location = "../login.html";

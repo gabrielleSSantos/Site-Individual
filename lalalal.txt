@@ -96,4 +96,23 @@ ALTER TABLE Agendamentos add column fkHorario INT, ADD foreign key(fkHorario) re
  (null, 'nada', 'Topo', 1 , 1);
  
  SELECT * FROM Agendamentos JOIN USUARIO on fkusuario=idusuario JOIN HORARIO ON FKHORARIO=IDHORARIO;
+
+
+ // if (lista_horario[contador].dia_horario_fk == data) {
+                //     if (lista_horario[contador].horario_horario_fk == hora) {
+                //         if (lista_horario[contador].status_fk == "indisponivel") {
+                //             alert("Horario Indisponivel")
+                //         } else {
+                //             alert("Horario Agendado")
  
+
+    for (var contador = 0; contador < lista_horario.length; contador++) {
+              if (lista_horario[contador].dia == data) {
+                    if (lista_horario[contador].horario == hora) {
+                        if (lista_horario[contador].status == "indisponivel") {
+                            alert("Horario Indisponivel")
+                        } else {
+                            alert("Horario Agendado")
+                            status[contador] == "indisponivel"
+ 
+            }

@@ -69,6 +69,7 @@ function cadastrar(req, res) {
     var numero = req.body.numeroServer;
     var bairro = req.body.bairroServer;
     var telefone = req.body.telefoneServer;
+    var genero = req.body.generoServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -85,10 +86,12 @@ function cadastrar(req, res) {
         res.status(400).send("Seu bairro está undefined!");
     } else if (telefone == undefined) {
         res.status(400).send("Seu telefone está undefined!");
+    } else if (genero == undefined) {
+        res.status(400).send("Seu genero está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, rua, numero, bairro, telefone)
+        usuarioModel.cadastrar(nome, email, senha, rua, numero, bairro, telefone, genero)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -106,33 +109,43 @@ function cadastrar(req, res) {
     }
 }
 function cadastrarAgendamento(){
-    var observacao = req.body.observaçao_AgendamentoServer;
-    var escolhaTranca = req.body.escolhaTranca_AgendamentoServer;
-    var fkUsuario = req.body.fkUsario_AgendamentoServer;
-    var fkHorario= req.body.fkHorario_AgendamentoServer;
-    // var data_Agendamento = req.body.data_AgendamentoServer;
-    // var hora_Agendamento = req.body.hora_AgendamentoServer;
+    var observacao = req.body.observacaoServer;
+    var escolha_tranca = req.body.escolhaTrançaServer;
+    var dia_hora = req.body.dia_horaServer;
+    var fkUsuario = req.body.fkusarioServer;
 
-// Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-usuarioModel.cadastrarAgendamento(observacao, escolhaTranca, fkUsuario, fkHorario)
-    .then(
-        function (resultado) {
-            res.json(resultado);
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log(
-                "\nHouve um erro ao realizar o Agendamento! Erro: ",
-                erro.sqlMessage
+    if (observacao == undefined) {
+        res.status(400).send("Sua observação está undefined!");
+    } else if (escolha_tranca == undefined) {
+        res.status(400).send("Sua escolha está undefined!");
+    } else if (dia_hora == undefined) {
+        res.status(400).send("Seu dia e hora está undefined!");
+    } else if (fkUsuario == undefined) {
+        res.status(400).send("Sua fkUsuario está undefined!");
+    } else {
+
+        usuarioModel.cadastrar(observacao, escolha_tranca, dia_hora, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o agendamento! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
             );
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
+    }
 }
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrarAgendamento,
     listar,
     testar
 }

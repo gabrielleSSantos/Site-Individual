@@ -582,13 +582,26 @@ to {opacity: 1}
 /* PAGINA CADASTRO */
 .login .card_cadastro{
   display: flex;
-  height: 70vh;
+  height: 80vh;
   border: 2px solid black;
   width: 65vw;
   box-shadow: 0 0 2em rgb(233, 14, 116);
   flex-direction: row;
   border-radius: 10px;
 
+}
+#btn_id{
+  width: 15vw;
+  height: 15vh;
+
+}
+
+#select_genero{
+  width: 20vw;
+  height: 15vh;
+  font-size: 3vh;
+  border-radius: 5vw;
+  border: 0.5vh solid rgb(233, 14, 116);
 }
 
 #login_id {

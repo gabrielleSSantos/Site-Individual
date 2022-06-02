@@ -45,11 +45,17 @@
               <h2>Telefone: </h2>
               <input type="number" id="telefone_input" class="input" 
               placeholder="Digite seu telefone"/>
+              <h2>Genero: </h2>
+              <select id="select_genero">
+                <option value="FEM"> Feminino </option>
+                <option value="MAS"> Masculino </option>
+              </select>
             </div><!-- FECHANDO A DIV LABEL -->
     
             <!-- SEGUNDA PARTE DO CADASTRO(ENDEREÇO) -->
             
             <div class="label"> 
+           
                 <h2>Rua:</h2>
                 <input type="text" id="rua_input" class="input" 
                 placeholder="Digite o nome da sua rua"/>
@@ -89,9 +95,11 @@
       var numeroVar = numero_input.value;
       var bairroVar = bairro_input.value;
       var telefoneVar = telefone_input.value;
+      var generoVar = select_genero.value;
 
       if (nomeVar == "" || emailVar == "" || senhaVar == "" ||
-       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  telefoneVar == "") {
+       ruaVar == ""  || numeroVar == "" || bairroVar == "" ||  
+       telefoneVar == "" || generoVar == "") {
           cardErro.style.display = "block"
           mensagem_erro.innerHTML = "(Preencha todos os campos)";
 
@@ -143,7 +151,8 @@
               ruaServer: ruaVar,
               numeroServer: numeroVar,
               bairroServer: bairroVar,
-              telefoneServer: telefoneVar
+              telefoneServer: telefoneVar,
+              generoServer: generoVar
           })
       }).then(function (resposta) {
 

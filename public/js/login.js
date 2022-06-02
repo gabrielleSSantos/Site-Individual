@@ -52,9 +52,10 @@ function validarSessao() {
     var login = sessionStorage.LOGIN_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var telefone = sessionStorage.TELEFONE_USUARIO;
+    var genero = sessionStorage.GENERO_USUARIO;
     var h1Titulo = document.getElementById("h1_titulo");
 
-    if (login != null && nome != null && telefone != null) {
+    if (login != null && nome != null && telefone != null && genero != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         h1Titulo.innerHTML = `${login}`;
 
