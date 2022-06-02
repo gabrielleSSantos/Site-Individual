@@ -17,13 +17,64 @@ function validarSessao() {
         b_agendamento.innerHTML = nome;
         b_agendamento_telefone.innerHTML = telefone;
         b_perfil_genero.innerHTML = genero;
-        // b_perfil_email.innerHTML =  email;
+        b_perfil_email.innerHTML =  email;
         // finalizarAguardar();
     } else {
         window.location = "../login.html";
     }
 }
 
+// FUNÇÃO PARA OS HORARIOS
+
+function carregarHorario() {
+    //aguardar();
+    fetch(`/avisos/listarHorario/${sessionStorage.horario}`)
+      .then(function (resposta) {
+        if (resposta.ok) {
+          if (resposta.status == 204) {
+            var select = document.getElementById("dia_hora_agendamento");
+            var mensagem = document.createElement("span");
+            mensagem.innerHTML = "-";
+            mensagem.value = "0";
+            select.appendChild(mensagem);
+            throw "Nenhuma Horario Disponivel";
+          }
+  
+          resposta.json().then(function (resposta) {
+            console.log("Horarios Disponiveis: ", JSON.stringify(resposta));
+  
+            var select = document.getElementById("dia_hora_agendamento");
+            select.innerHTML = "";
+            for (let i = 0; i < resposta.length; i++) {
+              var horario = resposta[i];
+  
+              // criando elementos do HTML via JavaScript
+              var optionHorario = document.createElement("option");
+  
+              // colocando valores do select no innerHTML
+              optionHorario.innerHTML = agendamento.horario;
+              optionHorario.value = agendamento.idagendamento;
+  
+              // adicionando todos à um elemento pai pré-existente
+              select.appendChild(optionHorario);
+            }
+  
+            finalizarAguardar();
+          });
+        } else {
+          throw "Houve um erro na API!";
+        }
+      })
+      .catch(function (resposta) {
+        console.error(resposta);
+        finalizarAguardar();
+      });
+  }
+
+
+// VALIDACOES PADRAO API ACQUATEC
+
+// FUNCOES NO HORARIO NO SELECT 
 
 function limparSessao() {
     // aguardar();
@@ -59,40 +110,3 @@ function fecharModal() {
     var divModal = document.getElementById("div_modal");
     divModal.style.display = "none";
 }
-
-// VERIFICAR JAVACRIPT NA PAGINA DE CONTATO
-
-function verificar() {
-    var nome = input_nome_contato.value
-    var email = input_email_contato.value
-    var telefone = input_telefone_contato.value
-    var duvida = input_duvida_contato.value
-
-    if (nome == "" || email == "" || telefone == "" || duvida == "") {
-        div_aviso.innerHTML = "Por favor preencha Todos os campos"
-
-    } else if (nome.length < 3 || nome.length > 90) {
-        div_aviso.innerHTML = "O nome deve conter entre 4 até 90 caracteres "
-
-    } else if (email.indexOf('@') <= 0 || email.indexOf('.com') == -1
-        || email.indexOf('.com') < email.indexOf('@')) {
-
-        div_aviso.innerHTML = "Email inválido <br> O email necessita de @ e .com"
-    }
-    else if (telefone.length < 11) {
-        div_aviso.innerHTML = "Telefone Invalido"
-
-    }
-    else if (duvida.length < 15) {
-        div_aviso.innerHTML = "Explique melhor sua duvida "
-
-    }else {
-
-        botoes.innerHTML = `
-        <button class="btn" type=" button" onclick="verificar()" id="botao-contato" style="display:none">
-         Verificar </button>
-        <button class="btn" type="submit" id="botao-contato-enviar" style="display:flex; align-items: center;  justify-content: center; "> Enviar </button> 
-        `
-
-        }
-    }

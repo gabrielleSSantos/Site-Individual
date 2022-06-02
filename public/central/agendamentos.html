@@ -52,11 +52,12 @@
                     <input type="text" id="observacao_agendamento">
                     <h3> Dia e Hora: </h3>
                     <select id="dia_hora_agendamento">
-                        <option value="0"> </option>
-                        <option value="1"> Dia: 24/07 Horario: 10:00 </option>
-                        <option value="2"> Dia: 24/07 Horario: 12:00 </option>
-                        <option value="3"> Dia: 24/07 Horario: 14:00 </option>
-                        <option value="4"> Dia: 24/07 Horario: 16:00 </option>
+
+                        <option value="0">  </option>
+                        <option value="1"> </option>
+                        <option value="2"> </option>
+                        <option value="3"> </option>
+                        <option value="4"> </option>
                     </select>
                 </label>
         
@@ -87,17 +88,17 @@
 <script>
 
   // VALIDAÇOES NO AGENDAMENTOS
-    function cadastrarAgendamento(){
-        var observacao = observacao_agendamento.value
-        var escolha_tranca = select_tranca.value
-        var dia_hora = dia_hora_agendamento.value
-        var fkusuario = sessionStorage.ID_USUARIO;
+    function cadastrarAgendamento(req, res){
+        var observacaoVar = observacao_agendamento.value
+        var escolha_trancaVar = select_tranca.value
+        var horarioVar = "2022-06-13 10:00:00"
+        var fkusuarioVar = sessionStorage.ID_USUARIO;
    
-        if (escolha_tranca == 0 || dia_hora == 0) {
+        if (escolha_trancaVar == 0 || horarioVar == 0) {
             frase.innerHTML = `Preencha todos os Campos`
         }
         else {
-            alert("COMEÇANDO A AGENDAR")
+            alert("COMEÇANDO A AGENDAR");
             fetch("/usuarios/cadastrarAgendamento", {
           method: "POST",
           headers: {
@@ -106,19 +107,20 @@
           body: JSON.stringify({
               // crie um atributo que recebe o valor recuperado aqui
               // Agora vá para o arquivo routes/usuario.js
-              observacaoServer: observacao,
-              escolhaTrançaServer: escolha_tranca,
-              dia_horaServer: dia_hora,
-              fkusarioServer: fkusuario
+              observacaoServer: observacaoVar,
+              escolhaTrançaServer: escolha_trancaVar,
+              horarioServer: horarioVar,
+              fkusarioServer: fkusuarioVar
+
           })
       }).then(function (resposta) {
 
           console.log("resposta: ", resposta);
 
           if (resposta.ok) {
-            div_aviso.innerHTML = "Agendamento realizado!";
+            alert( "Agendamento realizado!");
           } else {
-            div_aviso.innerHTML = "Não foi possível realizar o agendamento, o horario atual já está cadastrado!";
+            alert( "Não foi possível realizar o agendamento");
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })
@@ -133,34 +135,34 @@
     function selecionar(){
 
         // VALIDAÇOES 
-        var escolha_tranca = select_tranca.value
+        var escolha_trancaVar = select_tranca.value
 
         // ESCOLHA DA TRANÇA
-        if(escolha_tranca == 1){
+        if(escolha_trancaVar == 1){
             frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
             <img src="../IMAGENS/Trança-slider-10.jpg">
             `    
-        } else if(escolha_tranca == 2){
+        } else if(escolha_trancaVar == 2){
             frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
             <img src="../IMAGENS/Trança-slider-1.jpg">
             `
         }
-        else if(escolha_tranca == 3){
+        else if(escolha_trancaVar == 3){
             frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
             <img src="../IMAGENS/trança-slider-11.jpg"> 
             `
         }
-        else if(escolha_tranca == 4){
+        else if(escolha_trancaVar == 4){
             frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
             <img src="../IMAGENS/trança-slider-12.jpg">   
             `
         }
-        else if(escolha_tranca == 5){
+        else if(escolha_trancaVar == 5){
             frase.innerHTML = `Você escolheu Trança Boxeadora, Pronta pro combate!!  <br>
             <img src="../IMAGENS/trança-slider-7.jpg">
             `
         }
-        else if(escolha_tranca == 0){
+        else if(escolha_trancaVar == 0){
             frase.innerHTML = `Escolha uma opção valida`
         }
     }

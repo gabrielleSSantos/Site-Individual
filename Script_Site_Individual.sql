@@ -1,8 +1,6 @@
+CREATE DATABASE GABITRANCAS;
+USE GABITRANCAS;
 
-CREATE DATABASE GabiTrancas;
-USE GabiTrancas;
-
--- TABELA USUARIO
 CREATE TABLE usuario(
 	idusuario INT PRIMARY KEY auto_increment,
     nome VARCHAR(45),
@@ -15,48 +13,26 @@ CREATE TABLE usuario(
     genero char(3) check (genero = 'FEM' or genero = 'MAS')
 );
 
--- TABELA HORARIO
- CREATE TABLE horario (
-	idhorario int primary key auto_increment, 
-   dia DATE,
-   horarioAgendamento TIME
- );
- 
- ALTER TABLE horario ADD COLUMN StatusHorario VARCHAR(12) constraint CNK_STATUS 
- CHECK (StatusHorario= 'Disponivel' or StatusHorario = 'Indisponivel');
-
--- TABELA AGENDAMENTOS
- CREATE TABLE Agendamentos(
-	idagendamentos INT primary KEY auto_increment,
-    observavao VARCHAR(45),
-    TrancaEscolha VARCHAR(25),
+CREATE TABLE Agendamento(
+	idagendamento INT primary KEY auto_increment,
+    observacao VARCHAR(45),
+    escolha_tranca VARCHAR(25),
+	horario datetime,
     FKusuario int, foreign key (FKusuario) references usuario(idusuario)
  );
-ALTER TABLE Agendamentos add column fkHorario INT, ADD foreign key(fkHorario) references Horario(idhorario);
- 
-	DESC AGENDAMENTOS;
 
--- simulando os dados 
  INSERT INTO usuario(idusuario, nome, email, senha) VALUES
  (NULL, 'gabrielle teste', 'gabrielle@gmail', 'gabi');
  
- UPDATE USUARIO SET telefone = "11943131977" WHERE IDUSUARIO= 1;
+ INSERT INTO Agendamento(horario) VALUES
+ ('2022-06-02 12:00'),
+ ('2022-06-02 13:00');
  
- select * from usuario;
+ SELECT * FROM AGENDAMENTO;
  
- INSERT INTO Horario VALUES
- (NULL, '2022-06-01', '10:00', 'Disponivel'),
- (NULL ,'2022-06-01', '12:00',  'Disponivel'),
- (NULL ,'2022-06-01', '14:00',  'Disponivel'),
- (NULL ,'2022-06-02', '10:00',  'Disponivel'),
- (NULL ,'2022-06-02', '12:00',  'Disponivel'),
- (NULL ,'2022-06-02', '14:00',  'Disponivel');
+ SELECT date_format(horario, '%d-%m-%y %H:%i:%s') as horarios FROM AGENDAMENTO WHERE FKUSUARIO IS NULL;
  
 
- SELECT * FROM Horario;
- 
- INSERT INTO Agendamentos VALUES
- (null, 'nada', 'Topo', 1 , 1);
- 
- SELECT * FROM Agendamentos JOIN USUARIO on fkusuario=idusuario JOIN HORARIO ON FKHORARIO=IDHORARIO;
- 
+ UPDATE AGENDAMENTO SET observacao = 'alalal' , escolha_tranca = 'topo' , fkusuario = 1 
+ WHERE IDAGENDAMENTO = (SELECT IDAGENDAMENTO FROM(SELECT IDAGENDAMENTO FROM AGENDAMENTO 
+ WHERE HORARIO = date_format('02-06-22 13:00:00', '%d-%m-%y %H:%i:%s')) AS IDAGENDAMENTO);

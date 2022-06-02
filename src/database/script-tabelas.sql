@@ -15,7 +15,8 @@ CREATE TABLE usuario(
     rua VARCHAR(45),
     numero INT,
     bairro VARCHAR(45),
-    telefone CHAR(11)
+    telefone CHAR(11),
+    genero char(3) check (genero = 'FEM' or genero = 'MAS')
 );
 
 -- TABELA HORARIO
@@ -43,6 +44,8 @@ ALTER TABLE Agendamentos add column fkHorario INT, ADD foreign key(fkHorario) re
  INSERT INTO usuario(idusuario, nome, email, senha) VALUES
  (NULL, 'gabrielle teste', 'gabrielle@gmail', 'gabi');
  
+ UPDATE USUARIO SET telefone = "11943131977" WHERE IDUSUARIO= 1;
+ 
  select * from usuario;
  
  INSERT INTO Horario VALUES
@@ -53,7 +56,7 @@ ALTER TABLE Agendamentos add column fkHorario INT, ADD foreign key(fkHorario) re
  (NULL ,'2022-06-02', '12:00',  'Disponivel'),
  (NULL ,'2022-06-02', '14:00',  'Disponivel');
  
- 
+
  SELECT * FROM Horario;
  
  INSERT INTO Agendamentos VALUES

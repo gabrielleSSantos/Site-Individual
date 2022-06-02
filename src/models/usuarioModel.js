@@ -31,13 +31,13 @@ function cadastrar(nome, email, senha, rua , numero, bairro, telefone, genero) {
     return database.executar(instrucao);
 }
 
-function cadastrarAgendamento(observacao, escolha_tranca, dia_hora, fkUsuario){
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarAgendamento():", observacao, escolha_tranca, dia_hora, fkUsuario);
+function cadastrarAgendamento(observacao, escolha_tranca,horario, fkUsuario){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarAgendamento():", observacao, escolha_tranca, horario, fkUsuario);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO agendamentos (observacao, escolha_tranca, dia_hora, fkUsuario) VALUES ('${observacao}', '${escolha_tranca}', '${dia_hora}', '${fkUsuario}');
+        INSERT INTO agendamento (observacao, escolha_tranca, horario, fkUsuario) VALUES ('${observacao}', '${escolha_tranca}', '${horario}', '${fkUsuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
