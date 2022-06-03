@@ -22,55 +22,13 @@ function validarSessao() {
     } else {
         window.location = "../login.html";
     }
+
+    if(genero == "MAS"){
+      card_perfil_foto.style.backgroundColor = "blue"
+    }else{
+
+    }
 }
-
-// FUNÇÃO PARA OS HORARIOS
-
-function carregarHorario() {
-    //aguardar();
-    fetch(`/avisos/listarHorario/${sessionStorage.horario}`)
-      .then(function (resposta) {
-        if (resposta.ok) {
-          if (resposta.status == 204) {
-            var select = document.getElementById("dia_hora_agendamento");
-            var mensagem = document.createElement("span");
-            mensagem.innerHTML = "-";
-            mensagem.value = "0";
-            select.appendChild(mensagem);
-            throw "Nenhuma Horario Disponivel";
-          }
-  
-          resposta.json().then(function (resposta) {
-            console.log("Horarios Disponiveis: ", JSON.stringify(resposta));
-  
-            var select = document.getElementById("dia_hora_agendamento");
-            select.innerHTML = "";
-            for (let i = 0; i < resposta.length; i++) {
-              var horario = resposta[i];
-  
-              // criando elementos do HTML via JavaScript
-              var optionHorario = document.createElement("option");
-  
-              // colocando valores do select no innerHTML
-              optionHorario.innerHTML = agendamento.horario;
-              optionHorario.value = agendamento.idagendamento;
-  
-              // adicionando todos à um elemento pai pré-existente
-              select.appendChild(optionHorario);
-            }
-  
-            finalizarAguardar();
-          });
-        } else {
-          throw "Houve um erro na API!";
-        }
-      })
-      .catch(function (resposta) {
-        console.error(resposta);
-        finalizarAguardar();
-      });
-  }
-
 
 // VALIDACOES PADRAO API ACQUATEC
 

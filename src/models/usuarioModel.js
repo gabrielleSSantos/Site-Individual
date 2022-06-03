@@ -37,7 +37,10 @@ function cadastrarAgendamento(observacao, escolha_tranca,horario, fkUsuario){
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO agendamento (observacao, escolha_tranca, horario, fkUsuario) VALUES ('${observacao}', '${escolha_tranca}', '${horario}', '${fkUsuario}');
+    UPDATE AGENDAMENTO SET observacao = '${observacao}' , escolha_tranca = '${escolha_tranca}' , fkusuario = '${fkUsuario}' 
+    WHERE IDAGENDAMENTO = (SELECT IDAGENDAMENTO FROM(SELECT IDAGENDAMENTO FROM AGENDAMENTO 
+    WHERE HORARIO = date_format('${horario}', '%d-%m-%y %H:%i:%s')) AS IDAGENDAMENTO);
+    
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

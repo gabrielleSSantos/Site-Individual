@@ -1,57 +1,86 @@
+
 function entrar() {
     aguardar();
 
-    var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
 
-    console.log("FORM LOGIN: ", formulario.get("login"));
-    console.log("FORM SENHA: ", formulario.get("senha"));
+    if (emailVar == "" || senhaVar == "") {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "(Preencha todos os campos)";
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
 
     fetch("/usuarios/autenticar", {
-        method: "POST",
-        body: formulario
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
 
         if (resposta.ok) {
-            console.log(resposta);
+          console.log(resposta);
 
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
 
-                sessionStorage.LOGIN_USUARIO = json.login;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.idUsuario;
+            sessionStorage.ID_USUARIO = json.idusuario;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.RUA_USUARIO = json.rua;
+            sessionStorage.NUMERO_USUARIO = json.numero;
+            sessionStorage.TELEFONE_USUARIO = json.telefone;
+            sessionStorage.GENERO_USUARIO = json.genero;
 
-                setTimeout(function () {
-                    window.location = "/index.html";
-                }, 1000);
-            });
+            
+            sessionStorage.HORARIO_AGENDAMENTO = json.horario;
+            sessionStorage.ID_AGENDAMENTO = json.idAgendamento;
 
+            setTimeout(function () {
+              window.location = "central/painel.html";
+            }, 1000); // apenas para exibir o loading
+          });
         } else {
+          console.log("Houve um erro ao tentar realizar o login!");
 
-            console.log("Erro de login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                // limparFormulario();
-                finalizarAguardar(texto);
-            });
+          resposta.text().then((texto) => {
+            console.error(texto);
+            finalizarAguardar(texto);
+          });
         }
-
-    }).catch(function (erro) {
+      })
+      .catch(function (erro) {
         console.log(erro);
-    })
+      });
+
 
     return false;
-}
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+
 
 function validarSessao() {
     aguardar();
 
     var login = sessionStorage.LOGIN_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
-    var h1Titulo = document.getElementById("h1_titulo");
+    var h1Titulo = document.getElementById("h1_titulo");  
 
     if (login != null && nome != null ) {
         // window.alert(`Seja bem-vindo, ${nome}!`);

@@ -1,8 +1,9 @@
  // VALIDAÇOES NO AGENDAMENTOS
  function cadastrarAgendamento(req, res){
+
     var observacaoVar = observacao_agendamento.value
     var escolha_trancaVar = select_tranca.value
-    var horarioVar = "2022-06-13 10:00:00"
+    var horarioVar = sessionStorage.HORARIO_AGENDAMENTO;
     var fkusuarioVar = sessionStorage.ID_USUARIO;
 
     if (escolha_trancaVar == 0 || horarioVar == 0) {
@@ -32,11 +33,59 @@
         alert( "Agendamento realizado!");
       } else {
         alert( "Não foi possível realizar o agendamento");
-        throw "Houve um erro ao tentar realizar o cadastro!";
+        throw "Houve um erro ao tentar realizar o agendamento!";
       }
     })
     .catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
     });
 }
+}
+
+function carregarHorario(){
+     sessionStorage.HORARIO_AGENDAMENTO = json.horario;
+     sessionStorage.ID_AGENDAMENTO = json.idAgendamento;
+
+ 
+
+  fetch(`/avisos/listarHorario/${sessionStorage.HORARIO_AGENDAMENTO}`)
+  .then(function (resposta) {
+    if (resposta.ok) {
+      if (resposta.status == 204) {
+        var select = document.getElementById("dia_hora_agendamento");
+        var mensagem = document.createElement("span");
+        mensagem.innerHTML = "-";
+        mensagem.value = "0";
+        select.appendChild(mensagem);
+        throw "Nenhum horario Disponivel";
+      }
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var select = document.getElementById("dia_hora_agendamento");
+          select.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var horario = resposta[i];
+
+            // criando elementos do HTML via JavaScript
+            var optionHorario = document.createElement("option");
+
+            // colocando valores do select no innerHTML
+            optionHorario.innerHTML = horario.horario;
+            optionHorario.value = horario.idagendamento;
+
+            // adicionando todos à um elemento pai pré-existente
+            select.appendChild(optionHorario);
+          }
+
+          finalizarAguardar();
+        });
+      } else {
+        throw "Houve um erro na API!";
+      }
+    })
+    .catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
 }

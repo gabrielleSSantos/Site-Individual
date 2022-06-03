@@ -25,8 +25,11 @@ CREATE TABLE Agendamento(
  (NULL, 'gabrielle teste', 'gabrielle@gmail', 'gabi');
  
  INSERT INTO Agendamento(horario) VALUES
- ('2022-06-02 12:00'),
- ('2022-06-02 13:00');
+ ('2022-06-03 10:00'),
+ ('2022-06-03 13:00'),
+ ('2022-06-04 10:00'),
+ ('2022-06-04 13:00')
+ ;
  
  SELECT * FROM AGENDAMENTO;
  
