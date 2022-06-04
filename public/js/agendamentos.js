@@ -3,8 +3,24 @@
 
     var observacaoVar = observacao_agendamento.value
     var escolha_trancaVar = select_tranca.value
-    var horarioVar = sessionStorage.HORARIO_AGENDAMENTO;
+    var horarioVar = dia_hora_agendamento.value;
     var fkusuarioVar = sessionStorage.ID_USUARIO;
+    var idAgendamento = 0;
+
+
+    if (horarioVar == "2022-06-24 10:00") {
+      idAgendamento = 1;
+    }else if(horarioVar == "2022-06-24 12:00"){
+      idAgendamento = 2;
+    }else if(horarioVar == "2022-06-24 14:00"){
+      idAgendamento = 3;
+    }else if(horarioVar == "2022-06-25 10:00"){
+      idAgendamento = 4;
+    }else if(horarioVar == "2022-06-25 12:00"){
+      idAgendamento = 5;
+    }else{
+      idAgendamento = 6;
+    }
 
     if (escolha_trancaVar == 0 || horarioVar == 0) {
         frase.innerHTML = `Preencha todos os Campos`
@@ -19,6 +35,7 @@
       body: JSON.stringify({
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
+          idAgendamentoServer: idAgendamento,
           observacaoServer: observacaoVar,
           escolhaTrançaServer: escolha_trancaVar,
           horarioServer: horarioVar,
@@ -40,52 +57,4 @@
       console.log(`#ERRO: ${resposta}`);
     });
 }
-}
-
-function carregarHorario(){
-     sessionStorage.HORARIO_AGENDAMENTO = json.horario;
-     sessionStorage.ID_AGENDAMENTO = json.idAgendamento;
-
- 
-
-  fetch(`/avisos/listarHorario/${sessionStorage.HORARIO_AGENDAMENTO}`)
-  .then(function (resposta) {
-    if (resposta.ok) {
-      if (resposta.status == 204) {
-        var select = document.getElementById("dia_hora_agendamento");
-        var mensagem = document.createElement("span");
-        mensagem.innerHTML = "-";
-        mensagem.value = "0";
-        select.appendChild(mensagem);
-        throw "Nenhum horario Disponivel";
-      }
-        resposta.json().then(function (resposta) {
-          console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-          var select = document.getElementById("dia_hora_agendamento");
-          select.innerHTML = "";
-          for (let i = 0; i < resposta.length; i++) {
-            var horario = resposta[i];
-
-            // criando elementos do HTML via JavaScript
-            var optionHorario = document.createElement("option");
-
-            // colocando valores do select no innerHTML
-            optionHorario.innerHTML = horario.horario;
-            optionHorario.value = horario.idagendamento;
-
-            // adicionando todos à um elemento pai pré-existente
-            select.appendChild(optionHorario);
-          }
-
-          finalizarAguardar();
-        });
-      } else {
-        throw "Houve um erro na API!";
-      }
-    })
-    .catch(function (resposta) {
-      console.error(resposta);
-      finalizarAguardar();
-    });
 }

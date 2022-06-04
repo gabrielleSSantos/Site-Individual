@@ -66,7 +66,6 @@ function entrar() {
         console.log(erro);
       });
 
-
     return false;
   }
 

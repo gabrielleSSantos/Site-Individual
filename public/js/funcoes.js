@@ -23,12 +23,27 @@ function validarSessao() {
         window.location = "../login.html";
     }
 
-    if(genero == "MAS"){
-      card_perfil_foto.style.backgroundColor = "blue"
+    var generoVetor = sessionStorage.GENERO_USUARIO;
+    
+    if(generoVetor == "MAS"){
+        card_perfil_legenda.innerHTML = `<div class="card_perfil_foto" id="card_perfil_legenda" 
+    // style="background-color: #29bdf8;"> 
+        <div class id="bolinhaFoto">
+        <img src="../IMAGENS/git menino.gif">
+         </div>
+        </div>`
+        
     }else{
-
+        card_perfil_legenda.innerHTML = `<div class="card_perfil_foto" id="card_perfil_legenda" 
+        style="background-color: pink; "> 
+        <div class id="bolinhaFoto">
+        <img src="../IMAGENS/garotinha.gif">
+         </div>
+        </div>`
+    
     }
 }
+
 
 // VALIDACOES PADRAO API ACQUATEC
 

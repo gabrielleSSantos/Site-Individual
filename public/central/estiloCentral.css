@@ -113,7 +113,7 @@ nav a {
 
 .container {
 	width: 100vw;
-	border: 2px solid black;
+	/* border: 2px solid black; */
 	display: flex;
 	justify-content: flex-end;
 	background-color: pink;
@@ -236,10 +236,10 @@ nav a {
 }
 
 .card_perfil .foto_perfil .card_perfil_foto{
-	border: 2px solid rgb(233, 14, 116);
+	/* border: 1px solid rgb(233, 14, 116); */
 	width: 30vw;
 	height: 30vh;
-	background-color: pink;
+	/* background-color: pink; */
 }
 
 .card_perfil .foto_perfil .descricao{
@@ -256,6 +256,22 @@ nav a {
 }
 .descricao h3{
 	margin: 0.5vh;
+}
+
+
+#bolinhaFoto{
+	/* border: 2px solid black; */
+	width: 29vw;
+	height: 30vh;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+
+}
+
+#bolinhaFoto img{
+	height: 25vh;
+	/* position: relative;; */
 }
 /* PAGINA PAINEL */
 
