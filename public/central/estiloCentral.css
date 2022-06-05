@@ -273,6 +273,16 @@ nav a {
 	height: 25vh;
 	/* position: relative;; */
 }
+
+.agendamento{
+	/* box-shadow: 0 0 0.2em rgb(233, 14, 116); */
+	width: 25vw;
+	margin-top: 3vh;
+	font-size: 3vh;
+	padding: 2vh;
+}
+
+
 /* PAGINA PAINEL */
 
 .container .painel{

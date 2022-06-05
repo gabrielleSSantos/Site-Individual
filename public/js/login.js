@@ -76,7 +76,7 @@ function entrar() {
 
 function validarSessao() {
     aguardar();
-
+    var idUsuario = sessionStorage.ID_USUARIO ;
     var login = sessionStorage.LOGIN_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var h1Titulo = document.getElementById("h1_titulo");  

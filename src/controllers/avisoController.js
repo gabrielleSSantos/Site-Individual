@@ -5,33 +5,13 @@ function testar(req, res) {
     res.send("ENTRAMOS NO AVISO CONTROLLER");
 }
 
-// SELECT DO HORARIO
-function listarHorario(req, res) {
-
-    var horario = req.params.horario;
-    avisoModel
-      .listarHorario(horario)
-      .then(function (resultado) {
-        if (resultado.length > 0) {
-          res.status(200).json(resultado);
-        } else {
-          res.status(204).send("Nenhum resultado encontrado!");
-        }
-      })
-      .catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar o horario: ", erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-      });
-  }
   
 
-
-
-
 // api do rover
-function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+function listar(req, res) { 
+    var idUsuario = req.params.idUsuario;
+   
+    avisoModel.listar(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -45,7 +25,6 @@ function listar(req, res) {
 }
 
 function listarPorUsuario(req, res) {
-    var idUsuario = req.params.idUsuario;
 
     avisoModel.listarPorUsuario(idUsuario)
         .then(
@@ -159,7 +138,6 @@ function deletar(req, res) {
 module.exports = {
     testar,
     listar,
-    listarHorario,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,

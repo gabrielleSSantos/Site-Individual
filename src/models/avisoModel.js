@@ -1,36 +1,12 @@
 var database = require("../database/config");
 
-
-
-function listarHorario(horario) {
-    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarHorario()");
-    var instrucao = `
-    SELECT date_format(${horario}, '%d-%m-%y %H:%i:%s') as horarios FROM AGENDAMENTO WHERE ${fkUsuario} IS NULL;
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
-
-
-
-
 // LISTA DO ROVER 
-function listar() {
+function listar(idUsuario) {
+    
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
-        FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
-    `;
+    SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO WHERE idusuario = ${idUsuario};
+    `; 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -59,19 +35,7 @@ function pesquisarDescricao(texto) {
 function listarPorUsuario(idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
     var instrucao = `
-        SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
-        FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id
-        WHERE u.id = ${idUsuario};
+    SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDAGENDAMENTO where idusuario= ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -105,7 +69,6 @@ function deletar(idAviso) {
 }
 
 module.exports = {
-    listarHorario,
     listar,
     listarPorUsuario,
     pesquisarDescricao,

@@ -109,12 +109,16 @@ function cadastrar(req, res) {
     }
 }
 function cadastrarAgendamento(req, res){
+    var idAgendamento =  req.body.idAgendamentoServer;
     var observacao = req.body.observacaoServer;
     var escolha_tranca = req.body.escolhaTrançaServer;
     var horario = req.body.horarioServer;
     var fkUsuario = req.body.fkusarioServer;
 
-    if (observacao == undefined) {
+    if (idAgendamento == undefined) {
+        res.status(400).send("Seu agendamento está undefined!");
+    }
+    else if (observacao == undefined) {
         res.status(400).send("Sua observação está undefined!");
     } else if (escolha_tranca == undefined) {
         res.status(400).send("Sua escolha está undefined!");
@@ -124,7 +128,7 @@ function cadastrarAgendamento(req, res){
         res.status(400).send("Sua fkUsuario está undefined!");
     } else {
 
-        usuarioModel.cadastrarAgendamento(observacao, escolha_tranca, horario, fkUsuario)
+        usuarioModel.cadastrarAgendamento(idAgendamento,observacao, escolha_tranca, horario, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
