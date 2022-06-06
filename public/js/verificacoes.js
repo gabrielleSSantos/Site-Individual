@@ -47,21 +47,21 @@ function verificar() {
         var escolha_trancaVar = select_tranca.value
 
         // ESCOLHA DA TRANÇA
-        if(escolha_trancaVar == 1){
+        if(escolha_trancaVar == "Trança Lateral"){
             frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
             <img src="../IMAGENS/Trança-slider-10.jpg">
             `    
-        } else if(escolha_trancaVar == 2){
+        } else if(escolha_trancaVar == "Trança Frontal"){
             frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
             <img src="../IMAGENS/Trança-slider-1.jpg">
             `
         }
-        else if(escolha_trancaVar == 3){
+        else if(escolha_trancaVar == "Trança Cabelo Todo"){
             frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
             <img src="../IMAGENS/trança-slider-11.jpg"> 
             `
         }
-        else if(escolha_trancaVar == 4){
+        else if(escolha_trancaVar == "Trança Nagô com jumbo"){
             frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
             <img src="../IMAGENS/trança-slider-12.jpg">   
             `

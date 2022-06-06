@@ -112,7 +112,6 @@ function cadastrarAgendamento(req, res){
     var idAgendamento =  req.body.idAgendamentoServer;
     var observacao = req.body.observacaoServer;
     var escolha_tranca = req.body.escolhaTrançaServer;
-    var horario = req.body.horarioServer;
     var fkUsuario = req.body.fkusarioServer;
 
     if (idAgendamento == undefined) {
@@ -122,13 +121,12 @@ function cadastrarAgendamento(req, res){
         res.status(400).send("Sua observação está undefined!");
     } else if (escolha_tranca == undefined) {
         res.status(400).send("Sua escolha está undefined!");
-    } else if (horario == undefined) {
-        res.status(400).send("Seu Horario está undefined!");
+
     } else if (fkUsuario == undefined) {
         res.status(400).send("Sua fkUsuario está undefined!");
     } else {
 
-        usuarioModel.cadastrarAgendamento(idAgendamento,observacao, escolha_tranca, horario, fkUsuario)
+        usuarioModel.cadastrarAgendamento(idAgendamento,observacao, escolha_tranca, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);

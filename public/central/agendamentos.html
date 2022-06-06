@@ -14,7 +14,7 @@
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao()" >
+<body onload="validarSessao(), carregarHorario()" >
 
 <div class="banner">
     <div class="header">
@@ -52,8 +52,10 @@
                     <h3> Observação :</h3>
                     <input type="text" id="observacao_agendamento">
                     <h3> Dia e Hora: </h3>
-                    <select onclick=" carregarHorario()" class="form-select" id="dia_hora_agendamento" > 
-                        <option value="0">  </option>
+                    <select onclick="carregarHorario()" class="form-select" id="dia_hora_agendamento" > 
+                        <option value="0">escolha um horario  </option>
+                        
+
             
                     </select>
             
@@ -64,11 +66,11 @@
                         <h3> Escolha uma Trança: </h3>
                         <select id="select_tranca" onchange="selecionar()">
                             <option value="0"> </option>
-                            <option value="1"> Trança Lateral </option>
-                            <option value="2"> Trança Frontal </option>
-                            <option value="3"> Trança Cabelo Todo </option>
-                            <option value="4"> Trança Nagô com jumbo </option>
-                            <option value="5"> Trança Boxeadora </option>
+                            <option value="Trança Lateral"> Trança Lateral </option>
+                            <option value="Trança Frontal"> Trança Frontal </option>
+                            <option value="Trança Cabelo Todo"> Trança Cabelo Todo </option>
+                            <option value="Trança Nagô com jumbo"> Trança Nagô com jumbo </option>
+                            <option value="Trança Boxeadora"> Trança Boxeadora </option>
                         </select>
                        
                     </label>
