@@ -78,10 +78,9 @@
 </body>
 <script>
         function atualizarAgendamentos() {
-        var idUsuario = sessionStorage.ID_USUARIO;
-
+            
             //aguardar();
-            fetch(`/avisos/listar/:${idUsuario}`).then(function (resposta) {
+            fetch(`/avisos/listar/${sessionStorage.ID_USUARIO}`).then(function (resposta) {
                 if (resposta.ok) {
                     if (resposta.status == 204) {
                         var feed = document.getElementById("feed_container");
@@ -90,6 +89,7 @@
                         feed.appendChild(mensagem);
                         throw "Nenhum resultado encontrado!!";
                     }
+                    // var idUsuario = sessionStorage.ID_USUARIO;
                     resposta.json().then(function (resposta) {
                         console.log("Agendamentos recebidos: ", JSON.stringify(resposta));
                         var feed = document.getElementById("feed_container");
@@ -112,8 +112,8 @@
                         spanID.innerHTML = "Registro do Agendamento: <b>" + agendamento.idagendamento + "</b> <br>"; 
                         spanobservacao.innerHTML = "Observação: <b>" + agendamento.observacao + "</b> <br>";
                         spanescolha_tranca.innerHTML = "Escolha Trança: <b>" + agendamento.escolha_tranca+ "</b> <br>";
-                        spanhorario.innerHTML = "Horario: <b>" + agendamento.horario+ "</b> <br>";
-                        spannome.innerHTML = "Nome do Usuario: <b>" + agendamento.FKusuario + "</b> <br> <br>";
+                        spanhorario.innerHTML = "Horario: <b>" + agendamento.horarios+ "</b> <br>";
+                        spannome.innerHTML = "Nome do Usuario: <b>" + sessionStorage.NOME_USUARIO + "</b> <br> <br>";
                      
 
                         divagendamento.className = "agendamento";

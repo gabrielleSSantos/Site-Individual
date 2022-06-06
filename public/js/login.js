@@ -75,6 +75,7 @@ function entrar() {
 
 
 function validarSessao() {
+  console.log("teste validar seção")
     aguardar();
     var idUsuario = sessionStorage.ID_USUARIO ;
     var login = sessionStorage.LOGIN_USUARIO;

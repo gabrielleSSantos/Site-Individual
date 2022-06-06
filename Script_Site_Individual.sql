@@ -25,16 +25,22 @@ CREATE TABLE Agendamento(
  (NULL, 'gabrielle teste', 'gabrielle@gmail', 'gabi');
  
  INSERT INTO Agendamento(horario) VALUES
- ('2022-06-03 10:00'),
- ('2022-06-03 13:00'),
- ('2022-06-04 10:00'),
- ('2022-06-04 13:00')
+ ('2022-06-11 10:00'),
+ ('2022-06-11 13:00'),
+ ('2022-06-12 10:00'),
+ ('2022-06-12 13:00')
  ;
- 
+
+
  SELECT * FROM AGENDAMENTO;
+ SELECT * FROM USUARIO;
  
- SELECT date_format(horario, '%d-%m-%y %H:%i:%s') as horarios FROM AGENDAMENTO WHERE FKUSUARIO IS NULL;
  
+ SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
+ 
+  SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO WHERE idusuario = 1;
+
+
 
  UPDATE AGENDAMENTO SET observacao = 'alalal' , escolha_tranca = 'topo' , fkusuario = 1 
  WHERE IDAGENDAMENTO = (SELECT IDAGENDAMENTO FROM(SELECT IDAGENDAMENTO FROM AGENDAMENTO 

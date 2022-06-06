@@ -8,18 +8,26 @@
     var idAgendamento = 0;
 
 
-    if (horarioVar == "2022-06-24 10:00") {
+    // DIA 09-06
+    if (horarioVar == "2022-06-09 10:00") {
       idAgendamento = 1;
-    }else if(horarioVar == "2022-06-24 12:00"){
+    }else if(horarioVar == "2022-06-09 13:00"){
       idAgendamento = 2;
-    }else if(horarioVar == "2022-06-24 14:00"){
+    // DIA 10-06
+    }else if(horarioVar == "2022-06-10 10:00"){
       idAgendamento = 3;
-    }else if(horarioVar == "2022-06-25 10:00"){
+    }else if(horarioVar == "2022-06-10 13:00"){
       idAgendamento = 4;
-    }else if(horarioVar == "2022-06-25 12:00"){
+    // DIA 11-06
+    }else if(horarioVar == "2022-06-11 10:00"){
       idAgendamento = 5;
-    }else{
+    }else if(horarioVar == "2022-06-11 13:00"){
       idAgendamento = 6;
+    // DIA 12-06
+    }else if(horarioVar == "2022-06-11 10:00"){
+      idAgendamento = 7;
+    }else {
+      idAgendamento = 8;
     }
 
     if (escolha_trancaVar == 0 || horarioVar == 0) {
@@ -58,3 +66,49 @@
     });
 }
 }
+function carregarHorario(){
+  console.log("teste carregar horario")
+  
+  fetch(`/avisos/listarHorario/${sessionStorage.HORARIO_AGENDAMENTO}`)
+
+  .then(function (resposta) {
+    if (resposta.ok) {
+      if (resposta.status == 204) {
+        var select = document.getElementById("dia_hora_agendamento");
+        var mensagem = document.createElement("span");
+        mensagem.innerHTML = "-";
+        mensagem.value = "0";
+        select.appendChild(mensagem);
+        throw "Nenhum horario Disponivel";
+      }
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var select = document.getElementById("dia_hora_agendamento");
+          select.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var horario = resposta[i];
+
+            // criando elementos do HTML via JavaScript
+            var optionHorario = document.createElement("option");
+
+            // colocando valores do select no innerHTML
+            optionHorario.innerHTML = horario.horarios;
+            optionHorario.value = horario.idagendamento;
+
+            // adicionando todos à um elemento pai pré-existente
+            select.appendChild(optionHorario);
+          }
+
+          finalizarAguardar();
+        });
+      } else {
+        throw "Houve um erro na API!";
+      }
+    })
+    .catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
+}
+

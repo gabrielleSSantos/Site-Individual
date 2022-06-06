@@ -5,10 +5,21 @@ function listar(idUsuario) {
     
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO WHERE idusuario = ${idUsuario};
+    SELECT date_format (horario, '%d-%m às %Hh%i') as horarios FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO WHERE idusuario = '${idUsuario}';
     `; 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
+}
+
+function listarHorario(horario) {
+    console.log(horario)
+  console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarHorario()");
+  var instrucao = `
+  SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
+ 
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucao);
+  return database.executar(instrucao);
 }
 
 function pesquisarDescricao(texto) {
@@ -71,6 +82,7 @@ function deletar(idAviso) {
 module.exports = {
     listar,
     listarPorUsuario,
+    listarHorario,
     pesquisarDescricao,
     publicar,
     editar,

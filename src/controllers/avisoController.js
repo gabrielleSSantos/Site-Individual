@@ -6,12 +6,10 @@ function testar(req, res) {
 }
 
   
-
 // api do rover
 function listar(req, res) { 
     var idUsuario = req.params.idUsuario;
-   
-    avisoModel.listar(idUsuario).then(function (resultado) {
+       avisoModel.listar(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -47,6 +45,26 @@ function listarPorUsuario(req, res) {
             }
         );
 }
+
+function listarHorario(req, res) {
+
+  var horario = req.params.horario;
+  avisoModel
+    .listarHorario(horario)
+    .then(function (resultado) {
+      if (resultado.length > 0) {
+        res.status(200).json(resultado);
+      } else {
+        res.status(204).send("Nenhum resultado encontrado!");
+      }
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar o horario: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+
 
 function pesquisarDescricao(req, res) {
     var descricao = req.params.descricao;
@@ -139,6 +157,7 @@ module.exports = {
     testar,
     listar,
     listarPorUsuario,
+    listarHorario,
     pesquisarDescricao,
     publicar,
     editar,
