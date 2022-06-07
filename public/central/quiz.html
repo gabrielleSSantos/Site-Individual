@@ -57,16 +57,10 @@
             <div id="fase1" class="fase">
                 <h2> Qual Trança Você Prefere ?</h2>
                 <div id="fotosFase">
-                        <img src="../IMAGENS/Trança-slider-7.jpg">    
-                        <img src="../IMAGENS/Trança-slider-12.jpg">    
-                  </div>  
-    
-                    <select id="select_fase1">
-                        <option value="1"> Trança Boxeadora </option>
-                        <option value="2"> Trança Boxeadora com Jumbo</option>
-                    </select>
-                  <button onclick="registrar()" class="btn"> Registrar </button>
-       </div>
+                 <img src="../IMAGENS/Trança-slider-7.jpg" onclick="escolher()" >    
+                 <img src="../IMAGENS/Trança-slider-12.jpg" onclick="escolher()">    
+                </div>  
+            </div>
 
             <!-- SEGUNDA PARTE  -->
             <div id="fase2" class="fase">
@@ -75,11 +69,6 @@
                   <img src="../IMAGENS/Trança-slider-10.jpg">    
                    <img src="../IMAGENS/Trança-slider-1.jpg">    
              </div>  
-             <select id="select_fase2">
-                 <option value="1"> Trança Lateral </option>
-                 <option value="2"> Trança Frontal </option>
-                 <button onclick="registrar()" class="btn"> Registrar </button>
-                 </select> 
             </div>
 
             <!-- terceira PARTE -->
@@ -89,11 +78,7 @@
                   <img src="../IMAGENS/Trança-slider-11.jpg">    
                    <img src="../IMAGENS/Trança-slider-9.jpg">    
              </div>  
-                 <select id="select_fase3">
-                     <option value="1"> Trança com acessorios </option>
-                     <option value="2"> Trança sem acessorios</option>
-                    </select>
-                    <button onclick="registrar()" class="btn"> Registrar </button>
+
             </div>
 
         </div>
@@ -107,51 +92,15 @@
     let lista = []
     function descobrir() {
 
-        var escolhaOpcaoA = select_fase1.value
-        var escolhaOpcaoB = select_fase2.value
-        var escolhaOpcaoC = select_fase3.value
+        comeco.style.display = "none"
 
-
-        quiz.innerHTML = `<div id="comeco" style= "display: none;"> </div> 
-        <div id="fase1" style= "display: flex;"> estou aqui </div> `
-
-        // for(var contador = 0; contador <= lista.length; contador++){
-
-        if(escolhaOpcaoA == "" ){
-            console.log("FASE 1")
-        } else{
-        quiz.innerHTML = ` 
-        <button onclick="registrar()" class="btn"> Registrar </button>
-        <div id="fase1" style= "display: none;"> </div> 
-        <div id="fase2" style= "display: flex;"> fase 2 </div> 
-        
-        `
-       }
-
-       if(escolhaOpcaoB == ""){
-        console.log("FASE 2")
-
-       } else{
-        quiz.innerHTML = ` 
-        <button onclick="registrar()" class="btn"> Registrar </button>
-        <div id="fase2" style= "display: none;"> </div> 
-        <div id="fase3" style= "display: flex;"> fase 3 </div> 
-        `
-       }
-
-       
-       if(escolhaOpcaoC == ""){
-        console.log("FASE 3")
-        
-       } else{
-        quiz.innerHTML = `
-        <button onclick="registrar()" class="btn"> Registrar </button>
-        <div id="fase3" style= "display: none;"> </div> 
-        <div id="fase4" style= "display: flex;"> RESULTADO </div> 
-        `
-       }
-
-        // }
+        fase1.style.display = "flex"
     }
 
+    function escolher(){
+        lista = []
+
+
+        // lista.push()
+    }
 </script>

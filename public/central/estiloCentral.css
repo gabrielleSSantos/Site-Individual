@@ -360,14 +360,15 @@ nav a {
 .grafico .dados_metricas_usuarios{
 	height: 40vh;
 	width: 25vw;
-	box-shadow: 0 0 0.5em rgb(233, 14, 116);
+	box-shadow: 0 0 1em black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 4vh;
 	flex-direction: column;
 	border-radius: 5vh;
-	/* padding-left: 2vh; */
+	background-color: rgb(233, 14, 116);
+	color: white;
 }
 
 /* quizzzzzzz */
