@@ -40,5 +40,9 @@ SELECT * FROM AGENDAMENTO;
  SELECT * FROM USUARIO;
 SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
 SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO;
-SELECT count(idusuario) from usuario WHERE GENERO = 'MAS';
-select count(idusuario) from usuario;
+
+SELECT count(idusuario) as 'QuantidadeUsuarios'  from usuario ;
+
+SELECT count(idusuario) AS 'Generos' from usuario WHERE GENERO = 'MAS'
+union 
+SELECT count(idusuario) AS 'Generos' from usuario WHERE GENERO = 'FEM';
