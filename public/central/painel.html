@@ -15,164 +15,87 @@
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao(), ObtergeneroF(sessionStorage.GENERO_USUARIO,()=> 
-    ObtergeneroM(sessionStorage.GENERO_USUARIO, setTimeout(atualizarGraficoGenero, 600)))">
-<div class="banner">
-    <div class="header">
-        <input type="checkbox" id="check">
-        <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
-        <div class="barra">
-            <nav>
-                <div class="hello">
-                    <h1>Olá, <span id="b_usuario"> </span>!</h1>
-                </div>
-                <a href="agendamentos.html">
-                    <div class="link">Agendamentos</div>
-                </a>
-                <a href="perfil.html">
-                    <div class="link">Perfil</div>
-                </a>
-                <a href="painel.html" id="agora">
-                    <div class="link"> Metricas </div>
-                </a>
-                <a href="quiz.html">
-                    <div class="link"> Quiz</div>
-                </a>
-                <a href="../index.html">
-                    <div class="link">Sair</div>
-                </a>
-            </nav>
+<body onload="validarSessao(), listarMetricas()">
+    <div class="banner">
+        <div class="header">
+            <input type="checkbox" id="check">
+            <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
+            <div class="barra">
+                <nav>
+                    <div class="hello">
+                        <h1>Olá, <span id="b_usuario"> </span>!</h1>
+                    </div>
+                    <a href="agendamentos.html">
+                        <div class="link">Agendamentos</div>
+                    </a>
+                    <a href="perfil.html">
+                        <div class="link">Perfil</div>
+                    </a>
+                    <a href="painel.html" id="agora">
+                        <div class="link"> Metricas </div>
+                    </a>
+                    <a href="quiz.html">
+                        <div class="link"> Quiz</div>
+                    </a>
+                    <a href="../index.html">
+                        <div class="link">Sair</div>
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="painel">
+                <h1> Metricas </h1>
+
+                <div class="grafico">
+                    <div class="dados_metricas">
+                        <h2> Gêneros dos Usuarios: </h2>
+                        <div id="Genero">
+
+                        </div>
+                    </div>
+                </div><!--  FECHOU A DIV GRAFICO -->
+            </div>
+
         </div>
     </div>
-    <div class="container" style="display: flex; justify-content: center; align-items: center;">
-        <div class="painel">
-            <h1> Metricas </h1>
-
-            <div class="grafico">
-                <div class="sub_grafico">
-                    <h2> Quantidade de Usuarios por Gênero </h2>
-                    <canvas id="myChart"> </canvas>
-                </div>
-                <div class="dados_metricas">
-                    <h2> Dados: </h2>
-
-                </div>
-            </div><!--  FECHOU A DIV GRAFICO -->
-        </div>
+    </div>
 
     </div>
-</div>
-</div>
-
-</div>
 </body>
-<script>
-
-    //  Primeiro Grafico
-    const labels = [
-        'Feminino',
-        'Masculino'
-    ];
-
-
-
-    const data = {
-        labels: labels,
-
-        datasets: [{
-
-            label: 'Gênero',
-            backgroundColor: [
-                '#e57d90',
-                '#add8e6'
-            ],
-            borderColor: 'black ',
-            hoverOffset: 20,
-            hoverBorderColor: 'black',
-            hoverBorderWidth: 3,
-            data: []
-        }]
-    };
-
-
-    const config = {
-
-
-        type: 'pie',
-        data: data,
-        options: {
-            scales: {
-                x: {
-                    grid: {
-                        offset: true
-                    }
-                }
-            }
-        }
-    };
-</script>
-
-<script>
-    // GRAFICO 1
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-</script>
 
 </html>
-
+<!-- <script src="painel.js"></script> -->
 <script>
-    var generoF = 0;
-    var generoM = 0;
+    function listarMetricas() {
+        //aguardar();
+        console.log("CHEGUEI AQUI ")
+        fetch("/avisos/listarMetricas")
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    if (resposta.status == 204) {
+                        console.log("NENHUM USUARIO CADASTRADO");
+                    }
 
+                    resposta.json().then(function (resposta) {
+                        console.log(resposta[0]);
 
-    function ObtergeneroF(generoF, _callback) {
+                        var tableGenero = resposta[0];
 
-        fetch(`/medidas/genero/${sessionStorage.GENERO_USUARIO}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    console.log(`1`);
-                    litroPerdido0 = resposta[0].contagem;
-                    _callback();
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                _callback();
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                        // criando e manipulando elementos do HTML via JavaScrip 
+
+                        Genero.innerHTML = tableGenero.genero;
+
+                        //   finalizarAguardar();
+                    });
+                } else {
+                    throw "Houve um erro na API!";
+                }
+            })
+            .catch(function (resposta) {
+                console.error(resposta);
+                //   finalizarAguardar();
             });
-
-    }
-
-    function ObtergeneroM(generoM, _callback) {
-
-        fetch(`/medidas/genero/${sessionStorage.GENERO_USUARIO}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    console.log(`1`);
-                    litroPerdido0 = resposta[0].contagem;
-                    _callback();
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                _callback();
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-
-    }
-
-    function atualizarGraficoGenero(){
-        data.datasets[0].data.push(generoF);
-        data.datasets[0].data.push(generoM);
-        myChart.update();
     }
 
 </script>
