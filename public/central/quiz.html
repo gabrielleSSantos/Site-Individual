@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../central/estiloCentral.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title> Quiz </title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
+    </style>
+    <script src="../js/funcoes.js"></script>
+</head>
+
+<body onload="validarSessao(), atualizarFeed()"></body>
+<div class="banner">
+    <div class="header">
+        <input type="checkbox" id="check">
+        <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
+        <div class="barra">
+            <nav>
+                <div class="hello">
+                    <h1>Olá, <span id="b_usuario"> </span>!</h1>
+                </div>
+                <a href="agendamentos.html">
+                    <div class="link">Agendamentos</div>
+                </a>
+                <a href="perfil.html">
+                    <div class="link">Perfil</div>
+                </a>
+                <a href="painel.html">
+                    <div class="link"> Metricas </div>
+                </a>
+                <a href="quiz.html" id="agora">
+                    <div class="link"> Quiz</div>
+                </a>
+                <a href="../index.html">
+                    <div class="link">Sair</div>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="display: flex; justify-content: center; align-items: center">
+        <div class="painel" id="quiz">
+
+            <div id="comeco">
+                <h1> Quiz </h1>
+                <h2> Descubra Qual Trança é Ideal para Você Hoje!! </h2>
+                <button onclick="descobrir()" class="btn"> Descobrir </button>
+
+            </div>
+
+            <!-- PRIMEIRA PARTE -->
+            <div id="fase1" class="fase">
+                <h2> Qual Trança Você Prefere ?</h2>
+                <div id="fotosFase">
+                        <img src="../IMAGENS/Trança-slider-7.jpg">    
+                        <img src="../IMAGENS/Trança-slider-12.jpg">    
+                  </div>  
+    
+                    <select id="select_fase1">
+                        <option value="1"> Trança Boxeadora </option>
+                        <option value="2"> Trança Boxeadora com Jumbo</option>
+                    </select>
+                  <button onclick="registrar()" class="btn"> Registrar </button>
+       </div>
+
+            <!-- SEGUNDA PARTE  -->
+            <div id="fase2" class="fase">
+            <h2> Qual Trança Você Prefere ?</h2>
+             <div id="fotosFase">
+                  <img src="../IMAGENS/Trança-slider-10.jpg">    
+                   <img src="../IMAGENS/Trança-slider-1.jpg">    
+             </div>  
+             <select id="select_fase2">
+                 <option value="1"> Trança Lateral </option>
+                 <option value="2"> Trança Frontal </option>
+                 <button onclick="registrar()" class="btn"> Registrar </button>
+                 </select> 
+            </div>
+
+            <!-- terceira PARTE -->
+            <div id="fase3" class="fase">
+                 <h2> Qual Trança Você Prefere ?</h2>
+                 <div id="fotosFase">
+                  <img src="../IMAGENS/Trança-slider-11.jpg">    
+                   <img src="../IMAGENS/Trança-slider-9.jpg">    
+             </div>  
+                 <select id="select_fase3">
+                     <option value="1"> Trança com acessorios </option>
+                     <option value="2"> Trança sem acessorios</option>
+                    </select>
+                    <button onclick="registrar()" class="btn"> Registrar </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</body>
+<script>
+    let lista = []
+    function descobrir() {
+
+        var escolhaOpcaoA = select_fase1.value
+        var escolhaOpcaoB = select_fase2.value
+        var escolhaOpcaoC = select_fase3.value
+
+
+        quiz.innerHTML = `<div id="comeco" style= "display: none;"> </div> 
+        <div id="fase1" style= "display: flex;"> estou aqui </div> `
+
+        // for(var contador = 0; contador <= lista.length; contador++){
+
+        if(escolhaOpcaoA == "" ){
+            console.log("FASE 1")
+        } else{
+        quiz.innerHTML = ` 
+        <button onclick="registrar()" class="btn"> Registrar </button>
+        <div id="fase1" style= "display: none;"> </div> 
+        <div id="fase2" style= "display: flex;"> fase 2 </div> 
+        
+        `
+       }
+
+       if(escolhaOpcaoB == ""){
+        console.log("FASE 2")
+
+       } else{
+        quiz.innerHTML = ` 
+        <button onclick="registrar()" class="btn"> Registrar </button>
+        <div id="fase2" style= "display: none;"> </div> 
+        <div id="fase3" style= "display: flex;"> fase 3 </div> 
+        `
+       }
+
+       
+       if(escolhaOpcaoC == ""){
+        console.log("FASE 3")
+        
+       } else{
+        quiz.innerHTML = `
+        <button onclick="registrar()" class="btn"> Registrar </button>
+        <div id="fase3" style= "display: none;"> </div> 
+        <div id="fase4" style= "display: flex;"> RESULTADO </div> 
+        `
+       }
+
+        // }
+    }
+
+</script>

@@ -50,27 +50,45 @@ function verificar() {
         if(escolha_trancaVar == "Trança Lateral"){
             frase.innerHTML = `Você escolheu Trança Lateral, Arrasou!! <br>
             <img src="../IMAGENS/Trança-slider-10.jpg">
+            R$ 20,00 
             `    
         } else if(escolha_trancaVar == "Trança Frontal"){
             frase.innerHTML = `Você escolheu Trança Frontal, Vai ficar uma Princesa(o)!!  <br>
-            <img src="../IMAGENS/Trança-slider-1.jpg">
+            <img src="../IMAGENS/Trança-slider-1.jpg"> 
+            R$ 25,00 
             `
         }
         else if(escolha_trancaVar == "Trança Cabelo Todo"){
             frase.innerHTML = `Você escolheu Trança Cabelo Todo, otima escolha!!  <br>
             <img src="../IMAGENS/trança-slider-11.jpg"> 
+            R$ 35,00 
             `
         }
         else if(escolha_trancaVar == "Trança Nagô com jumbo"){
             frase.innerHTML = `Você escolheu Trança Nago com Jumbo , Se prepara que ai vem mudança!!  <br>
             <img src="../IMAGENS/trança-slider-12.jpg">   
+            R$ 50,00 
             `
         }
-        else if(escolha_trancaVar == 5){
+        else if(escolha_trancaVar == "Trança Boxeadora"){
             frase.innerHTML = `Você escolheu Trança Boxeadora, Pronta pro combate!!  <br>
             <img src="../IMAGENS/trança-slider-7.jpg">
+            R$ 35,00 
             `
         }
+        else if(escolha_trancaVar == "Trança Masculina"){
+            frase.innerHTML = `Trança Masculina é Tendencia!! <br>
+            <img src="../IMAGENS/trança-slider-5.jpg">
+            R$ 40,00 
+            `
+        }
+        else if(escolha_trancaVar == "Trança Masculina com Jumbo"){
+            frase.innerHTML = `Trança Masculina é Tendencia!! <br>
+            <img src="../IMAGENS/trança-slider-9.jpg">
+            R$ 50,00 
+            `
+        }
+
         else if(escolha_trancaVar == 0){
             frase.innerHTML = `Escolha uma opção valida`
         }

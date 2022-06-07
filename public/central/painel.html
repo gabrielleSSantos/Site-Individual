@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../central/estiloCentral.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title> Painel de Noticias </title>
+    <title> Metricas </title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
     </style> 
@@ -32,7 +32,10 @@
                     <div class="link">Perfil</div>
                 </a>
                 <a href="painel.html" id="agora">
-                    <div class="link">Dashboards</div>
+                    <div class="link"> Metricas </div>
+                </a>
+                <a href="quiz.html">
+                    <div class="link"> Quiz</div>
                 </a>
                 <a href="../index.html">
                     <div class="link">Sair</div>
@@ -42,22 +45,17 @@
     </div>
         <div class="container" style="display: flex; justify-content: center; align-items: center;">
             <div class="painel">
-                <h1> Dashboards</h1>
+                <h1> Metricas </h1>
              
                     <div class="grafico"> 
                     <div class="sub_grafico">
-                        <h2> Tranças Tendencias no Mês </h2>
+                        <h2> Quantidade de Usuarios por Gênero </h2>
                         <canvas id="myChart"> </canvas>
                     </div>
-        
-
-                    <!-- <div class="metricas">
-                        <div class="card_metricasI"> Grave  </div>
-                        <div class="card_metricasI">  Importante </div>
-                        <div class="card_metricasI">  Ideal </div>
-                        <div class="card_metricasI">  Importante </div>
-                        <div class="card_metricasI">  Grave </div>
-                    </div> -->
+                    <div class="dados_metricas">
+                        <h2> Dados: </h2>
+                      
+                    </div>
                 </div><!--  FECHOU A DIV GRAFICO -->
             </div>
             
@@ -71,11 +69,8 @@
 
     //  Primeiro Grafico
     const labels = [
-        'Trança Lateral',
-        'Trança Frontal',
-        'Trança Cabelo Todo',
-        'Trança Nagô com jumbo',
-        'Trança Boxeadora'
+        'Feminino',
+        'Masculino'
     ];
 
 
@@ -85,15 +80,16 @@
 
         datasets: [{
 
-            label: 'Quantidade dessa Tranças no mês',
+            label: 'Gênero',
             backgroundColor: [
-                '#f1889b',
+                '#e57d90',
+                '#add8e6'
             ],
-            borderColor: '#3a3383 ',
-            borderRadius: 10,
+            borderColor: 'black ',
+            hoverOffset: 20,
             hoverBorderColor: 'black',
             hoverBorderWidth: 3,
-            data: [1,2,3,5,5],
+            data: [5,3]
         }]
     };
 
@@ -101,7 +97,7 @@
     const config = {
 
 
-        type: 'bar',
+        type: 'pie',
         data: data,
         options: {
             scales: {
@@ -113,54 +109,6 @@
             }
         }
     };
-
-// SEGUNFO GRAFICO 
-const labels2 = [
-        'Abril',
-        'Maio',
-        'Junho',
-        'Julho'
-    ];
-
-
-
-    const data2 = {
-        labels: labels2,
-
-        datasets: [{
-
-            label: 'Quantidade',
-            backgroundColor: [
-                '#e57d90',
-                '#f1889b',
-                '#f99aaa',
-                '#fdb4bf',
-            ],
-            borderColor: 'black ',
-            hoverOffset: 20,
-            hoverBorderColor: 'black',
-            hoverBorderWidth: 3,
-            data: [10,17,25 , 8],
-        }]
-    };
-
-
-    const config2 = {
-
-
-        type: 'pie',
-        data: data2,
-        options: {
-            scales: {
-                x: {
-                    grid: {
-                        offset: true
-                    }
-                }
-            }
-        }
-    };
-
 </script>
 
 <script>
@@ -169,10 +117,5 @@ const labels2 = [
         document.getElementById('myChart'),
         config
     );
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
-
 </script>
 </html>

@@ -1,4 +1,4 @@
- // VALIDAÇOES NO AGENDAMENTOS
+ // VALIDAÇOES NO AGENDAMENTOS E CADASTRO 
  function cadastrarAgendamento(req, res){
 
     var idAgendamento = document.getElementById("dia_hora_agendamento").value
@@ -41,6 +41,8 @@
     });
 }
 }
+
+// codigo RElACIONADO AO SELECT DO AGENDAMENTO DE HORARIO
 function carregarHorario(){
   console.log("teste carregar horario")
   console.log(document.getElementById("dia_hora_agendamento").value)
@@ -75,7 +77,9 @@ function carregarHorario(){
             // adicionando todos à um elemento pai pré-existente
             select.appendChild(optionHorario);
           }
-
+          
+  
+        
           // finalizarAguardar();
         });
       } else {
@@ -87,4 +91,73 @@ function carregarHorario(){
       finalizarAguardar();
     });
 }
+
+// CODIGO RELACIONADO AO ATUALIZAR OS AGENDAMENTOS NA PAGINA DE PERFIL
+function atualizarAgendamentos() {
+            
+  //aguardar();
+  fetch(`/avisos/listar/${sessionStorage.ID_USUARIO}`).then(function (resposta) {
+      if (resposta.ok) {
+          if (resposta.status == 204) {
+              var feed = document.getElementById("feed_container");
+              var mensagem = document.createElement("span");
+              mensagem.innerHTML = "Nenhum agendamento encontrado."
+              feed.appendChild(mensagem);
+              throw "Nenhum resultado encontrado!!";
+          }
+          // var idUsuario = sessionStorage.ID_USUARIO;
+          resposta.json().then(function (resposta) {
+              console.log("Agendamentos recebidos: ", JSON.stringify(resposta));
+              var feed = document.getElementById("feed_container");
+              feed.innerHTML = "";
+              for (let i = 0; i < resposta.length; i++) {
+                  var agendamento = resposta[i];
+                  console.log(agendamento)
+                  
+          
+                  // criando e manipulando elementos do HTML via JavaScript
+              var divagendamento = document.createElement("div");
+
+              var spanID = document.createElement("span");
+              var spanobservacao = document.createElement("span");
+              var spanescolha_tranca = document.createElement("span");
+              var spanhorario = document.createElement("span");
+              var spannome = document.createElement("span");
+
+
+
+              spanID.innerHTML = "Registro do Agendamento: <b>" + agendamento.idagendamento + "</b> <br>"; 
+              spanobservacao.innerHTML = "Observação: <b>" + agendamento.observacao + "</b> <br>";
+              spanescolha_tranca.innerHTML = "Escolha Trança: <b>" + agendamento.escolha_tranca+ "</b> <br>";
+              spanhorario.innerHTML = "Horario: <b>" + agendamento.horarios+ "</b> <br>";
+              spannome.innerHTML = "Nome do Usuario: <b>" + sessionStorage.NOME_USUARIO + "</b> <br> <br>";
+           
+
+              divagendamento.className = "agendamento";
+              spanID.id = "inputNumero" + agendamento.idagendamento;
+              spanobservacao.className = "agendamento-observacao";
+              spanhorario.className = "agendamento-horario";
+              spannome.className = "agendamento-nome";
+         
+
+              divagendamento.appendChild(spanID);
+              divagendamento.appendChild(spanobservacao);
+              divagendamento.appendChild(spanescolha_tranca);
+              divagendamento.appendChild(spanhorario);
+              divagendamento.appendChild(spannome);
+          
+              feed.appendChild(divagendamento);
+          }
+
+          // finalizarAguardar();
+      });
+  } else {
+      throw ('Houve um erro na API!');
+  }
+}).catch(function (resposta) {
+  console.error(resposta);
+  finalizarAguardar();
+});
+}
+
 

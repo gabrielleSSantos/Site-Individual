@@ -1,90 +1,36 @@
-// javascript 
-// function carregarHorario(){
-//      sessionStorage.HORARIO_AGENDAMENTO = json.horario;
-//      sessionStorage.ID_AGENDAMENTO = json.idAgendamento;
 
- 
+        //     var opcaoA = select_fase1.value;
 
-//   fetch(`/avisos/listarHorario/${sessionStorage.HORARIO_AGENDAMENTO}`)
-//   .then(function (resposta) {
-//     if (resposta.ok) {
-//       if (resposta.status == 204) {
-//         var select = document.getElementById("dia_hora_agendamento");
-//         var mensagem = document.createElement("span");
-//         mensagem.innerHTML = "-";
-//         mensagem.value = "0";
-//         select.appendChild(mensagem);
-//         throw "Nenhum horario Disponivel";
-//       }
-//         resposta.json().then(function (resposta) {
-//           console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-//           var select = document.getElementById("dia_hora_agendamento");
-//           select.innerHTML = "";
-//           for (let i = 0; i < resposta.length; i++) {
-//             var horario = resposta[i];
-
-//             // criando elementos do HTML via JavaScript
-//             var optionHorario = document.createElement("option");
-
-//             // colocando valores do select no innerHTML
-//             optionHorario.innerHTML = horario.horario;
-//             optionHorario.value = horario.idagendamento;
-
-//             // adicionando todos à um elemento pai pré-existente
-//             select.appendChild(optionHorario);
-//           }
-
-//           finalizarAguardar();
-//         });
-//       } else {
-//         throw "Houve um erro na API!";
-//       }
-//     })
-//     .catch(function (resposta) {
-//       console.error(resposta);
-//       finalizarAguardar();
-//     });
-// }
+        // for(var contador = 0; contador <= lista.length ; contador++){
 
 
+        //     if(opcaoA == ""){
+        //       console.log("AINDA FASE 1")
+        //     }else{
+        //         lista += opcaoA
+        //         fase.innerHTML = `<div style= "display: none;"> </div>`
+        //     }
 
-// SELECT DO HORARIO  -- CONTROLLER
-// function listarHorario(req, res) {
-
-//   var horario = req.params.horario;
-//   avisoModel
-//     .listarHorario(horario)
-//     .then(function (resultado) {
-//       if (resultado.length > 0) {
-//         res.status(200).json(resultado);
-//       } else {
-//         res.status(204).send("Nenhum resultado encontrado!");
-//       }
-//     })
-//     .catch(function (erro) {
-//       console.log(erro);
-//       console.log("Houve um erro ao buscar o horario: ", erro.sqlMessage);
-//       res.status(500).json(erro.sqlMessage);
-//     });
-// }
-
-
-
-// ROUTE
-// router.get("/listarHorario/:horario", function (req, res) {
-  //     avisoController.listarHorario(req, res);
-  // });
-  
-  // model
-// function listarHorario(horario) {
-//   console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarHorario()");
-//   var instrucao = `
-//   SELECT date_format(${horario}, '%d-%m-%y %H:%i:%s') as horarios FROM AGENDAMENTO WHERE ${fkUsuario} IS NULL;
-//   `;
-//   console.log("Executando a instrução SQL: \n" + instrucao);
-//   return database.executar(instrucao);
-// }
-
-
-
+        // }
+        
+        // <h2> Qual Trança Você Prefere ?</h2>
+        //         <div id="fotosFase">
+        //              <img src="../IMAGENS/Trança-slider-10.jpg">    
+        //               <img src="../IMAGENS/Trança-slider-1.jpg">    
+        //         </div>  
+        //         <select id="select_fase2">
+        //             <option value="1"> Trança Lateral </option>
+        //             <option value="2"> Trança Frontal </option>
+        //             </select> 
+                    
+        //             <h2> Qual Trança Você Prefere ?</h2>
+        //             <div id="fotosFase">
+        //              <img src="../IMAGENS/Trança-slider-11.jpg">    
+        //               <img src="../IMAGENS/Trança-slider-9.jpg">    
+        //         </div>  
+        //             <select id="select_fase1">
+        //                 <option value="1"> Trança com acessorios </option>
+        //                 <option value="2"> Trança sem acessorios</option>
+        //                 </select>
+        //                 <button onclick="registrar()" class="btn"> Registrar </button>
+        //      </div>

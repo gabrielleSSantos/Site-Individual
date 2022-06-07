@@ -15,6 +15,7 @@ body {
 	/* border: 1px solid rgba(0, 6, 12, 0.808); */
 	flex-direction: row;
 }
+
 .btn {
 	height: 10vh;
 	width: 15vw;
@@ -23,12 +24,12 @@ body {
 	font-size: 20px;
 	cursor: pointer;
 	color: white;
-  }
-  
-  .btn a {
+}
+
+.btn a {
 	text-decoration: none;
 	color: white;
-  }
+}
 
 
 /* HEADER */
@@ -60,8 +61,8 @@ body {
 nav {
 	width: 100%;
 	position: absolute;
-	top: 60px;
-	height: 80%;
+	top: 30vh;
+	height: 40%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -69,7 +70,7 @@ nav {
 
 nav a {
 	text-decoration: none;
-	margin-top: 10vh;
+	margin-top: 8vh;
 	/* border-radius: 10px; */
 }
 
@@ -119,34 +120,38 @@ nav a {
 	background-color: pink;
 }
 
-.card .formulario{
+.card .formulario {
 	width: 65vw;
 	height: 90vh;
 	display: flex;
 	margin-right: 20px;
 	flex-direction: row;
 	justify-content: space-around;
-	align-items:center;
+	align-items: center;
 	font-size: 4vh;
 	border-radius: 8vh;
 	background-color: white;
 	box-shadow: 0 0 1em black;
 
 }
-.card .formulario input{
+
+.card .formulario input {
 	border: 2px solid black;
 	width: 23vw;
 	border-radius: 2vh;
 	height: 5vh;
 	/* margin-left: 20px; */
 }
-.card .formulario .label h2{
+
+.card .formulario .label h2 {
 	margin: 4vh;
 }
-.card .formulario .label h3{
+
+.card .formulario .label h3 {
 	margin: 2vh;
 }
-.card .formulario .form-foto{
+
+.card .formulario .form-foto {
 	display: flex;
 	flex-direction: column;
 	/* border: 2px solid gold; */
@@ -155,7 +160,8 @@ nav a {
 	align-items: center;
 	justify-content: center;
 }
-.card .formulario select{
+
+.card .formulario select {
 	height: 8vh;
 	border: 2px solid black;
 	border-radius: 1vw;
@@ -164,31 +170,33 @@ nav a {
 	margin: 0;
 }
 
-#botao-agendamento{
+#botao-agendamento {
 	margin-top: 5vh;
-	
+
 }
-.hello{
+
+.hello {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.frase img{
+.frase img {
 	height: 40vh;
 	width: 15vw;
 }
 
-.frase{
+.frase {
 	display: flex;
 	font-size: 4vh;
 	flex-direction: column;
 	align-items: center;
 	color: #f00;
 }
+
 /* PAGINA PERFIL */
 
-.container .perfil{
+.container .perfil {
 	display: flex;
 	width: 95vw;
 	height: 99vh;
@@ -197,11 +205,11 @@ nav a {
 	align-items: center;
 }
 
-.span_agendamento{
+.span_agendamento {
 	color: rgb(233, 14, 116);
 }
 
-.card_perfil{
+.card_perfil {
 	width: 65vw;
 	height: 85vh;
 	background-color: white;
@@ -213,7 +221,7 @@ nav a {
 	align-items: center;
 }
 
-.card_perfil .card_informacoes{
+.card_perfil .card_informacoes {
 	/* border: 2px solid black; */
 	width: 30vw;
 	height: 70vh;
@@ -221,11 +229,12 @@ nav a {
 	align-items: center;
 	flex-direction: column;
 }
-.card_informacoes h2{
+
+.card_informacoes h2 {
 	margin-top: 2vh;
 }
 
-.card_perfil .foto_perfil{
+.card_perfil .foto_perfil {
 	box-shadow: 0 0 1em black;
 	width: 30vw;
 	height: 70vh;
@@ -235,14 +244,14 @@ nav a {
 	/* justify-content: center; */
 }
 
-.card_perfil .foto_perfil .card_perfil_foto{
+.card_perfil .foto_perfil .card_perfil_foto {
 	/* border: 1px solid rgb(233, 14, 116); */
 	width: 30vw;
 	height: 30vh;
 	/* background-color: pink; */
 }
 
-.card_perfil .foto_perfil .descricao{
+.card_perfil .foto_perfil .descricao {
 	/* border: 2px solid blue; */
 	width: 80%;
 	display: flex;
@@ -251,15 +260,17 @@ nav a {
 	/* align-items: center; */
 	margin: 5vh;
 }
-.descricao h2{
+
+.descricao h2 {
 	margin: 1.5vh;
 }
-.descricao h3{
+
+.descricao h3 {
 	margin: 0.5vh;
 }
 
 
-#bolinhaFoto{
+#bolinhaFoto {
 	/* border: 2px solid black; */
 	width: 29vw;
 	height: 30vh;
@@ -269,12 +280,12 @@ nav a {
 
 }
 
-#bolinhaFoto img{
+#bolinhaFoto img {
 	height: 25vh;
 	/* position: relative;; */
 }
 
-.agendamento{
+.agendamento {
 	/* box-shadow: 0 0 0.2em rgb(233, 14, 116); */
 	width: 25vw;
 	margin-top: 3vh;
@@ -285,12 +296,12 @@ nav a {
 
 /* PAGINA PAINEL */
 
-.container .painel{
+.container .painel {
 	display: flex;
 	width: 85vw;
 	height: 90vh;
 	border-radius: 5vh;
-	justify-content: center;
+	justify-content: space-evenly;
 	flex-direction: column;
 	background-color: white;
 	box-shadow: 0 0 1em black;
@@ -298,53 +309,96 @@ nav a {
 
 }
 
+.painel h1 {
+	color: rgb(233, 14, 116);
+	font-size: 5vh;
+}
+
 .sub_grafico {
 	height: 85%;
-	width: 45%;
+	width: 32%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	border-radius: 10px;
+	box-shadow: 0 0 1em black;
 }
 
-.sub_grafico h2{
+.sub_grafico h2 {
 	margin: auto;
 }
 
-.grafico{
+.grafico {
 	height: 80%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-around;
 	/* border: 2px solid blue; */
 }
 
-.sub_grafico .pie{
-	width: 65%;
-	height: 80%;
-}
-
-.metricas{
-	height: 80vh;
-	width: 10vw;
-	border: 2px solid black;
+.dados_metricas {
+	width: 35vw;
+	display: flex;
+	height: 85%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 	align-items: center;
-	background-color: rgb(233, 14, 116);
-	margin-right: 5px;
-	border-radius: 3vh;
+	border-radius: 10px;
+	box-shadow: 0 0 1em black;
 }
 
-.metricas .card_metricasI {
-	border: 2px solid black;
-	height: 13vh;
-	width: 8vw;
+/* quizzzzzzz */
+
+
+/* AONDE ESTA TUDO */
+#quiz {
+	width: 50vw;
 	display: flex;
-	justify-content: center;
-	border-radius: 1vh;
-	background-color: white;
+	flex-direction: column;
+	align-items: center;
+	height: 80vh;
 }
+
+#comeco {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 50vh;
+	position: absolute;
+}
+
+.fase {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	border: 2px solid blue;
+	height: 70vh;
+	width: 45vw;
+}
+
+#fase select {
+	height: 8vh;
+	border: 2px solid rgb(233, 14, 116);
+	border-radius: 1vw;
+	font-size: 3vh;
+	margin-top: 5vh;
+	margin: 0;
+}
+
+#fotosFase img{
+	height: 45vh;
+	/* position: relative; */
+}
+
+#fotosFase {
+	display: flex;
+	justify-content: space-around;
+	/* border: 2px solid red; */
+	width: 40vw;
+}
+
