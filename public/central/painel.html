@@ -15,7 +15,7 @@
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao(), listarMetricas()">
+<body onload="listarMetricas()">
     <div class="banner">
         <div class="header">
             <input type="checkbox" id="check">
@@ -48,12 +48,10 @@
                 <h1> Metricas </h1>
 
                 <div class="grafico">
-                    <div class="dados_metricas">
-                        <h2> Gêneros dos Usuarios: </h2>
-                        <div id="Genero">
 
-                        </div>
-                    </div>
+                    <div class="dados_metricas" id="dados_feed"> </div>
+                    <div class="dados_metricas_usuarios" id="dados_feed_usuarios"> </div>
+
                 </div><!--  FECHOU A DIV GRAFICO -->
             </div>
 
@@ -65,7 +63,7 @@
 </body>
 
 </html>
-<!-- <script src="painel.js"></script> -->
+
 <script>
     function listarMetricas() {
         //aguardar();
@@ -73,29 +71,51 @@
         fetch("/avisos/listarMetricas")
             .then(function (resposta) {
                 if (resposta.ok) {
-                    if (resposta.status == 204) {
-                        console.log("NENHUM USUARIO CADASTRADO");
-                    }
+          if (resposta.status == 204) {
+              var feed = document.getElementById("dados_feed");
+              var mensagem = document.createElement("span");
+              mensagem.innerHTML = "Nenhum Usuario cadastrado."
+              feed.appendChild(mensagem);
+              throw "Nenhum resultado encontrado!!";
+          }
+    
+          resposta.json().then(function (resposta) {
+              console.log("Usuarios Generos recebidos: ", JSON.stringify(resposta));
+              var feed = document.getElementById("dados_feed");
+              feed.innerHTML = "";
+              for (let i = 0; i < resposta.length; i++) {
+                  var genero1 = resposta;
+                  console.log(genero1)
+          
+                  
+          
+                  // criando e manipulando elementos do HTML via JavaScrip
 
-                    resposta.json().then(function (resposta) {
-                        console.log(resposta[0]);
+              var spangenero= document.createElement("span");
 
-                        var tableGenero = resposta[0];
+              spangenero.innerHTML = " <h4> Gêneros dos Usuarios: </h4> <br> Feminino: <b>" + genero1[0].genero + "</b> <br> Masculino: <b>" + genero1[1].genero;
+              dados_feed_usuarios.innerHTML=  "<h4> Quantidade Total de <br> Usuarios Cadastrados: </h4> <b>" + genero1[2].genero +"</b>";
 
-                        // criando e manipulando elementos do HTML via JavaScrip 
 
-                        Genero.innerHTML = tableGenero.genero;
+              dados_feed.className = "metricas";    
+         
 
-                        //   finalizarAguardar();
-                    });
-                } else {
-                    throw "Houve um erro na API!";
-                }
-            })
-            .catch(function (resposta) {
-                console.error(resposta);
-                //   finalizarAguardar();
-            });
-    }
+              dados_feed.appendChild(spangenero);
+    
+              appendChild(dados_feed);
+          }
+
+          // finalizarAguardar();
+      });
+  } else {
+      throw ('Houve um erro na API!');
+  }
+}).catch(function (resposta) {
+  console.error(resposta);
+  finalizarAguardar();
+});
+}
+
+
 
 </script>

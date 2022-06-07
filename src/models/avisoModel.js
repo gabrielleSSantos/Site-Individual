@@ -26,7 +26,9 @@ function listarHorario(horario) {
 function listarMetricas() {
     
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMetricas()");
-    var instrucao = `SELECT genero, count(genero) FROM usuario GROUP BY genero;`; 
+    var instrucao = `select genero as descricao, count(genero) as genero from usuario group by genero
+    union 
+    select genero as descricao, count(genero) as genero from usuario;`; 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

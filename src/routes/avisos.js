@@ -6,6 +6,10 @@ var avisoController = require("../controllers/avisoController");
 router.get("/", function (req, res) {
     avisoController.testar(req, res);
 });
+
+router.get("/listarMetricas", function(req,res){
+    avisoController.listarMetricas(req,res);
+})
 router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listar(req, res);
 });
