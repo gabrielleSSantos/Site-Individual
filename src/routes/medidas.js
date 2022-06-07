@@ -11,4 +11,12 @@ router.get("/tempo-real/:idAquario", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
+router.get("/genero/:generoF", function (req, res) {
+    medidaController.ObtergeneroF(req, res);
+})
+
+router.get("/genero/:generoM", function (req, res) {
+    medidaController.ObtergeneroM(req, res);
+})
+
 module.exports = router;

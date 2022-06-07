@@ -11,20 +11,21 @@
     <title> Metricas </title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
-    </style> 
+    </style>
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()"></body>
-    <div class="banner">
-        <div class="header">
-            <input type="checkbox" id="check">
-            <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
-            <div class="barra">
-                <nav>
-                    <div class="hello">
-                        <h1>Olá, <span id="b_usuario"> </span>!</h1>
-                    </div>
+<body onload="validarSessao(), ObtergeneroF(sessionStorage.GENERO_USUARIO,()=> 
+    ObtergeneroM(sessionStorage.GENERO_USUARIO, setTimeout(atualizarGraficoGenero, 600)))">
+<div class="banner">
+    <div class="header">
+        <input type="checkbox" id="check">
+        <label for="check" id="icone"><img src="https://i.imgur.com/RWHvwPE.png" /></label>
+        <div class="barra">
+            <nav>
+                <div class="hello">
+                    <h1>Olá, <span id="b_usuario"> </span>!</h1>
+                </div>
                 <a href="agendamentos.html">
                     <div class="link">Agendamentos</div>
                 </a>
@@ -43,27 +44,27 @@
             </nav>
         </div>
     </div>
-        <div class="container" style="display: flex; justify-content: center; align-items: center;">
-            <div class="painel">
-                <h1> Metricas </h1>
-             
-                    <div class="grafico"> 
-                    <div class="sub_grafico">
-                        <h2> Quantidade de Usuarios por Gênero </h2>
-                        <canvas id="myChart"> </canvas>
-                    </div>
-                    <div class="dados_metricas">
-                        <h2> Dados: </h2>
-                      
-                    </div>
-                </div><!--  FECHOU A DIV GRAFICO -->
-            </div>
-            
+    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <div class="painel">
+            <h1> Metricas </h1>
+
+            <div class="grafico">
+                <div class="sub_grafico">
+                    <h2> Quantidade de Usuarios por Gênero </h2>
+                    <canvas id="myChart"> </canvas>
+                </div>
+                <div class="dados_metricas">
+                    <h2> Dados: </h2>
+
+                </div>
+            </div><!--  FECHOU A DIV GRAFICO -->
         </div>
-        </div>
-</div>
 
     </div>
+</div>
+</div>
+
+</div>
 </body>
 <script>
 
@@ -89,7 +90,7 @@
             hoverOffset: 20,
             hoverBorderColor: 'black',
             hoverBorderWidth: 3,
-            data: [5,3]
+            data: []
         }]
     };
 
@@ -118,4 +119,60 @@
         config
     );
 </script>
+
 </html>
+
+<script>
+    var generoF = 0;
+    var generoM = 0;
+
+
+    function ObtergeneroF(generoF, _callback) {
+
+        fetch(`/medidas/genero/${sessionStorage.GENERO_USUARIO}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`1`);
+                    litroPerdido0 = resposta[0].contagem;
+                    _callback();
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                _callback();
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function ObtergeneroM(generoM, _callback) {
+
+        fetch(`/medidas/genero/${sessionStorage.GENERO_USUARIO}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`1`);
+                    litroPerdido0 = resposta[0].contagem;
+                    _callback();
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                _callback();
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function atualizarGraficoGenero(){
+        data.datasets[0].data.push(generoF);
+        data.datasets[0].data.push(generoM);
+        myChart.update();
+    }
+
+</script>

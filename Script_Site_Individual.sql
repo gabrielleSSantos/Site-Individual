@@ -35,18 +35,10 @@ ALTER TABLE AGENDAMENTO modify COLUMN escolha_tranca VARCHAR (45);
 
 truncate AGENDAMENTO;
 
- SELECT * FROM AGENDAMENTO;
- SELECT * FROM USUARIO;
- 
 -- SELECTS 
-
+SELECT * FROM AGENDAMENTO;
+ SELECT * FROM USUARIO;
 SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
 SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO;
-SELECT count(idusuario) from usuario WHERE GENERO = 'FEM';
+SELECT count(idusuario) from usuario WHERE GENERO = 'MAS';
 select count(idusuario) from usuario;
-
-
-/*
- UPDATE AGENDAMENTO SET observacao = 'alalal' , escolha_tranca = 'topo' , fkusuario = 1 
- WHERE IDAGENDAMENTO = (SELECT IDAGENDAMENTO FROM(SELECT IDAGENDAMENTO FROM AGENDAMENTO 
- WHERE HORARIO = date_format('02-06-22 13:00:00', '%d-%m-%y %H:%i:%s')) AS IDAGENDAMENTO);
