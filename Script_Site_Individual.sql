@@ -21,9 +21,7 @@ CREATE TABLE Agendamento(
     FKusuario int, foreign key (FKusuario) references usuario(idusuario)
  );
 
- INSERT INTO usuario(idusuario, nome, email, senha) VALUES
- (NULL, 'gabrielle teste', 'gabrielle@gmail', 'gabi');
- 
+ALTER TABLE AGENDAMENTO modify COLUMN escolha_tranca VARCHAR (45);
  INSERT INTO Agendamento(horario) VALUES
 ('2022-06-09 10:00'),
  ('2022-06-09 13:00'),
@@ -32,20 +30,20 @@ CREATE TABLE Agendamento(
   ('2022-06-11 10:00'),
  ('2022-06-11 13:00'),
   ('2022-06-12 10:00'),
-('2022-06-12 13:00'),
- ('2022-06-11 10:00'),
- ('2022-06-11 13:00')
+('2022-06-12 13:00')
  ;
 
+truncate AGENDAMENTO;
 
  SELECT * FROM AGENDAMENTO;
  SELECT * FROM USUARIO;
  
+-- SELECTS 
 
- SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
- 
- 
-  SELECT * FROM AGENDAMENTO LEFT JOIN USUARIO ON FKUSUARIO=IDUSUARIO;
+SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
+SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO;
+SELECT count(idusuario) from usuario WHERE GENERO = 'FEM';
+select count(idusuario) from usuario;
 
 
 /*

@@ -10,7 +10,7 @@
         frase.innerHTML = `Preencha todos os Campos`
     }
     else {
-        alert("COMEÇANDO A AGENDAR");
+        // alert("COMEÇANDO A AGENDAR");
         fetch("/usuarios/cadastrarAgendamento", {
       method: "POST",
       headers: {
@@ -30,9 +30,21 @@
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        alert( "Agendamento realizado!");
+      //  alert("agendou");
+       frase_completou.style.display = "flex"
+       frase_completou.innerHTML = `Agendamento Realizado com Sucesso
+       <img src="../IMAGENS/certo.png"> </img>
+       `
+        setTimeout(() => {
+          window.location = "perfil.html";
+        }, "2000")
+        
+        // limparFormulario();
+
       } else {
-        alert( "Não foi possível realizar o agendamento");
+        // alert("agendou não");
+       frase_completou.style.display = "flex"
+       frase_completou.innerHTML = `Houve um erro ao tentar realizar o agendamento!`
         throw "Houve um erro ao tentar realizar o agendamento!";
       }
     })
