@@ -46,3 +46,5 @@ select count(idusuario) from usuario;
 select genero as descricao, count(genero) as genero from usuario group by genero
 union 
 select genero as descricao, count(genero) as genero from usuario;
+
+SELECT * FROM AGENDAMENTO LEFT JOIN USUARIO ON IDUSUARIO=FKUSUARIO;

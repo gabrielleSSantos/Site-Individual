@@ -1,0 +1,62 @@
+  PERGUNTAS
+
+▪ Em que momento da sua história (linha da vida) o interesse ou prazer por este
+tema despertou? Como está inserido no seu dia a dia e por que você escolheu
+este tema? -- RESPONDIDA
+▪ Você deve demonstrar quais valores seus estão representados em seu desafio
+individual. -- RESPONDIDA
+
+---------------------------------------------- INTRODUÇÃO ----------------------------------------------
+
+	Bom dia Meu nome é gabrielle e vim apresentar meu trabalho sobre Tranças. 
+
+	Desde de que me conheço como gente eu gosto de mexer em cabelos, na minha familia posso dizer que temos de todos os 
+tipos, o que me levou a pensar o quanto somos livres para escolhermos ser o que quiser, independente de preconceito que existe ou possam existir.
+
+	A trança para mim é uma forma de expressar a liberdade de voce ser o que vc quer ser, pois ela é um simbolo de empoderamento Feminino, assim como 
+o que eu escolhir como profissão(Analista e desenvolvedora de Sistemas), pois anos atras isso era designado apenas aos homens.
+
+	Complementando, a trança esta totalmente inserido no meu dia a dia, não apenas porque eu gosto, mas porque tambem atuo na area, aqui esta algumas
+ fotos do meu trabalho. 
+
+---------------------------------------------- APRESENTAR O SITE ----------------------------------------------
+	VAMOS PARA O SITE 
+
+	º INDEX --- Na pagina inicial temos o header que contém algumas opçoes, logo abaixo fotos e videos do meu trabalho, 
+, incluindo os valores que passo para os meus clientes.
+Na index tambem possui uma aba para realizar agendamentos, finalizando com fotos e videos.
+
+	º SOBRE MIM --- Já na pagina sobre mim, contem algumas informaçoes do meu dia a dia e a baixo minha relação com as tranças
+
+	º CONTATO -- no contato tem um formulario para duvida, passando pelas validações esse formulario é enviado ao meu email. Do lado 
+contem um card com as minhas redes Sociais, que apertando nelas é levado para o WPP, podendo iniciar uma conversa comigo, ou instragram, podendo ver
+meu trabalho na plataforma. 
+
+	E FINALMENTE VAMOS REALIZAR UM CADASTRO NA MINHA PLATAFORMA
+Preenche todas informaçoes necessarias.
+Entrando no site voce ja esta na aba do seu perfil, que tem suas informaçoes preenchidas no cadastro e seus agendamentos, como não realizamos nenhum não contem 
+agendamentos na tela
+ Vamos realizar um agendamento, aqui nessa comboBOX ele tras apenas os horarios disponiveis no banco, irei demostrar como ele some dps de um agendamento realizado.
+escolhe o modelo da trança, pronto voce sera redirecionado para o perfil, que ja saiu aquele nenhum agendamento, para o seu agendamento realizado agora pouco.
+e voltando na pagina de agendamento podemos perceber como aquela opcao ja saiu da combox.
+
+	Como metricas Eu usei, a quantidade de usuarios cadastrados no meu site e tambem separados por generos, FEM OU MAS, para que possa ser analizado
+ esses dados no futuro
+
+---------------------------------------------- DESFECHO -------------------------------------------------------
+▪ Qual foi a maior dificuldade?
+
+	Minha maior dificuldade foi na pagina de agendamentos, pensar em uma logica para que os usuarios não conseguisse cadastrar no msm horario.
+	Quebrei muito a cabeça nessa parte, mas com a ajuda de alguns monitores conseguir implementar a melhor logica para a minha regra de negocio.
+	O que eu fiz foi trazer em um SELECT DO banco os horarios que não tem FKUsuario cadastrados e assim quando o msm realizar o agendamentos eu dou um update no banco.
+	Eu crio essas options atraves do JAVASCRIPT, COM FOR E VETORES.
+
+▪ Qual foi a maior superação na realização desse desafio?
+
+	Ja puxando o gancho a maior realização foi ver o Agendamento Funcionando, exibindo na tela e no banco de dados, e restringindo esses horario para os proximos usuarios.
+
+▪ Há alguém que deva receber a sua gratidão por você ter conseguido chegar ao resultado final?
+	
+	Primeiro quero agradecer a atenção de todos aqui presente, e tambem aos meus amigos(em especial Vitor, Eduarda e João pela ajuda na API) e aos monitores
+(ROVER, MARCIO E PAULO por me ajudar a aplicar uma logica no meu projeto), e tambem aos professores que ao longo desses seis meses dao o seu melhor par repassar o conhecimento aos alunos.
+	E pricipalmente da minha familia, por sempre estar ao meu lado. 
