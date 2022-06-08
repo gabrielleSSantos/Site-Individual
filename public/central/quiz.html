@@ -12,10 +12,10 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&family=Pacifico&family=Signika+Negative:wght@700&display=swap");
     </style>
-    <script src="../js/funcoes.js"></script>
+    <!-- <script src="../js/funcoes.js"></script> -->
 </head>
 
-<body onload="validarSessao(), atualizarFeed()"></body>
+<body>
 <div class="banner">
     <div class="header">
         <input type="checkbox" id="check">
@@ -54,34 +54,39 @@
             </div>
 
             <!-- PRIMEIRA PARTE -->
-            <div id="fase1" class="fase">
+            <div id="div_fase1" class="fase">
                 <h2> Qual Trança Você Prefere ?</h2>
                 <div id="fotosFase">
-                 <img src="../IMAGENS/Trança-slider-7.jpg" onclick="escolher()" >    
-                 <img src="../IMAGENS/Trança-slider-12.jpg" onclick="escolher()">    
+                 <img src="../IMAGENS/Trança-slider-7.jpg" onclick="descobrir('TRANCA 7')">    
+                 <img src="../IMAGENS/Trança-slider-12.jpg" onclick="descobrir('TRANCA 12')">    
                 </div>  
             </div>
 
             <!-- SEGUNDA PARTE  -->
-            <div id="fase2" class="fase">
+            <div id="div_fase2" class="fase">
             <h2> Qual Trança Você Prefere ?</h2>
              <div id="fotosFase">
-                  <img src="../IMAGENS/Trança-slider-10.jpg">    
-                   <img src="../IMAGENS/Trança-slider-1.jpg">    
+                  <img src="../IMAGENS/Trança-slider-10.jpg" onclick="descobrir('TRANCA 10')">    
+                   <img src="../IMAGENS/Trança-slider-1.jpg" onclick="descobrir('TRANCA 1')">    
              </div>  
             </div>
 
             <!-- terceira PARTE -->
-            <div id="fase3" class="fase">
+            <div id="div_fase3" class="fase">
                  <h2> Qual Trança Você Prefere ?</h2>
                  <div id="fotosFase">
-                  <img src="../IMAGENS/Trança-slider-11.jpg">    
-                   <img src="../IMAGENS/Trança-slider-9.jpg">    
+                  <img src="../IMAGENS/Trança-slider-11.jpg" onclick="descobrir('TRANCA 11')">    
+                   <img src="../IMAGENS/Trança-slider-9.jpg" onclick="descobrir('TRANCA 9')">    
              </div>  
-
             </div>
 
-        </div>
+             <div id="div_fase4" class="fase">
+                <div id="resposta">
+                    
+                </div>
+        
+            </div>
+
     </div>
 </div>
 </div>
@@ -90,17 +95,59 @@
 </body>
 <script>
     let lista = []
-    function descobrir() {
+    function descobrir(tranca) {
+        lista.push(tranca)
 
-        comeco.style.display = "none"
+        if(comeco.style.display == ""){
+            comeco.style.display = "none"
+            div_fase1.style.display = "flex"
+            lista.shift()
+        } else if(div_fase1.style.display == "flex"){
+            div_fase1.style.display = "none"
+            div_fase2.style.display = "flex"
+            
+        } else if(div_fase2.style.display == "flex"){
+            div_fase2.style.display = "none"
+            div_fase3.style.display = "flex"
 
-        fase1.style.display = "flex"
-    }
+        }else if(div_fase3.style.display == "flex"){
+            div_fase3.style.display = "none"
+            div_fase4.style.display = "flex"
+        }
 
-    function escolher(){
-        lista = []
 
+        if(lista[0] == "TRANCA 7"&& lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 11"){
+            //  IF - TRANCA 7 - TRANCA 10 -TRANCA 11
+            resposta.innerHTML = `Seu Perfil é  1`
 
-        // lista.push()
-    }
+        } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 1" &&  lista[2] == "TRANCA 9"){
+        // IF - TRANCA 7 - TRANCA 1 - TRANCA 9
+            resposta.innerHTML = `Seu Perfil é  2`
+
+       } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 9"){
+           // IF - TRANCA 7 - TRANCA 10 - TRANCA 9
+            resposta.innerHTML = `Seu Perfil é  3`    
+
+        } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 1" &&  lista[2] == "TRANCA 11"){
+            // IF - TRANCA 7 - TRANCA 1 - TRANCA 11
+            resposta.innerHTML = `Seu Perfil é  4`
+
+        } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 11"){
+            // IF - TRANCA 12 - TRANCA 10 - TRANCA 11
+            resposta.innerHTML = `Seu Perfil é  5`
+
+        } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 9"){
+            // IF - TRANCA 12 - TRANCA 10 - TRANCA 9
+            resposta.innerHTML = `Seu Perfil é  6`
+
+        } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 1" &&  lista[3] == "TRANCA 11"){
+             // IF - TRANCA 12 - TRANCA 1 - TRANCA 11
+            resposta.innerHTML = `Seu Perfil é  7`
+            
+        } else {
+            resposta.innerHTML = `Seu Perfil é  8`
+        // IF - TRANCA 12 - TRANCA 1 - TRANCA 9
+         }
+}
+
 </script>

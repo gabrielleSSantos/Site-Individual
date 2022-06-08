@@ -402,15 +402,6 @@ nav a {
 	width: 45vw;
 }
 
-#fase select {
-	height: 8vh;
-	border: 2px solid rgb(233, 14, 116);
-	border-radius: 1vw;
-	font-size: 3vh;
-	margin-top: 5vh;
-	margin: 0;
-}
-
 #fotosFase img{
 	height: 45vh;
 	/* position: relative; */
@@ -423,3 +414,12 @@ nav a {
 	width: 40vw;
 }
 
+#resposta{
+	box-shadow: 0 0 1em rgb(233, 14, 116);
+	width: 40vw;
+	height: 60vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5vh;
+}
