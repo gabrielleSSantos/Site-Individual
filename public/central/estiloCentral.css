@@ -397,14 +397,15 @@ nav a {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	height: 70vh;
 	width: 45vw;
 }
 
 #fotosFase img{
 	height: 45vh;
-	/* position: relative; */
+	border-radius: 10px;
+	border: 2px solid rgb(233, 14, 116);
 }
 
 #fotosFase {
@@ -415,11 +416,23 @@ nav a {
 }
 
 #resposta{
-	box-shadow: 0 0 1em rgb(233, 14, 116);
 	width: 40vw;
 	height: 60vh;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	font-size: 5vh;
+	flex-direction: row;
+	padding: 5vh;
+	border-radius: 2vh;
 }
+
+#resposta img{
+ 	height: 40vh;
+	 border-radius: 10px;
+	 border: 2px solid rgb(233, 14, 116);
+	 margin-top: 10px;
+
+}
+
+

@@ -50,7 +50,7 @@ function entrar() {
             sessionStorage.ID_AGENDAMENTO = json.idAgendamento;
 
             setTimeout(function () {
-              window.location = "central/painel.html";
+              window.location = "central/perfil.html";
             }, 1000); // apenas para exibir o loading
           });
         } else {

@@ -60,6 +60,7 @@
                  <img src="../IMAGENS/Trança-slider-7.jpg" onclick="descobrir('TRANCA 7')">    
                  <img src="../IMAGENS/Trança-slider-12.jpg" onclick="descobrir('TRANCA 12')">    
                 </div>  
+                <h3> Clique na Imagem para a proxima Fase</h3>
             </div>
 
             <!-- SEGUNDA PARTE  -->
@@ -69,6 +70,7 @@
                   <img src="../IMAGENS/Trança-slider-10.jpg" onclick="descobrir('TRANCA 10')">    
                    <img src="../IMAGENS/Trança-slider-1.jpg" onclick="descobrir('TRANCA 1')">    
              </div>  
+             <h3> Clique na Imagem para a proxima Fase</h3>
             </div>
 
             <!-- terceira PARTE -->
@@ -78,6 +80,7 @@
                   <img src="../IMAGENS/Trança-slider-11.jpg" onclick="descobrir('TRANCA 11')">    
                    <img src="../IMAGENS/Trança-slider-9.jpg" onclick="descobrir('TRANCA 9')">    
              </div>  
+             <h3> Clique na Imagem para a proxima Fase</h3>
             </div>
 
              <div id="div_fase4" class="fase">
@@ -118,34 +121,50 @@
 
         if(lista[0] == "TRANCA 7"&& lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 11"){
             //  IF - TRANCA 7 - TRANCA 10 -TRANCA 11
-            resposta.innerHTML = `Seu Perfil é  1`
+            resposta.innerHTML = `Seu Perfil é  Detalhista <br>
+            O melhor seria Trança Lateral ou Trança Boxeadora <br>
+            <img src="../IMAGENS/Trança-slider-10.jpg" />
+            `
 
         } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 1" &&  lista[2] == "TRANCA 9"){
         // IF - TRANCA 7 - TRANCA 1 - TRANCA 9
-            resposta.innerHTML = `Seu Perfil é  2`
+            resposta.innerHTML = `Seu Perfil é  Afrontosa <br>
+            Eu recomendo Trança Frontal com detalhes ou Trança com Jumbo para abalar <br>
+            <img src="../IMAGENS/Trança-slider-1.jpg"> `
 
        } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 9"){
            // IF - TRANCA 7 - TRANCA 10 - TRANCA 9
-            resposta.innerHTML = `Seu Perfil é  3`    
+            resposta.innerHTML = `Seu Perfil é para Tranças Boxeadora <br>
+            Essa é tendencia em !! <br>
+            <img src="../IMAGENS/Trança-slider-12.jpg"> `  
 
         } else if (lista[0] == "TRANCA 7" && lista[1] == "TRANCA 1" &&  lista[2] == "TRANCA 11"){
             // IF - TRANCA 7 - TRANCA 1 - TRANCA 11
-            resposta.innerHTML = `Seu Perfil é  4`
+            resposta.innerHTML = `Seu Perfil é Detalhista <br>
+            Trança Lateral ou Frontal é a melhor Opção! <br>
+            <img src="../IMAGENS/Trança-slider-13.jpg"> `
 
         } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 11"){
             // IF - TRANCA 12 - TRANCA 10 - TRANCA 11
-            resposta.innerHTML = `Seu Perfil é  5`
+            resposta.innerHTML = `Seu Perfil é conservadora <br>
+            Uma Otima Opção Seria Trança Cabelo todo <br>
+            <img src="../IMAGENS/Trança-slider-11.jpg"> `
 
         } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 10" &&  lista[2] == "TRANCA 9"){
             // IF - TRANCA 12 - TRANCA 10 - TRANCA 9
-            resposta.innerHTML = `Seu Perfil é  6`
+            resposta.innerHTML = `Seu Perfil é para Tranças Boxeadora Com enfeites! <br>
+            Sucessooo !! <br>
+            <img src="../IMAGENS/Trança-slider-7.jpg"> `
 
         } else if (lista[0] == "TRANCA 12" && lista[1] == "TRANCA 1" &&  lista[3] == "TRANCA 11"){
              // IF - TRANCA 12 - TRANCA 1 - TRANCA 11
-            resposta.innerHTML = `Seu Perfil é  7`
+            resposta.innerHTML = `Seu Perfil é Ousada, Pode Apostar em Tranças Com enfeites! <br>
+            <img src="../IMAGENS/Trança-slider-13.jpg"> `
             
         } else {
-            resposta.innerHTML = `Seu Perfil é  8`
+            resposta.innerHTML = `Seu Perfil é Divertida <br>
+            Aposta na trança com desenhos Ousados! <br>
+            <img src="../IMAGENS/Trança-slider-2.jpg"> `
         // IF - TRANCA 12 - TRANCA 1 - TRANCA 9
          }
 }
