@@ -1,6 +1,8 @@
 CREATE DATABASE GABITRANCAS;
 USE GABITRANCAS;
 
+
+-- TABELAS
 CREATE TABLE usuario(
 	idusuario INT PRIMARY KEY auto_increment,
     nome VARCHAR(45),
@@ -20,8 +22,11 @@ CREATE TABLE Agendamento(
 	horario datetime,
     FKusuario int, foreign key (FKusuario) references usuario(idusuario)
  );
-
 ALTER TABLE AGENDAMENTO modify COLUMN escolha_tranca VARCHAR (45);
+
+
+
+-- inserção de dados no agendamentos
  INSERT INTO Agendamento(horario) VALUES
 ('2022-06-09 10:00'),
  ('2022-06-09 13:00'),
@@ -32,12 +37,18 @@ ALTER TABLE AGENDAMENTO modify COLUMN escolha_tranca VARCHAR (45);
   ('2022-06-12 10:00'),
 ('2022-06-12 13:00')
  ;
+-- INSERÇÃO DE USUARIO
+INSERT INTO USUARIO VALUES
+(NULL, 'Gabrielle Silva', 'gabrielle.santos@gmail.com', 'gabi123', 'Rua Barão Joaquim do Amparo', 215,'Inacio Monteiro', '11943131977', 'FEM'),
+(NULL, 'Ruan Pablo', 'ruan@gmail.com', 'ruan215' , 'Rua lapetina Russo', '28', 'Santo Amaro', '11947859624','MAS'),
+(NULL, 'Eduarda Calixto', 'eduarda@gmail.com', 'duda125','Rua lapetina Russo', '28', 'Santo Amaro', '11947859624','MAS' ),
+(null, 'Vitor Silva', 'vitor@gmail.com' , 'vitor',  'Rua lapetina Russo', '28', 'Santo Amaro', '11947859624','MAS'); 
 
-truncate AGENDAMENTO;
 
 -- SELECTS 
+
 SELECT * FROM AGENDAMENTO;
- SELECT * FROM USUARIO;
+SELECT * FROM USUARIO;
 SELECT date_format (horario, '%d-%m às %Hh%i') as horarios from AGENDAMENTO WHERE FKUSUARIO IS NULL;
 SELECT * FROM AGENDAMENTO JOIN USUARIO ON FKUSUARIO=IDUSUARIO;
 SELECT count(idusuario) from usuario WHERE GENERO = 'MAS';
